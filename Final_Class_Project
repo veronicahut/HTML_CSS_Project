@@ -1,0 +1,1177 @@
+<!-- HOME PAGE -->
+<!--
+  title: portfolio_index.html
+  author: Veronica Hutchins
+  date: 11/19/2022
+  note: portfolio home page
+--> 
+
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Template_Home</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style> 
+        @import url(styles/portfolio_home.css);
+        .homepage { border: none;}
+    </style>  
+</head>
+
+<body class="homepage">
+        
+        <h1 id="homeheader">
+            <span>veronica </span>
+            <span id="lastname">hutchins</span>
+        </h1>
+
+        <main>
+            <p>developer</p>
+            <p>designer</p>
+            <nav id="homenav">
+                <ul>
+                    <li id="about"> <a id="linka" href="about.html">About</a></li>
+                    <li id="resume"><a id="linkr" href="resume.html">Resume</a></li>
+                    <li id="samples"><a id="links" href="samples.html">Samples</a></li>
+                    <li id="contact"><a id="linkc" href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+
+            <span id="empty"> </span>
+        </main>        
+
+    <div id="home"><a href="index.html">Veronica's LCC Assignment Page</a></div>
+</body>
+</html>
+
+<!-- ABOUT PAGE -->
+<!--
+  title: about.html
+  author: Veronica Hutchins
+  date: 11/19/2022
+  note: project about page
+--> 
+
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Template</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>     
+        html {
+            box-sizing: border-box;
+            background-color: #9AB6CC; /* fallback */
+            background-image: url("images/rainbow_vh_cropped.jpg");
+            background-repeat: no-repeat;
+            width: 100%;
+            height: 100%;
+        }
+        * {
+            box-sizing: inherit;
+        }
+        /* generic styles #page */
+        #page {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            width: 100%;
+            height: 100%;
+        }   
+        p {
+            font-family: verdana, sans-serif;
+            margin: 0.5em; 
+            padding: 0.5em; 
+            line-height: 1.5em;
+        }
+        h1 {
+            font-family: 'Times New Roman', Times, serif;
+            font-variant: small-caps;
+            padding: 1.5em;
+            text-align: center;
+            letter-spacing: 0.15em;
+            text-shadow: 0.1em 0.1em 0.2em #313b4d;
+            color: #003391;
+        }
+        footer {
+            margin: 2em;
+            font-size: x-small;
+            text-align: left;
+        }
+        /* navigation styles */
+        a:visited {
+            color: #310fad;
+        }
+        a:focus, a:hover, a:active {
+            color: #3a7cf7;
+        }        
+        nav ul {
+            list-style-type: none;
+        }
+        nav ul {
+            margin: 0.05; 
+            padding: 0; 
+            list-style-type: none; 
+            display: flex; 
+            justify-content: center;
+        }
+        nav ul li a { 	
+            display: block; 	
+            border: 1px solid; 
+            padding: .5em .5em; 	
+            border-radius: 2.5em; 
+            margin: 1em;     
+            color: #003391;
+        } 
+        a {
+            text-align: center;
+        } 
+        #home a {
+            color: #003391;
+        }
+        #home a:focus, #home a:hover, #home a:active {
+            color: #3a7cf7;
+        }  
+        /*.about {
+             background-image: url("images/rainbow_vh_cropped.jpg");
+        } */
+        #page {    
+            /* background-color: #5b8fc0; /* #9ab1c7; fallback */
+            /* background-image: url("../images/rainbow_vh_cropped.jpg"); */ 
+            text-align: center;
+            padding-bottom: 1.5em;
+        }
+        aside {
+            margin: 1em;
+            text-align: center;
+        }
+        img {
+            margin: 2em 2em;
+        }
+        /* media queries */
+        @media screen and (min-width: 50px) 
+        {
+            .about {
+                margin: 1em;
+                font-size: small;
+            }
+            ul {
+                list-style-type: none; 
+                display: flex;
+                margin: 1em;
+            }
+        }
+        @media screen and (min-width: 450px) 
+        {
+            .about {
+                margin: 1em;
+                font-size: medium;
+            }
+            ul {
+                list-style-type: none; 
+                display: flex;
+                margin: 1em;
+            }
+        }
+    </style>  
+</head>
+
+<body class="about">
+    <div id="page">
+        
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="portfolio_index.html">Home</a></li> 
+                    <li><a href="resume.html">Resume</a></li>             
+                    <li><a href="samples.html">Samples</a></li> 
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <h1 id="aboutheader">about me</h1>
+        
+        <p>
+            My programming and design journey began a few years ago when I returned to school 
+            to study programming while working as a part time environmental lab technician. 
+            Staying with the same company, I took a full time position as a data technician. 
+            Then I finished my school program when I earned a certificate as a 
+            programmer-analyst and was given the title IT Specialist at work. 
+            After a while, I decided to return to school again and take more 
+            technology classes.   
+        </p> 
+        <p>
+            Work I like to do includes developing applications and designing user-friendly 
+            interfaces. I enjoy using my creativity and creating a positive environment. 
+            I am interested in providing a user experience that leaves them feeling good 
+            about themselves and what they can accomplish.
+        </p>
+        <p>
+            Work I have done includes developing an application to manipulate data 
+            into a deliverable format and student projects in development and design. 
+            I have been successful working indivually at school and with a team at work. 
+        </p> 
+        <p>
+            I get many inspirations from nature and being outdoors. Some of my hobbies 
+            are running, hiking, reading, and baking. I enjoy spending time with my family 
+            and traveling in my free time.        
+        </p>
+        <aside>
+            <img src="images/20220716_beach_small_hz_vh.jpg" alt="beach photo">            
+            <img src="images/20221112_laptop_sm_mod.png" alt="laptop photo">
+            <!-- <img src="images/20221113_2screens_small.jpg" alt="laptop photo"> -->
+            <img src="images/20220722_bridge_small_vh.jpg " alt="Mackinaw bridge photo"> 
+        </aside> 
+        <footer>background image and photos captured by Veronica Hutchins, 2022</footer>
+        <div id="home"><a href="index.html">Veronica's LCC Assignment Page</a></div>
+    </div>
+    
+</body>
+</html>
+
+<!-- RESUME PAGE -->
+<!--
+  title: resume.html
+  author: Veronica Hutchins
+  date: 11/19/2022
+  note: project resume page
+--> 
+
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Template</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style> 
+        html {
+            box-sizing: border-box;
+        }
+        * {
+            box-sizing: inherit;
+        }
+        /* generic styles #page */
+        #page {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            width: 100%;            
+        }        
+        h1 {
+            min-height: 5em;
+            background-image: url("images/aleksandr-popov-eXoXJrOGqG4-unsplash_dna_crop3.jpg"); 
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 3em;
+            font-weight: lighter;
+            padding: 1.5em;
+            text-align: center;
+            letter-spacing: 0.1em; 
+            color: #bbdbfb; /* #ade5ff; #1f1f1f; */
+            text-shadow: .03em .03em .05em #9bb6d1;
+        }
+        h2 {
+            color: #32506e;
+            margin-top: 1.5em;
+        }
+        p {
+            font-family: verdana, sans-serif; 
+            font-weight: 500;
+            line-height: 1.5em;
+            margin: 1em 2em 1em 2em; 
+            padding: 0.5em; 
+        }
+        .resume {
+            /* background: #a3b2ce;  #a4b1ca fallback #63b1d4 #9bb6d1 */
+            background: rgb(155, 182, 209);
+            color: #0d1335;
+            text-align: center;
+            font-weight: bold;
+            padding-bottom: 1.5em;
+        }
+        ul { 
+            list-style-type: none;
+            line-height: 1.5em;
+        }
+        #credit {
+            font-family: verdana, sans-serif;
+            color: #1f1f1f;
+            font-size: small;
+            font-weight: lighter;
+            font-style: italic;
+            text-align: left;
+            margin-left: 2em;
+        }
+        footer {
+            font-family: verdana, sans-serif;            
+            font-size: x-small;
+            font-weight: lighter;
+            margin: 2em;
+        }        
+        /* navigation styles */
+        .resume a {
+            color: #0d1335;
+        }
+        a:focus, a:hover, a:active {
+            color: #3c9cc9; /* #ade5ff */
+        }        
+        nav ul {
+            list-style-type: none;
+        }
+        nav ul {
+            margin: 0; 
+            padding: 0; 
+            list-style-type: none; 
+            display: flex; 
+            justify-content: center;
+        }
+        nav ul li a { 	
+            display: block; 	
+            border: 1px solid; 
+            padding: .5em .5em; 	
+            border-radius: 2.5em; 
+            margin: 1em;     
+        } 
+        a {
+            text-align: center;
+        }
+        #home {
+            margin: 1em;
+            padding-top: 4em; 
+            font-size: medium; 
+        }
+        #home a {
+            color: #00318d;
+        }
+        #home a:focus, #home a:hover, #home a:active {
+            color: #3c9cc9;
+        }
+         /* media queries */
+         @media screen and (min-width: 50px) 
+        {
+            .resume {
+                margin: 1em;
+                font-size: small;
+            }
+            ul {
+                list-style-type: none; 
+                display: flex;
+                margin: 1em;
+            }
+            p, .skills {
+                margin: 0.25em;
+                padding: 0.5em;
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+        @media screen and (min-width: 450px) 
+        {
+            .resume {
+                margin: 1em;
+                font-size: medium;
+            }
+            ul {
+                list-style-type: none; 
+                display: flex;
+                margin: 1em;
+            }
+            p, .skills {
+                margin: 0.25em;
+                padding: 0.5em;
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>  
+</head>
+
+<body class="resume">
+    <div id="page" >
+
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="portfolio_index.html">Home</a></li> 
+                    <li><a href="about.html">About</a></li>             
+                    <li><a href="samples.html">Samples</a></li> 
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <h1 id="resumeheader">Veronica Hutchins</h1>
+            <span id="credit">photo courtesy of Aleksandr Popov on unsplash</span>
+
+            <h2>Experience</h2>
+            <p>
+                <span>
+                    Fibertec Environmental Services ~ IT Specialist ~ August 2017 - present ~ Holt, MI 
+                </span>                
+                <br>           
+                Develop in Microsoft Access and VB.NET for export and formatting of 
+                electronic data deliverables, respond to emails. Create forms and 
+                reports in Microsoft Access as needed. Review Excel files with data 
+                and formatting manipulated to the environmental client-requested 
+                specifications.               
+            </p>
+            
+            <h2>Education</h2>
+            <p>
+                Lansing Community College ~ August 2022 - present ~ Lansing, MI ~ Relevant Courses: HTML/ CSS 
+            </p>
+            <p>
+                Lansing Community College ~ C.C. January 2016 - May 2019 ~ Lansing, MI ~ Certificate of 
+                Completion ~ Computer Programmer/ Analyst ~ Relevant Courses: SQL, C#, Python 
+            </p> 
+            <p>
+                Lansing Community College ~ A.S. January 1999 - May 2002 ~ Lansing, MI 
+                Associate in Applied Science ~ Biotechnology ~ Honors: Cum Laude        
+            </p>
+    
+            <h2>Skills</h2>
+            <p>
+                <ul class="skills">
+                    <li>VB.NET </li>
+                    <li>vba Microsoft Access </li>
+                    <li>SQL </li>
+                    <li>HTML/CSS </li>
+                    <li>C# </li>
+                    <li>Python </li>
+                    <li>GitHub </li>
+                </ul> 
+            </p>
+                            
+        </main> 
+
+        <span id="home"><a href="index.html">Veronica's LCC Assignment Page</a></span>
+
+        <footer>updated 11/19/2022</footer>
+    </div>
+    
+</body>
+</html>
+
+<!-- SAMPLES PAGE -->
+<!--
+  title: samples.html
+  author: Veronica Hutchins
+  date: 11/19/2022
+  note: project samples page
+--> 
+
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Template</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style> 
+        html {
+            box-sizing: border-box;
+        }
+        * {
+            box-sizing: inherit;
+        }
+        /* page styles */
+        .samples { 
+            background: #b9d8ed;
+            text-align: center;
+            padding-bottom: 1.5em;
+        }
+        .samples a {
+            color: #0d1335;
+        }
+        .samples nav a {
+            color: #0d1335;
+        }
+        .samples p {
+            color: #0d1335;
+        }
+        /* generic styles #page */       
+        h1 {
+            font-family: 'Times New Roman', Times, serif;
+            padding: 1.5em;
+            text-align: center;
+            letter-spacing: 0.15em;
+            text-shadow: 0.1em 0.1em 0.2em #313b4d;
+            color: #003391;
+        }
+        p {
+            font-family: verdana, sans-serif;
+            text-indent: 2em;
+            line-height: 1.5em;
+            margin: 1em;
+            padding: 0.5em;    
+        }
+        aside {
+            margin: 1em;
+        }
+        /* navigation styles */
+        a {
+            text-align: center;
+            color: #143e8d;
+        }
+        nav a:focus, nav a:hover, nav a:active {
+            color: #194ba7;
+        }
+        nav ul {
+            list-style-type: none;
+        }
+        nav ul {
+            margin: 0; 
+            padding: 0; 
+            list-style-type: none; 
+            display: flex; 
+            justify-content: center;
+        }
+        nav ul li a { 	
+            display: block; 	
+            border: 1px solid; 
+            padding: .5em .5em; 	
+            border-radius: 2.5em; 
+            margin: 1em;     
+        } 
+        #home {
+            margin: 2em;
+        }
+        #home a {
+            color: #143e8d;
+        }
+        #home a:focus, #home a:hover, #home a:active {
+            color: #197fa7;
+        }
+        #updated {
+            font-size: smaller;
+            margin: 2em;
+        }
+        /* media queries */
+        @media screen and (min-width: 50px) 
+        {
+            /* page grid defs */
+            #page {
+                display: grid;
+                grid-template-columns: repeat(1, 1fr);
+                grid-gap: 5px;
+                grid-template-areas: 
+                "par1"
+                "par2"
+                "par3";
+            }
+            #par1  {
+                grid-area: par1; 
+                grid-row: 1;
+                grid-column: 1 / 1;
+                padding: .5em; 
+            } 
+            #par2  {
+                grid-area: par2; 
+                grid-row: 2;
+                grid-column: 1 / 1;
+                padding: .5em; 
+            } 
+            #par3  {
+                grid-area: par3; 
+                grid-row: 3;
+                grid-column: 1 / 1;
+                padding: .5em; 
+            } 
+        }
+        @media screen and (min-width: 800px) 
+        {
+             /* page grid defs */
+            #page {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                grid-gap: 5px;
+                grid-template-areas: 
+                "par1 par2 par3"
+                "par1 par2 par3"
+                "par1 par2 par3";
+            }
+            #par1  {
+                grid-area: par1; 
+                grid-row: 1;
+                grid-column: 1 / 1;
+                padding: .5em; 
+            } 
+            #par2  {
+                grid-area: par2; 
+                grid-row: 1;
+                grid-column: 2 / 2;
+                padding: .5em; 
+            } 
+            #par3  {
+                grid-area: par3; 
+                grid-row: 1;
+                grid-column: 3 / 3;
+                padding: .5em; 
+            } 
+        }
+         /* media queries */
+         @media screen and (min-width: 50px) 
+        {
+            .samples {
+                margin: 1em;
+                font-size: small;
+            }
+            ul {
+                list-style-type: none; 
+                display: flex;
+                margin: 1em;
+            }
+        }
+        @media screen and (min-width: 450px) 
+        {
+            .samples {
+                margin: 1em;
+                font-size: medium;
+            }
+            ul {
+                list-style-type: none; 
+                display: flex;
+                margin: 1em;
+            }
+        }
+    </style>  
+</head>
+
+<body class="samples">      
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="portfolio_index.html">Home</a></li> 
+                    <li><a href="about.html">About</a></li>             
+                    <li><a href="resume.html">Resume</a></li> 
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <h1 id="samplesheader">Work Samples</h1>
+
+    <div id="page">
+
+        <p id="par1">
+            Final C# Class Project: developed an application that utilizes a relational 
+            database with six tables in SQL Server to customize behavioral health therapies for 
+            young children and individuals with special needs. This has three learning games in 
+            one application. The games are selected with a button on a form. To give an overview, 
+            the first game displays a situation and the user chooses an appropriate emotional facial 
+            expression as a response. The second game is similar to Simon Says where the user copies a 
+            sequence of colors. This is useful because imitation is important to developing social 
+            skills. The third game displays a situation where it is safe or unsafe and the user 
+            chooses either a thumbs up or thumbs down. Some technologies used included inheritance, 
+            polymorphism, exception handling, LINQ, an extension method, threading, and a 
+            programmer-created event. Here is a snippet of that code: <br>
+            <br>
+            <code>
+                public int GetAnswer(int aQuestionNum)
+                {
+                    <br>
+                    //use question number to get answer from database table
+                    <br>
+                    string command = "SELECT answerID FROM Questions WHERE Id = " + aQuestionNum + ";";
+                    <br>
+                    //create the command, data adapter, and dataset
+                    <br>
+                    sqlCommand = new SqlCommand(command, sqlConnection); <br>
+                    sqlDataAdapter = new SqlDataAdapter(sqlCommand); <br>
+                    DataSet dataSet2 = new DataSet();
+                    <br>
+                    //fill the dataset, get the table
+                    <br>
+                    sqlDataAdapter.Fill(dataSet2); <br>
+                    DataTable dataTable = dataSet2.Tables[0]; <br>
+                    foreach (DataRow dataRow in dataTable.Rows) <br> 
+                    {
+                        var a = dataRow[0];
+                        aAnswerNum = int.Parse(a.ToString());
+                    } <br>
+                    return aAnswerNum;
+                }
+            </code>            
+        </p>
+        <p id="par2">
+            Work Project: Developed a form in Microsoft Access (specifically, the Laboratory Information 
+            Management System) using vba Access, which would export data from Access to a file. The form would 
+            run checks followed by code that would filter data a particular way into a CSV file. Then it would 
+            run an executable I built with VB.NET, which would read the CSV file into an Excel 
+            file. The data and generic formatting are manipulated to certain specifications with the executable. 
+            At that point, an Excel macro built by a coworker is run to get the client-specific detailed formatting. 
+            This was a team project in that one person built the database tables, I built the form and executable, 
+            and another person built the Excel macros and kept up with new client requests and current client changes. 
+            We had meetings involving troubleshooting, brainstorming, and sharing updated information throughout the 
+            process. The actual code is owned by my employer, but here is a small portion of similar code: <br>
+            <br>
+            <code>
+                Private Sub GetOrderID() <br> 
+                Dim db As CurrentDatabase <br>
+                Dim sb As StringBuilder <br>
+                Dim bln_error As Boolean 
+                <br>
+                On Error GoTo error_handler
+                <br>
+                ...
+                <br>
+                exit_handler: <br>
+                    Set db = Nothing <br>
+                    Set sb = Nothing <br>
+                    Exit Sub
+                    <br>
+                error_handler: <br>
+                    Debug.Print err.Number & " " & err.Message <br>
+                    GoTo exit_handler <br>
+                End Sub 
+            </code>
+        </p>
+        <p id="par3">
+            Final HTML/ CSS Class Project: This project is this website. Included are navigation 
+            buttons and links, various headers and paragraphs, and images included (as you can see). 
+            There is also a separate CSS style sheet used. Here are a couple of sections of 
+            CSS and HTML code: <br>
+            <br>
+            <code>
+                h1 {
+                    font-family: 'Times New Roman', Times, serif;
+                    padding: 1.5em;
+                    text-align: center;
+                    letter-spacing: 0.15em;
+                    text-shadow: 0.1em 0.1em 0.2em #313b4d;
+                    color: #003391;
+                } <br>
+                p {
+                    font-family: verdana, sans-serif;
+                    text-indent: 2em;
+                    line-height: 1.5em;
+                    margin: 1em;
+                    padding: 0.5em;    
+                } <br>
+                aside {
+                    margin: 1em;
+                } <br>
+                /* media queries */ <br>
+                @media screen and (min-width: 50px) 
+               { <br> 
+                   .samples { <br> 
+                       margin: 1em;
+                       font-size: small;
+                   } <br>
+                   ul { <br> 
+                       list-style-type: none; 
+                       display: flex;
+                       margin: 1em;
+                   } <br> 
+               }
+            </code>
+            <br>
+            <code>
+                &lt;!-- navigation --&gt; <br>
+                &lt;header&gt; <br>
+                &lt;nav&gt; <br>
+                &lt;ul&gt; <br>
+                &lt;li&gt;&lt;a href="portfolio_index.html">Home&lt;/a&gt;&lt;/li&gt; <br>
+                &lt;li&gt;&lt;a href="about.html">About&lt;/a&gt;&lt;/li&gt; <br>            
+                &lt;li&gt;&lt;a href="resume.html">Resume&lt;/a&gt;&lt;/li&gt; <br>
+                &lt;li&gt;&lt;a href="contact.html">Contact&lt;/a&gt;&lt;/li&gt; <br>
+                &lt;/ul&gt; <br>
+                &lt;/nav&gt; <br>
+                &lt;/header&gt; 
+            </code>
+        </p>  
+
+    </div>
+
+    <aside>
+        <img src="images/20221112_laptop_sm.png" alt="laptop">
+    </aside>
+
+    <div id="home" class="samples"><a href="index.html">Veronica's LCC Assignment Page</a></div>
+
+    <div id="updated">updated 11/19/2022</div>
+</body>
+</html>
+
+<!-- CONTACT PAGE -->
+<!--
+  title: contact.html
+  author: Veronica Hutchins
+  date: 11/19/2022
+  note: project contact page
+--> 
+
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Template</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style> 
+        html {
+            box-sizing: border-box;
+            background: #0c0c0c; /* fallback */            
+        }
+        * {
+            box-sizing: inherit;
+        }
+        /* generic styles #page */
+        .contactpage {
+            display: flex;
+            flex-direction: column;
+            /* flex-wrap: nowrap; */
+            width: 100%;
+            height: 100%;
+        }
+        p {
+            font-family: verdana, sans-serif;
+            margin: 0.5em;
+            padding: 0.5em;    
+        }
+        /* detailed styles */
+        .contactpage {    
+            background: #18181a; /* fallback */
+            background-image: url("images/20221108_code_vh_resizedarker.jpg");
+            color: #77fce6;
+            padding-bottom: 1.5em;
+        }
+        .contactpage a {
+            color: #19a2a7;
+        }
+        .contactpage span {
+            line-height: 2em;
+            margin-bottom: 4em;
+        }
+        .contactpage p {
+            margin-bottom: 2em;
+        }
+        .contactpage a:focus, .contactpage a:hover, .contactpage a:active {
+            color: #77fce6;
+        }
+        .contact {
+            margin: 2em;
+        }        
+        /* navigation styles */
+        a:focus, a:hover, a:active {
+            color: #194ba7;
+        }
+        nav ul {
+            list-style-type: none;
+        }
+        nav ul {
+            margin: 0; 
+            padding: 0; 
+            list-style-type: none; 
+            display: flex; 
+            justify-content: center;
+        }
+        nav ul li a { 	
+            display: block; 	
+            border: 1px solid; 
+            padding: .5em .5em; 	
+            border-radius: 2.5em; 
+            margin: 1em;     
+        } 
+        a {
+            text-align: center;
+        }
+        #home {
+            font-size: medium;
+            margin: 1em;
+            padding-top: 5em;
+            text-align: center;
+        }
+        #home a:focus, #home a:hover, #home a:active {
+            color: #194ba7; 
+        }
+        #home a {
+            color: #19a2a7;
+        }
+        /* media queries */
+        @media screen and (min-width: 50px) 
+        {
+            .contact {
+                margin: 1em;
+                font-size: small;
+            }
+            p {
+                text-align: center;
+            }
+            ul {
+                list-style-type: none; 
+                display: flex;
+                margin: 1em;
+            }
+            #home {
+            font-size: medium; 
+            }
+        }
+        @media screen and (min-width: 450px) 
+        {
+            .contact {
+                margin: 1em;
+                font-size: medium;
+            }
+            ul {
+                list-style-type: none; 
+                display: flex;
+                margin: 1em;
+            }
+            #email {
+                font-size: 150%;
+                text-align: left;
+                margin: 2em 2em 2em 10em;
+            }
+            #linkedin {
+                font-size: 150%;
+                text-align: center;
+                margin: 2em;
+            }
+            #github {
+                font-size: 150%;
+                text-align: right;
+                margin: 2em 10em 2em 2em;
+            }
+        }
+    </style>  
+</head>
+
+<body>
+    <div class="contactpage">
+        
+        <header class="contact">
+            <nav>
+                <ul>
+                    <li><a href="portfolio_index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="resume.html">Resume</a></li>
+                    <li><a href="samples.html">Samples</a></li>                    
+                </ul>
+            </nav>
+        </header>
+
+        <p id="email">
+            <a href="mailto:hutchinv@mail.lcc.edu">hutchinv@mail.lcc.edu</a>
+        </p> 
+        <p id="linkedin">
+            <a href="https://www.linkedin.com/in/veronica-hutchins-14875048">www.linkedin.com/in/veronica-hutchins-14875048</a>
+        </p> 
+        <p id="github">
+            <a href="https://github.com/veronicahut">https://github.com/veronicahut</a>
+        </p>     
+
+        <div id="home"><a href="index.html">Veronica's LCC Assignment Page</a></div>
+
+    </div>
+    
+</body>
+</html>
+
+/* CSS STYLE PAGE */
+@charset "UTF-8";
+/* 
+  title: portfolio_home.css
+  author: Veronica Hutchins
+  date: 11/19/2022
+  note: project home page styles
+*/
+
+html {
+    box-sizing: border-box;
+    background-color: #5b8fc0; /* fallback */
+    background-image: url("../images/sunshine_sm_vh.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column; 
+}
+* {
+    box-sizing: inherit;
+}
+
+/* generic styles */
+h1 {
+    font-family: Verdana, sans-serif;
+    padding: 1.5em;
+    text-align: center;
+    font-stretch: ultra-expanded;
+    font-size: 3em;
+    font-weight: lighter;
+    letter-spacing: 0.5em;
+}
+p {
+    font-family: verdana, sans-serif;
+    text-align: right;
+    font-size: small;
+    letter-spacing: 0.25em;
+    margin: 0.5em 5em 0.5em 0.5em;
+    padding: 0.5em;
+}
+
+ /* more styles */
+.homepage {
+    min-height: 100em;
+    border: none;   
+    color: #05092c;     
+}
+#lastname {
+    text-transform: uppercase;
+    padding-left: 1em;
+}
+#linka { 
+    padding-top: 2em;
+    padding-bottom: 2em;
+    background-image: radial-gradient(white, #9ab1c7, #77a0c7);
+}
+#linkr { 
+    padding-top: 2em;
+    padding-bottom: 2em;
+    background-image: radial-gradient(white, #d1d8e6, #306be0);
+}
+#links { 
+    padding-top: 2em;
+    padding-bottom: 2em;
+    background-image: radial-gradient(white, #95d9f8, #5ac6f8);
+}
+#linkc { 
+    padding-top: 2em;
+    padding-bottom: 2em;
+    background-image: radial-gradient(white, #9d9db9, #18181a);
+}
+#home {
+    margin-top: 5em;
+    margin-right: 5em;
+    margin-bottom: 0.5em;
+    text-align: right;
+}
+
+/* navigation styles */
+nav {
+    padding-top: 5em;
+}
+nav ul {
+    list-style-type: none;
+}
+nav ul {
+    margin: 0; 
+    padding: 0; 
+    list-style-type: none; 
+    display: flex; 
+    justify-content: center;
+}
+nav ul li {
+    margin-left: .5em;
+ }
+nav ul li a { 	
+    display: block; 	
+    border: 1px solid; 
+    padding: .5em .5em; 	
+    border-radius: 2.5em; 
+    margin: 0.5em;     
+} 
+a {
+    font-weight: bold;
+    text-align: center;
+}
+a:focus, a:hover, a:active {
+    color: #276dee;
+}
+#home a:focus, #home a:hover, #home a:active {
+    color: #87bdf0;
+}
+#home a {
+    color: #00318d;
+}
+
+/* media queries */
+ @media screen and (min-width: 50px) 
+{
+    .homepage {        
+        border: none;   
+        color: #05092c;   
+        font-size: small;  
+        margin: 1em;
+    }
+    #homeheader {
+        margin-top: 0.25em;
+        padding-top: 0;
+    }
+    #lastname {
+        padding-left: 2em;
+        font-size: x-small;
+    }
+    ul {
+        margin: 0; 
+        padding: 0; 
+        list-style-type: none; 
+        display: flex;
+      }
+}
+@media screen and (min-width: 350px) 
+{
+    /* page grid defs */
+    #homenav ul {
+        display: grid;
+        grid-template-columns: repeat(6, 0.25fr);
+        grid-gap: 5px;
+        grid-template-areas: 
+        "empty empty empty empty empty empty"
+        "empty about empty empty empty empty"
+        "resume empty samples empty empty empty"
+        "empty contact empty empty empty empty";
+    }
+    #empty  {
+        grid-area: empty; 
+        grid-row: 1;
+        grid-column: 1 / 6;
+        padding: .5em;
+    } 
+    #about  {
+        grid-area: about; 
+        grid-row: 2;
+        grid-column: 2 / 3;
+        padding: .5em; 
+    } 
+    #resume  {
+        grid-area: resume; 
+        grid-row: 3;
+        grid-column: 1 / 2;
+        padding: .5em;   
+    } 
+    #empty  {
+        grid-area: empty; 
+        grid-row: 3;
+        grid-column: 2 / 3;
+        padding: .5em;
+    } 
+    #samples  {
+        grid-area: samples; 
+        grid-row: 3;
+        grid-column: 3 / 4;
+        padding: .5em;
+    } 
+    #contact  {
+        grid-area: contact; 
+        grid-row: 4;
+        grid-column: 2 / 3;
+        padding: .5em;
+    }
+    #lastname {
+        font-size: medium;
+        padding-left: 2em;
+    }
+}
+@media screen and (min-width: 490px) 
+{
+    #lastname {
+        font-size: large;
+        padding-left: 2em;
+    }
+} 
