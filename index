@@ -1,0 +1,45 @@
+<!-- HOME PAGE -->
+<!--
+  title: portfolio_index.html
+  author: Veronica Hutchins
+  date: 11/19/2022; 11/2/2024
+  note: portfolio home page
+--> 
+
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Portfolio_Home</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style> 
+        @import url(styles/portfolio_home.css);
+        .homepage { border: none;}
+    </style>  
+</head>
+
+<body class="homepage">
+        
+        <h1 id="homeheader">
+            <span>veronica </span>
+            <span id="lastname">hutchins</span>
+        </h1>
+
+        <main>
+            <p>developer</p>
+            <p>programmer</p>
+            <nav id="homenav">
+                <ul>
+                    <li id="about"> <a id="linka" href="about.html">About</a></li>
+                    <li id="resume"><a id="linkr" href="resume.html">Resume</a></li>
+                    <li id="samples"><a id="links" href="samples.html">Samples</a></li>
+                    <li id="contact"><a id="linkc" href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+
+            <span id="empty"> </span>
+        </main>        
+    
+</body>
+</html>
