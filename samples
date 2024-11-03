@@ -1,0 +1,340 @@
+<!-- SAMPLES PAGE -->
+<!--
+  title: samples.html
+  author: Veronica Hutchins
+  date: 11/19/2022;11/2/2024
+  note: project samples page
+--> 
+
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Portfolio_Samples</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style> 
+        html {
+            box-sizing: border-box;
+        }
+        * {
+            box-sizing: inherit;
+        }
+        /* page styles */
+        .samples { 
+            background: #b9d8ed;
+            text-align: center;
+            padding-bottom: 1.5em;
+        }
+        .samples a {
+            color: #0d1335;
+        }
+        .samples nav a {
+            color: #0d1335;
+        }
+        .samples p {
+            color: #0d1335;
+        }
+        /* generic styles #page */       
+        h1 {
+            font-family: 'Times New Roman', Times, serif;
+            padding: 1.5em;
+            text-align: center;
+            letter-spacing: 0.15em;
+            text-shadow: 0.1em 0.1em 0.2em #313b4d;
+            color: #003391;
+        }
+        p {
+            font-family: verdana, sans-serif;
+            text-indent: 2em;
+            line-height: 1.5em;
+            margin: 1em;
+            padding: 0.5em;    
+        }
+        aside {
+            margin: 1em;
+        }
+        /* navigation styles */
+        a {
+            text-align: center;
+            color: #143e8d;
+        }
+        nav a:focus, nav a:hover, nav a:active {
+            color: #194ba7;
+        }
+        nav ul {
+            list-style-type: none;
+        }
+        nav ul {
+            margin: 0; 
+            padding: 0; 
+            list-style-type: none; 
+            display: flex; 
+            justify-content: center;
+        }
+        nav ul li a { 	
+            display: block; 	
+            border: 1px solid; 
+            padding: .5em .5em; 	
+            border-radius: 2.5em; 
+            margin: 1em;     
+        } 
+        #home {
+            margin: 2em;
+        }
+        #home a {
+            color: #143e8d;
+        }
+        #home a:focus, #home a:hover, #home a:active {
+            color: #197fa7;
+        }
+        #updated {
+            font-size: smaller;
+            margin: 2em;
+        }
+        /* media queries */
+        @media screen and (min-width: 50px) 
+        {
+            /* page grid defs */
+            #page {
+                display: grid;
+                grid-template-columns: repeat(1, 1fr);
+                grid-gap: 5px;
+                grid-template-areas: 
+                "par1"
+                "par2"
+                "par3";
+            }
+            #par1  {
+                grid-area: par1; 
+                grid-row: 1;
+                grid-column: 1 / 1;
+                padding: .5em; 
+            } 
+            #par2  {
+                grid-area: par2; 
+                grid-row: 2;
+                grid-column: 1 / 1;
+                padding: .5em; 
+            } 
+            #par3  {
+                grid-area: par3; 
+                grid-row: 3;
+                grid-column: 1 / 1;
+                padding: .5em; 
+            } 
+        }
+        @media screen and (min-width: 800px) 
+        {
+             /* page grid defs */
+            #page {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                grid-gap: 5px;
+                grid-template-areas: 
+                "par1 par2 par3"
+                "par1 par2 par3"
+                "par1 par2 par3";
+            }
+            #par1  {
+                grid-area: par1; 
+                grid-row: 1;
+                grid-column: 1 / 1;
+                padding: .5em; 
+            } 
+            #par2  {
+                grid-area: par2; 
+                grid-row: 1;
+                grid-column: 2 / 2;
+                padding: .5em; 
+            } 
+            #par3  {
+                grid-area: par3; 
+                grid-row: 1;
+                grid-column: 3 / 3;
+                padding: .5em; 
+            } 
+        }
+         /* media queries */
+         @media screen and (min-width: 50px) 
+        {
+            .samples {
+                margin: 1em;
+                font-size: small;
+            }
+            ul {
+                list-style-type: none; 
+                display: flex;
+                margin: 1em;
+            }
+        }
+        @media screen and (min-width: 450px) 
+        {
+            .samples {
+                margin: 1em;
+                font-size: medium;
+            }
+            ul {
+                list-style-type: none; 
+                display: flex;
+                margin: 1em;
+            }
+        }
+    </style>  
+</head>
+
+<body class="samples">      
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li> 
+                    <li><a href="about.html">About</a></li>             
+                    <li><a href="resume.html">Resume</a></li> 
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <h1 id="samplesheader">Work Samples</h1>
+
+    <div id="page">
+
+        <p id="par1">
+            Final C# Class Project: developed an application that utilizes a relational 
+            database with six tables in SQL Server to customize behavioral health therapies for 
+            young children and individuals with special needs. This has three learning games in 
+            one application. The games are selected with a button on a form. To give an overview, 
+            the first game displays a situation and the user chooses an appropriate emotional facial 
+            expression as a response. The second game is similar to Simon Says where the user copies a 
+            sequence of colors. This is useful because imitation is important to developing social 
+            skills. The third game displays a situation where it is safe or unsafe and the user 
+            chooses either a thumbs up or thumbs down. Some technologies used included inheritance, 
+            polymorphism, exception handling, LINQ, an extension method, threading, and a 
+            programmer-created event. Here is a snippet of that code: <br>
+            <br>
+            <code>
+                public int GetAnswer(int aQuestionNum)
+                {
+                    <br>
+                    //use question number to get answer from database table
+                    <br>
+                    string command = "SELECT answerID FROM Questions WHERE Id = " + aQuestionNum + ";";
+                    <br>
+                    //create the command, data adapter, and dataset
+                    <br>
+                    sqlCommand = new SqlCommand(command, sqlConnection); <br>
+                    sqlDataAdapter = new SqlDataAdapter(sqlCommand); <br>
+                    DataSet dataSet2 = new DataSet();
+                    <br>
+                    //fill the dataset, get the table
+                    <br>
+                    sqlDataAdapter.Fill(dataSet2); <br>
+                    DataTable dataTable = dataSet2.Tables[0]; <br>
+                    foreach (DataRow dataRow in dataTable.Rows) <br> 
+                    {
+                        var a = dataRow[0];
+                        aAnswerNum = int.Parse(a.ToString());
+                    } <br>
+                    return aAnswerNum;
+                }
+            </code>            
+        </p>
+        <p id="par2">
+            Work Project: Developed a form in Microsoft Access (specifically, the Laboratory Information 
+            Management System) using vba Access, which would export data from Access to a file. The form would 
+            run checks followed by code that would filter data a particular way into a CSV file. Then it would 
+            run an executable I built with VB.NET, which would read the CSV file into an Excel 
+            file. The data and generic formatting are manipulated to certain specifications with the executable. 
+            At that point, an Excel macro built by a coworker is run to get the client-specific detailed formatting. 
+            This was a team project in that one person built the database tables, I built the form and executable, 
+            and another person built the Excel macros and kept up with new client requests and current client changes. 
+            We had meetings involving troubleshooting, brainstorming, and sharing updated information throughout the 
+            process. The actual code is owned by my employer, but here is a small portion of similar code: <br>
+            <br>
+            <code>
+                Private Sub GetOrderID() <br> 
+                Dim db As CurrentDatabase <br>
+                Dim sb As StringBuilder <br>
+                Dim bln_error As Boolean 
+                <br>
+                On Error GoTo error_handler
+                <br>
+                ...
+                <br>
+                exit_handler: <br>
+                    Set db = Nothing <br>
+                    Set sb = Nothing <br>
+                    Exit Sub
+                    <br>
+                error_handler: <br>
+                    Debug.Print err.Number & " " & err.Message <br>
+                    GoTo exit_handler <br>
+                End Sub 
+            </code>
+        </p>
+        <p id="par3">
+            Final HTML/ CSS Class Project: This project is this website. Included are navigation 
+            buttons and links, various headers and paragraphs, and images included (as you can see). 
+            There is also a separate CSS style sheet used. Here are a couple of sections of 
+            CSS and HTML code: <br>
+            <br>
+            <code>
+                h1 {
+                    font-family: 'Times New Roman', Times, serif;
+                    padding: 1.5em;
+                    text-align: center;
+                    letter-spacing: 0.15em;
+                    text-shadow: 0.1em 0.1em 0.2em #313b4d;
+                    color: #003391;
+                } <br>
+                p {
+                    font-family: verdana, sans-serif;
+                    text-indent: 2em;
+                    line-height: 1.5em;
+                    margin: 1em;
+                    padding: 0.5em;    
+                } <br>
+                aside {
+                    margin: 1em;
+                } <br>
+                /* media queries */ <br>
+                @media screen and (min-width: 50px) 
+               { <br> 
+                   .samples { <br> 
+                       margin: 1em;
+                       font-size: small;
+                   } <br>
+                   ul { <br> 
+                       list-style-type: none; 
+                       display: flex;
+                       margin: 1em;
+                   } <br> 
+               }
+            </code>
+            <br>
+            <code>
+                &lt;!-- navigation --&gt; <br>
+                &lt;header&gt; <br>
+                &lt;nav&gt; <br>
+                &lt;ul&gt; <br>
+                &lt;li&gt;&lt;a href="portfolio_index.html"&gt;Home&lt;/a&gt;&lt;/li&gt; <br>
+                &lt;li&gt;&lt;a href="about.html"&gt;About&lt;/a&gt;&lt;/li&gt; <br>            
+                &lt;li&gt;&lt;a href="resume.html"&gt;Resume&lt;/a&gt;&lt;/li&gt; <br>
+                &lt;li&gt;&lt;a href="contact.html"&gt;Contact&lt;/a&gt;&lt;/li&gt; <br>
+                &lt;/ul&gt; <br>
+                &lt;/nav&gt; <br>
+                &lt;/header&gt; 
+            </code>
+        </p>  
+
+    </div>
+
+    <aside>
+        <!-- <img src="images/20221112_laptop_sm.png" alt="laptop image"> -->
+    </aside>
+
+    <div id="home" class="samples"><a href="index.html">Veronica's Home Page</a></div>
+
+    <div id="updated">updated 11/02/2024</div>
+</body>
+</html>
