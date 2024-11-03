@@ -1,0 +1,178 @@
+<!-- ABOUT PAGE -->
+<!--
+  title: about.html
+  author: Veronica Hutchins
+  date: 11/19/2022; 11/02/2024
+  note: project about page
+--> 
+
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Portfolio_About</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>     
+        html {
+            box-sizing: border-box;
+            background-color: #9AB6CC; 
+            background-repeat: no-repeat;
+            width: 100%;
+            height: 100%;
+        }
+        * {
+            box-sizing: inherit;
+        }
+        /* generic styles #page */
+        #page {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            width: 100%;
+            height: 100%;
+        }   
+        p {
+            font-family: verdana, sans-serif;
+            margin: 0.5em; 
+            padding: 0.5em; 
+            line-height: 1.5em;
+        }
+        h1 {
+            font-family: 'Times New Roman', Times, serif;
+            font-variant: small-caps;
+            padding: 1.5em;
+            text-align: center;
+            letter-spacing: 0.15em;
+            text-shadow: 0.1em 0.1em 0.2em #313b4d;
+            color: #003391;
+        }
+        footer {
+            margin: 2em;
+            font-size: x-small;
+            text-align: left;
+        }
+        /* navigation styles */
+        a:visited {
+            color: #310fad;
+        }
+        a:focus, a:hover, a:active {
+            color: #3a7cf7;
+        }        
+        nav ul {
+            list-style-type: none;
+        }
+        nav ul {
+            margin: 0.05; 
+            padding: 0; 
+            list-style-type: none; 
+            display: flex; 
+            justify-content: center;
+        }
+        nav ul li a { 	
+            display: block; 	
+            border: 1px solid; 
+            padding: .5em .5em; 	
+            border-radius: 2.5em; 
+            margin: 1em;     
+            color: #003391;
+        } 
+        a {
+            text-align: center;
+        } 
+        #home a {
+            color: #003391;
+        }
+        #home a:focus, #home a:hover, #home a:active {
+            color: #3a7cf7;
+        }  
+
+        #page {    
+            text-align: center;
+            padding-bottom: 1.5em;
+        }
+        aside {
+            margin: 1em;
+            text-align: center;
+        }
+        img {
+            margin: 2em 2em;
+        }
+        /* media queries */
+        @media screen and (min-width: 50px) 
+        {
+            .about {
+                margin: 1em;
+                font-size: small;
+            }
+            ul {
+                list-style-type: none; 
+                display: flex;
+                margin: 1em;
+            }
+        }
+        @media screen and (min-width: 450px) 
+        {
+            .about {
+                margin: 1em;
+                font-size: medium;
+            }
+            ul {
+                list-style-type: none; 
+                display: flex;
+                margin: 1em;
+            }
+        }
+    </style>  
+</head>
+
+<body class="about">
+    <div id="page">
+        
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li> 
+                    <li><a href="resume.html">Resume</a></li>             
+                    <li><a href="samples.html">Samples</a></li> 
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <h1 id="aboutheader">about me</h1>
+        
+        <p>
+            My programming and design journey began a few years ago when I returned to school 
+            to study programming while working as a part time environmental lab technician. 
+            Staying with the same company, I took a full time position as a data technician. 
+            Then I finished my school program when I earned a certificate as a 
+            programmer-analyst and work game me the title IT Specialist, and then eventually 
+			IT project manager. I decided to return to school for more technology classes. 
+        </p> 
+        <p>
+            Work I like to do includes developing applications and designing user-friendly 
+            interfaces. I enjoy using my creativity and creating a positive environment. 
+            I am interested in providing a user experience that leaves the users feeling good 
+            about themselves and what they can accomplish. 
+        </p>
+        <p>
+            Work I have done includes developing an application to manipulate data 
+            into a deliverable format and student projects in development and design. 
+            I have been successful working individually and with a team at school and work. 
+        </p> 
+        <p>
+            I get many inspirations from nature and being outdoors. Some of my hobbies 
+            include running, hiking, reading, and baking. I enjoy spending time with my family 
+            and traveling in my free time.        
+        </p>
+        <aside>
+            <!-- <img src="images/bahamas_beach_vh_sm.jpg" alt="beach in the Bahamas photo"> --> 
+            <!-- <img src="images/mack_island_vh_sm.jpg " alt="Mackinaw Island photo"> -->
+        </aside> 
+        <!-- <footer>background image and photos captured by Veronica Hutchins, 2022</footer> -->
+        <div id="home"><a href="index.html">Veronica's Home Page</a></div>
+    </div>
+    
+</body>
+</html>
