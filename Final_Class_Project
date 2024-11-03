@@ -2,33 +2,29 @@
 <!--
   title: portfolio_index.html
   author: Veronica Hutchins
-  date: 11/19/2022
+  date: 11/19/2022; 11/2/2024
   note: portfolio home page
 --> 
 
 <!doctype html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
-  <title>Template_Home</title>
+  <title>Portfolio_Home</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
     <style> 
         @import url(styles/portfolio_home.css);
         .homepage { border: none;}
     </style>  
 </head>
-
-<body class="homepage">
-        
+<body class="homepage">        
         <h1 id="homeheader">
             <span>veronica </span>
             <span id="lastname">hutchins</span>
         </h1>
-
         <main>
             <p>developer</p>
-            <p>designer</p>
+            <p>programmer</p>
             <nav id="homenav">
                 <ul>
                     <li id="about"> <a id="linka" href="about.html">About</a></li>
@@ -39,9 +35,7 @@
             </nav>
 
             <span id="empty"> </span>
-        </main>        
-
-    <div id="home"><a href="index.html">Veronica's LCC Assignment Page</a></div>
+        </main>  
 </body>
 </html>
 
@@ -49,7 +43,7 @@
 <!--
   title: about.html
   author: Veronica Hutchins
-  date: 11/19/2022
+  date: 11/19/2022; 11/02/2024
   note: project about page
 --> 
 
@@ -58,13 +52,12 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Template</title>
+  <title>Portfolio_About</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>     
         html {
             box-sizing: border-box;
-            background-color: #9AB6CC; /* fallback */
-            background-image: url("images/rainbow_vh_cropped.jpg");
+            background-color: #9AB6CC; 
             background-repeat: no-repeat;
             width: 100%;
             height: 100%;
@@ -134,12 +127,8 @@
         #home a:focus, #home a:hover, #home a:active {
             color: #3a7cf7;
         }  
-        /*.about {
-             background-image: url("images/rainbow_vh_cropped.jpg");
-        } */
+
         #page {    
-            /* background-color: #5b8fc0; /* #9ab1c7; fallback */
-            /* background-image: url("../images/rainbow_vh_cropped.jpg"); */ 
             text-align: center;
             padding-bottom: 1.5em;
         }
@@ -177,14 +166,13 @@
         }
     </style>  
 </head>
-
 <body class="about">
     <div id="page">
         
         <header>
             <nav>
                 <ul>
-                    <li><a href="portfolio_index.html">Home</a></li> 
+                    <li><a href="index.html">Home</a></li> 
                     <li><a href="resume.html">Resume</a></li>             
                     <li><a href="samples.html">Samples</a></li> 
                     <li><a href="contact.html">Contact</a></li>
@@ -199,36 +187,32 @@
             to study programming while working as a part time environmental lab technician. 
             Staying with the same company, I took a full time position as a data technician. 
             Then I finished my school program when I earned a certificate as a 
-            programmer-analyst and was given the title IT Specialist at work. 
-            After a while, I decided to return to school again and take more 
-            technology classes.   
+            programmer-analyst and work game me the title IT Specialist, and then eventually 
+			IT project manager. I decided to return to school for more technology classes. 
         </p> 
         <p>
             Work I like to do includes developing applications and designing user-friendly 
             interfaces. I enjoy using my creativity and creating a positive environment. 
-            I am interested in providing a user experience that leaves them feeling good 
-            about themselves and what they can accomplish.
+            I am interested in providing a user experience that leaves the users feeling good 
+            about themselves and what they can accomplish. 
         </p>
         <p>
             Work I have done includes developing an application to manipulate data 
             into a deliverable format and student projects in development and design. 
-            I have been successful working indivually at school and with a team at work. 
+            I have been successful working individually and with a team at school and work. 
         </p> 
         <p>
             I get many inspirations from nature and being outdoors. Some of my hobbies 
-            are running, hiking, reading, and baking. I enjoy spending time with my family 
+            include running, hiking, reading, and baking. I enjoy spending time with my family 
             and traveling in my free time.        
         </p>
         <aside>
-            <img src="images/20220716_beach_small_hz_vh.jpg" alt="beach photo">            
-            <img src="images/20221112_laptop_sm_mod.png" alt="laptop photo">
-            <!-- <img src="images/20221113_2screens_small.jpg" alt="laptop photo"> -->
-            <img src="images/20220722_bridge_small_vh.jpg " alt="Mackinaw bridge photo"> 
+            <!-- <img src="images/bahamas_beach_vh_sm.jpg" alt="beach in the Bahamas photo"> --> 
+            <!-- <img src="images/mack_island_vh_sm.jpg " alt="Mackinaw Island photo"> -->
         </aside> 
-        <footer>background image and photos captured by Veronica Hutchins, 2022</footer>
-        <div id="home"><a href="index.html">Veronica's LCC Assignment Page</a></div>
-    </div>
-    
+        <!-- <footer>background image and photos captured by Veronica Hutchins, 2022</footer> -->
+        <div id="home"><a href="index.html">Veronica's Home Page</a></div>
+    </div>    
 </body>
 </html>
 
@@ -236,7 +220,7 @@
 <!--
   title: resume.html
   author: Veronica Hutchins
-  date: 11/19/2022
+  date: 11/19/2022; 11/2/2024
   note: project resume page
 --> 
 
@@ -245,7 +229,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Template</title>
+  <title>Portfolio_Resume</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
     <style> 
         html {
@@ -263,7 +247,6 @@
         }        
         h1 {
             min-height: 5em;
-            background-image: url("images/aleksandr-popov-eXoXJrOGqG4-unsplash_dna_crop3.jpg"); 
             font-family: 'Times New Roman', Times, serif;
             font-size: 3em;
             font-weight: lighter;
@@ -285,7 +268,6 @@
             padding: 0.5em; 
         }
         .resume {
-            /* background: #a3b2ce;  #a4b1ca fallback #63b1d4 #9bb6d1 */
             background: rgb(155, 182, 209);
             color: #0d1335;
             text-align: center;
@@ -390,71 +372,104 @@
         }
     </style>  
 </head>
-
 <body class="resume">
     <div id="page" >
+      <header>
+          <nav>
+              <ul>
+                  <li><a href="index.html">Home</a></li> 
+                  <li><a href="about.html">About</a></li>             
+                  <li><a href="samples.html">Samples</a></li> 
+                  <li><a href="contact.html">Contact</a></li>
+              </ul>
+          </nav>
+      </header>
 
-        <header>
-            <nav>
-                <ul>
-                    <li><a href="portfolio_index.html">Home</a></li> 
-                    <li><a href="about.html">About</a></li>             
-                    <li><a href="samples.html">Samples</a></li> 
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
-        </header>
-
-        <main>
-            <h1 id="resumeheader">Veronica Hutchins</h1>
-            <span id="credit">photo courtesy of Aleksandr Popov on unsplash</span>
-
-            <h2>Experience</h2>
-            <p>
-                <span>
-                    Fibertec Environmental Services ~ IT Specialist ~ August 2017 - present ~ Holt, MI 
-                </span>                
-                <br>           
-                Develop in Microsoft Access and VB.NET for export and formatting of 
-                electronic data deliverables, respond to emails. Create forms and 
-                reports in Microsoft Access as needed. Review Excel files with data 
-                and formatting manipulated to the environmental client-requested 
-                specifications.               
-            </p>
-            
-            <h2>Education</h2>
-            <p>
-                Lansing Community College ~ August 2022 - present ~ Lansing, MI ~ Relevant Courses: HTML/ CSS 
-            </p>
-            <p>
-                Lansing Community College ~ C.C. January 2016 - May 2019 ~ Lansing, MI ~ Certificate of 
-                Completion ~ Computer Programmer/ Analyst ~ Relevant Courses: SQL, C#, Python 
-            </p> 
-            <p>
-                Lansing Community College ~ A.S. January 1999 - May 2002 ~ Lansing, MI 
-                Associate in Applied Science ~ Biotechnology ~ Honors: Cum Laude        
-            </p>
-    
-            <h2>Skills</h2>
-            <p>
-                <ul class="skills">
-                    <li>VB.NET </li>
-                    <li>vba Microsoft Access </li>
-                    <li>SQL </li>
-                    <li>HTML/CSS </li>
-                    <li>C# </li>
-                    <li>Python </li>
-                    <li>GitHub </li>
-                </ul> 
-            </p>
-                            
-        </main> 
-
-        <span id="home"><a href="index.html">Veronica's LCC Assignment Page</a></span>
-
-        <footer>updated 11/19/2022</footer>
-    </div>
-    
+      <main>
+      <h1 id="resumeheader">Veronica Hutchins</h1>
+      <p id="resumeheader"><small>
+        Highly motivated and passionate programmer with experience in object-oriented programming, 
+        web application development, and working with complex data, who is eager to expand knowledge 
+        of development tools and practices.
+      </small></p>
+      <h2>Experience</h2>
+      <p>
+          <span>
+              Metiri Group (formerly Fibertec Environmental Services) ~ IT Project Manager ~ August 2017 - present ~ Holt, MI 
+          </span>                
+          <br>           
+          Assist development of custom data deliverables using SQL, MS Access, and Excel VBA. 
+          Independently design, develop, program, and test object-oriented applications with VB.NET to allow data 
+          from outsourced work to be integrated into custom deliverables.  Create and edit queries to maintain 
+          datasets in the relational database. Document and track  code changes. Perform troubleshooting of 
+          software issues, providing effective solutions that minimize wait time. Create customized spreadsheets 
+          with comparisons of sample results with EPA criteria. Communicate directly with clients to obtain 
+          specifications for deliverables.                
+      </p>
+      <p>
+          <span>
+              Fibertec Environmental Services ~ IT Project Manager ~ May 2014 - August 2017 ~ Holt, MI 
+          </span>                
+          <br>           
+          Prepared and tested environmental samples. Entered and uploaded data into Laboratory Information Management System (LIMS).                
+      </p>            
+      <h2>Education</h2>
+      <p>
+          Lansing Community College ~ August 2022 - Present ~ Lansing, MI 
+      </p>
+      <p>
+          Lansing Community College ~ C.C. January 2016 - May 2019 ~ Lansing, MI ~ Certificate of 
+          Completion ~ Computer Programmer/ Analyst  
+      </p> 
+      <p>
+          Lansing Community College ~ A.S. January 1999 - May 2002 ~ Lansing, MI 
+          Associate in Applied Science ~ Biotechnology ~ Honors: Cum Laude        
+      </p>
+      <h2>Skills</h2>
+      <p>
+        <ul class="skills">
+          <li>VB.NET </li>
+					<li>C#.NET </li>
+					<li>Java </li>
+					<li>SQL </li>
+					<li>HTML5/CSS3 </li>
+					<li>JavaScript </li>					
+					<li>PHP </li>
+					<li>Python </li>					
+          <li>VBA Microsoft Access </li> 
+					<li>software testing </li>
+          <li>XML </li>
+          <li>AJAX </li>
+					<li>Angular </li>
+					<li>MVC </li>
+					<li>T-SQL </li>					
+        </ul> <br> 
+				<ul class="skills">
+          <li>MS Visual Studio </li>
+					<li>Visual Studio Code </li>
+          <li>NetBeans </li>
+          <li>Looker Studio </li>
+          <li>SQL Server Management Studio </li>
+					<li>MS Office 365 Suite </li>
+          <li>Figma </li>
+					<li>yEd </li>
+        </ul> <br> 
+				<ul class="skills">
+          <li>communication </li>
+					<li>documentation </li>
+          <li>collaboration </li>
+          <li>problem-solving </li>
+					<li>analytical abilities </li>
+          <li>time management </li>
+					<li>adaptability </li>
+        </ul> <br> 
+      </p>
+			<h2>References</h2>
+      <p><small>Available upon request.</small></p> 
+    </main> 
+    <span id="home"><a href="index.html">Veronica's Home Page</a></span>
+    <footer>updated 11/02/2024</footer>
+    </div>    
 </body>
 </html>
 
@@ -462,16 +477,15 @@
 <!--
   title: samples.html
   author: Veronica Hutchins
-  date: 11/19/2022
+  date: 11/19/2022;11/2/2024
   note: project samples page
 --> 
 
 <!doctype html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
-  <title>Template</title>
+  <title>Portfolio_Samples</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
     <style> 
         html {
@@ -647,7 +661,7 @@
         <header>
             <nav>
                 <ul>
-                    <li><a href="portfolio_index.html">Home</a></li> 
+                    <li><a href="index.html">Home</a></li> 
                     <li><a href="about.html">About</a></li>             
                     <li><a href="resume.html">Resume</a></li> 
                     <li><a href="contact.html">Contact</a></li>
@@ -777,10 +791,10 @@
                 &lt;header&gt; <br>
                 &lt;nav&gt; <br>
                 &lt;ul&gt; <br>
-                &lt;li&gt;&lt;a href="portfolio_index.html">Home&lt;/a&gt;&lt;/li&gt; <br>
-                &lt;li&gt;&lt;a href="about.html">About&lt;/a&gt;&lt;/li&gt; <br>            
-                &lt;li&gt;&lt;a href="resume.html">Resume&lt;/a&gt;&lt;/li&gt; <br>
-                &lt;li&gt;&lt;a href="contact.html">Contact&lt;/a&gt;&lt;/li&gt; <br>
+                &lt;li&gt;&lt;a href="portfolio_index.html"&gt;Home&lt;/a&gt;&lt;/li&gt; <br>
+                &lt;li&gt;&lt;a href="about.html"&gt;About&lt;/a&gt;&lt;/li&gt; <br>            
+                &lt;li&gt;&lt;a href="resume.html"&gt;Resume&lt;/a&gt;&lt;/li&gt; <br>
+                &lt;li&gt;&lt;a href="contact.html"&gt;Contact&lt;/a&gt;&lt;/li&gt; <br>
                 &lt;/ul&gt; <br>
                 &lt;/nav&gt; <br>
                 &lt;/header&gt; 
@@ -790,12 +804,12 @@
     </div>
 
     <aside>
-        <img src="images/20221112_laptop_sm.png" alt="laptop">
+        <!-- <img src="images/20221112_laptop_sm.png" alt="laptop image"> -->
     </aside>
 
-    <div id="home" class="samples"><a href="index.html">Veronica's LCC Assignment Page</a></div>
+    <div id="home" class="samples"><a href="index.html">Veronica's Home Page</a></div>
 
-    <div id="updated">updated 11/19/2022</div>
+    <div id="updated">updated 11/02/2024</div>
 </body>
 </html>
 
@@ -803,21 +817,20 @@
 <!--
   title: contact.html
   author: Veronica Hutchins
-  date: 11/19/2022
+  date: 11/19/2022;11/2/2024
   note: project contact page
 --> 
 
 <!doctype html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
-  <title>Template</title>
+  <title>Portfolio_Contact</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
     <style> 
         html {
             box-sizing: border-box;
-            background: #0c0c0c; /* fallback */            
+            background: #0c0c0c;             
         }
         * {
             box-sizing: inherit;
@@ -837,8 +850,7 @@
         }
         /* detailed styles */
         .contactpage {    
-            background: #18181a; /* fallback */
-            background-image: url("images/20221108_code_vh_resizedarker.jpg");
+            background: #18181a; 
             color: #77fce6;
             padding-bottom: 1.5em;
         }
@@ -944,21 +956,19 @@
 </head>
 
 <body>
-    <div class="contactpage">
-        
+    <div class="contactpage">         
         <header class="contact">
             <nav>
                 <ul>
-                    <li><a href="portfolio_index.html">Home</a></li>
+                    <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="resume.html">Resume</a></li>
                     <li><a href="samples.html">Samples</a></li>                    
                 </ul>
             </nav>
-        </header>
-
+        </header> 
         <p id="email">
-            <a href="mailto:hutchinv@mail.lcc.edu">hutchinv@mail.lcc.edu</a>
+            <a href="mailto:veronicahutchins2@gmail.com">veronicahutchins@gmail.com</a>
         </p> 
         <p id="linkedin">
             <a href="https://www.linkedin.com/in/veronica-hutchins-14875048">www.linkedin.com/in/veronica-hutchins-14875048</a>
@@ -966,11 +976,8 @@
         <p id="github">
             <a href="https://github.com/veronicahut">https://github.com/veronicahut</a>
         </p>     
-
-        <div id="home"><a href="index.html">Veronica's LCC Assignment Page</a></div>
-
-    </div>
-    
+        <div id="home"><a href="index.html">Veronica's Home Page</a></div> 
+    </div>     
 </body>
 </html>
 
@@ -979,14 +986,13 @@
 /* 
   title: portfolio_home.css
   author: Veronica Hutchins
-  date: 11/19/2022
+  date: 11/19/2022; 11/2/2024
   note: project home page styles
 */
 
 html {
     box-sizing: border-box;
-    background-color: #5b8fc0; /* fallback */
-    background-image: url("../images/sunshine_sm_vh.png");
+    background-color: #5b8fc0; 
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
