@@ -1,0 +1,173 @@
+<!-- CONTACT PAGE -->
+<!--
+  title: contact.html
+  author: Veronica Hutchins
+  date: 11/19/2022;11/2/2024
+  note: project contact page
+--> 
+
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Portfolio_Contact</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style> 
+        html {
+            box-sizing: border-box;
+            background: #0c0c0c;             
+        }
+        * {
+            box-sizing: inherit;
+        }
+        /* generic styles #page */
+        .contactpage {
+            display: flex;
+            flex-direction: column;
+            /* flex-wrap: nowrap; */
+            width: 100%;
+            height: 100%;
+        }
+        p {
+            font-family: verdana, sans-serif;
+            margin: 0.5em;
+            padding: 0.5em;    
+        }
+        /* detailed styles */
+        .contactpage {    
+            background: #18181a; 
+            color: #77fce6;
+            padding-bottom: 1.5em;
+        }
+        .contactpage a {
+            color: #19a2a7;
+        }
+        .contactpage span {
+            line-height: 2em;
+            margin-bottom: 4em;
+        }
+        .contactpage p {
+            margin-bottom: 2em;
+        }
+        .contactpage a:focus, .contactpage a:hover, .contactpage a:active {
+            color: #77fce6;
+        }
+        .contact {
+            margin: 2em;
+        }        
+        /* navigation styles */
+        a:focus, a:hover, a:active {
+            color: #194ba7;
+        }
+        nav ul {
+            list-style-type: none;
+        }
+        nav ul {
+            margin: 0; 
+            padding: 0; 
+            list-style-type: none; 
+            display: flex; 
+            justify-content: center;
+        }
+        nav ul li a { 	
+            display: block; 	
+            border: 1px solid; 
+            padding: .5em .5em; 	
+            border-radius: 2.5em; 
+            margin: 1em;     
+        } 
+        a {
+            text-align: center;
+        }
+        #home {
+            font-size: medium;
+            margin: 1em;
+            padding-top: 5em;
+            text-align: center;
+        }
+        #home a:focus, #home a:hover, #home a:active {
+            color: #194ba7; 
+        }
+        #home a {
+            color: #19a2a7;
+        }
+        /* media queries */
+        @media screen and (min-width: 50px) 
+        {
+            .contact {
+                margin: 1em;
+                font-size: small;
+            }
+            p {
+                text-align: center;
+            }
+            ul {
+                list-style-type: none; 
+                display: flex;
+                margin: 1em;
+            }
+            #home {
+            font-size: medium; 
+            }
+        }
+        @media screen and (min-width: 450px) 
+        {
+            .contact {
+                margin: 1em;
+                font-size: medium;
+            }
+            ul {
+                list-style-type: none; 
+                display: flex;
+                margin: 1em;
+            }
+            #email {
+                font-size: 150%;
+                text-align: left;
+                margin: 2em 2em 2em 10em;
+            }
+            #linkedin {
+                font-size: 150%;
+                text-align: center;
+                margin: 2em;
+            }
+            #github {
+                font-size: 150%;
+                text-align: right;
+                margin: 2em 10em 2em 2em;
+            }
+        }
+    </style>  
+</head>
+
+<body>
+    <div class="contactpage">
+        
+        <header class="contact">
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="resume.html">Resume</a></li>
+                    <li><a href="samples.html">Samples</a></li>                    
+                </ul>
+            </nav>
+        </header>
+
+        <p id="email">
+            <a href="mailto:veronicahutchins2@gmail.com">veronicahutchins@gmail.com</a>
+        </p> 
+        <p id="linkedin">
+            <a href="https://www.linkedin.com/in/veronica-hutchins-14875048">www.linkedin.com/in/veronica-hutchins-14875048</a>
+        </p> 
+        <p id="github">
+            <a href="https://github.com/veronicahut">https://github.com/veronicahut</a>
+        </p>     
+
+        <div id="home"><a href="index.html">Veronica's Home Page</a></div>
+
+    </div>
+    
+</body>
+</html>
