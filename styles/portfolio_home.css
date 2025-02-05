@@ -9,7 +9,7 @@
 
 html {
     box-sizing: border-box;
-    background-color: #5b8fc0; 
+   /* background-color: #5b8fc0; */
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
