@@ -1,9 +1,9 @@
 <!-- HOME PAGE -->
 <!--
-  title: portfolio_index.html
+  title: index.html
   author: Veronica Hutchins
   date: 11/19/2022; 11/2/2024
-  note: portfolio home page
+  note: portfolio index page
 --> 
 
 <!doctype html>
@@ -11,7 +11,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Portfolio_Home</title>
+  <title>Home</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
     <style> 
         @import url(styles/portfolio_home.css);
