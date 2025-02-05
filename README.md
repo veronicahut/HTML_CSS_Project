@@ -1,1 +1,2 @@
-This is a professional portfolio designed for a class project. 
+Find my portfolio here: 
+https://veronicahut.github.io/HTML_CSS_Project/Final_Class_Project.html
