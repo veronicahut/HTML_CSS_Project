@@ -200,15 +200,10 @@
     <div id="page">
 
         <p id="par1">
-            Final C# Class Project: developed an application that utilizes a relational 
+            Final C# Class Project: developed an application that utilized a relational 
             database with six tables in SQL Server to customize behavioral health therapies for 
-            young children and individuals with special needs. This has three learning games in 
-            one application. The games are selected with a button on a form. To give an overview, 
-            the first game displays a situation and the user chooses an appropriate emotional facial 
-            expression as a response. The second game is similar to Simon Says where the user copies a 
-            sequence of colors. This is useful because imitation is important to developing social 
-            skills. The third game displays a situation where it is safe or unsafe and the user 
-            chooses either a thumbs up or thumbs down. Some technologies used included inheritance, 
+            young children and individuals with special needs. This had three learning games in 
+            one application. Some technologies used included inheritance, 
             polymorphism, exception handling, LINQ, an extension method, threading, and a 
             programmer-created event. Here is a snippet of that code: <br>
             <br>
@@ -240,16 +235,10 @@
             </code>            
         </p>
         <p id="par2">
-            Work Project: Developed a form in Microsoft Access (specifically, the Laboratory Information 
-            Management System) using vba Access, which would export data from Access to a file. The form would 
-            run checks followed by code that would filter data a particular way into a CSV file. Then it would 
-            run an executable I built with VB.NET, which would read the CSV file into an Excel 
-            file. The data and generic formatting are manipulated to certain specifications with the executable. 
-            At that point, an Excel macro built by a coworker is run to get the client-specific detailed formatting. 
-            This was a team project in that one person built the database tables, I built the form and executable, 
-            and another person built the Excel macros and kept up with new client requests and current client changes. 
-            We had meetings involving troubleshooting, brainstorming, and sharing updated information throughout the 
-            process. The actual code is owned by my employer, but here is a small portion of similar code: <br>
+            Work Project: Developed a form in Microsoft Access (specifically, a Laboratory Information 
+            Management System) using vba Access.The form would run checks and if all was good, it would 
+            run an executable file that I built using VB.NET. The actual code is proprietary, but here 
+            is a small portion of similar code: <br>
             <br>
             <code>
                 Private Sub GetOrderID() <br> 
@@ -258,6 +247,13 @@
                 Dim bln_error As Boolean 
                 <br>
                 On Error GoTo error_handler
+                <br>
+                ...
+                <br>
+                If bln_error Then
+                Else 'call Sub routine that runs the executable
+                    Call run_exe_file("C:\my_folder\my_executable.exe")
+                End If
                 <br>
                 ...
                 <br>
@@ -273,30 +269,12 @@
             </code>
         </p>
         <p id="par3">
-            Final HTML/ CSS Class Project: This project is this website. Included are navigation 
+            Final HTML/ CSS Class Project: This project is this portfolio. Included are navigation 
             buttons and links, various headers and paragraphs, and images included (as you can see). 
             There is also a separate CSS style sheet used. Here are a couple of sections of 
             CSS and HTML code: <br>
             <br>
             <code>
-                h1 {
-                    font-family: 'Times New Roman', Times, serif;
-                    padding: 1.5em;
-                    text-align: center;
-                    letter-spacing: 0.15em;
-                    text-shadow: 0.1em 0.1em 0.2em #313b4d;
-                    color: #003391;
-                } <br>
-                p {
-                    font-family: verdana, sans-serif;
-                    text-indent: 2em;
-                    line-height: 1.5em;
-                    margin: 1em;
-                    padding: 0.5em;    
-                } <br>
-                aside {
-                    margin: 1em;
-                } <br>
                 /* media queries */ <br>
                 @media screen and (min-width: 50px) 
                { <br> 
@@ -330,11 +308,11 @@
     </div>
 
     <aside>
-        <!-- <img src="images/20221112_laptop_sm.png" alt="laptop image"> -->
+        <!-- <img src="images/20221112_design.png" alt="design image"> -->
     </aside>
 
     <div id="home" class="samples"><a href="index.html">Veronica's Entry Page</a></div>
 
-    <div id="updated">updated 11/02/2024</div>
+    <div id="updated">updated 11/02/2024; 02/06/2025</div>
 </body>
 </html>
