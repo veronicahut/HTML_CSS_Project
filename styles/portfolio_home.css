@@ -41,10 +41,10 @@ img {
     border-radius: 1.5em;
 }
 #im {
-    /* display: block; */
+    display: block;
     /* margin-left: auto; */
-    /* text-align: right; */
-    float: center;
+    text-align: right;
+    /* float: center; */
 }
 
  /* more styles */
