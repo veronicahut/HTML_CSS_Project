@@ -37,6 +37,10 @@ p {
     margin: 0.5em 5em 0.5em 0.5em;
     padding: 0.5em;
 }
+img {
+    border-radius: 2.5em;
+    margin: 2em 2em;
+}
 
  /* more styles */
 .homepage {
