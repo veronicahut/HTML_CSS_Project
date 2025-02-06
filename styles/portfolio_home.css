@@ -38,8 +38,9 @@ p {
     padding: 0.5em;
 }
 img {
-    border-radius: 2.5em;
+    border-radius: 1.5em;
     margin: 2em 2em;
+    margin-right: auto;
 }
 
  /* more styles */
