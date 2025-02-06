@@ -38,9 +38,9 @@ p {
     padding: 0.5em;
 }
 #im {
+    display: block;
     border-radius: 1.5em;
-    margin: 2em 2em;
-    float: right;
+    margin-left: auto
 }
 
  /* more styles */
