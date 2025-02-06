@@ -42,8 +42,9 @@ img {
 }
 #im {
     /* display: block; */
-    /* margin-left: auto */
-    float: right;
+    /* margin-left: auto; */
+    /* text-align: right; */
+    float: center;
 }
 
  /* more styles */
