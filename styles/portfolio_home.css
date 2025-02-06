@@ -37,10 +37,13 @@ p {
     margin: 0.5em 5em 0.5em 0.5em;
     padding: 0.5em;
 }
-#im {
-    display: block;
+img {
     border-radius: 1.5em;
-    margin-left: auto
+}
+#im {
+    /* display: block; */
+    /* margin-left: auto */
+    float: right;
 }
 
  /* more styles */
