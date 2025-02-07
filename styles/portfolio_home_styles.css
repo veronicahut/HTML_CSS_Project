@@ -55,6 +55,7 @@ img {
 }
 #lastname {
     text-transform: uppercase;
+    font-size: 1.25em;
     padding-left: 1em;
 }
 #linka { 
@@ -107,7 +108,7 @@ nav ul li a {
     padding: .5em .5em; 	
     border-radius: 2.5em; 
     margin: 0.5em;     
-    font-size: 0.75em;
+    font-size: 1.17em;
 } 
 a {
     font-weight: bold;
