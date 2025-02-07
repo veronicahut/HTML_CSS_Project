@@ -22,7 +22,7 @@ html {
 /* generic styles */
 h1 {
     font-family: Verdana, sans-serif;
-    padding: 1.5em;
+    padding: 0.5em;
     text-align: center;
     font-stretch: ultra-expanded;
     font-size: 5em;
@@ -51,7 +51,7 @@ img {
 .homepage {
     min-height: 100em;
     border: none;   
-    color: #05092c;     
+    color: #05092c; /* very dark blue */    
 }
 #lastname {
     text-transform: uppercase;
@@ -107,20 +107,20 @@ nav ul li a {
     padding: .5em .5em; 	
     border-radius: 2.5em; 
     margin: 0.5em;     
+    font-size: 0.75em;
 } 
 a {
-    font-size: 1.25em;
     font-weight: bold;
     text-align: center;
 }
 a:focus, a:hover, a:active {
-    color: #276dee;
+    color: #276dee; /* medium blue */
 }
 #home a:focus, #home a:hover, #home a:active {
-    color: #87bdf0;
+    color: #87bdf0; /* light blue */
 }
 #home a {
-    color: #00318d;
+    color: #00318d; /* very dark blue */
 }
 
 /* media queries */
