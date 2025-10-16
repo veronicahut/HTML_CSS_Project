@@ -244,27 +244,27 @@
                 Private Sub GetOrderID() <br> 
                 Dim db As CurrentDatabase <br>
                 Dim sb As StringBuilder <br>
-                Dim bln_error As Boolean 
+                Dim blnError As Boolean 
                 <br>
-                On Error GoTo error_handler
+                On Error GoTo MyErrorHandler
                 <br>
                 ...
                 <br>
-                If bln_error Then <br>
-                Else 'call Sub routine that runs the executable <br>
-                    Call run_exe_file("C:\my_folder\my_executable.exe") <br>
+                If blnError Then <br>
+                Else 'call sub routine that runs the executable <br>
+                    Call RunMyExecutable("C:\my_folder\my_file.exe") <br>
                 End If 
                 <br>
                 ...
                 <br>
-                exit_handler: <br>
+                ExitHandler: <br>
                     Set db = Nothing <br>
                     Set sb = Nothing <br>
                     Exit Sub
                     <br>
-                error_handler: <br>
+                MyErrorHandler: <br>
                     Debug.Print err.Number & " " & err.Message <br>
-                    GoTo exit_handler <br>
+                    GoTo ExitHandler <br>
                 End Sub 
             </code>
         </p>
@@ -313,7 +313,7 @@
         <!-- <img src="images/20221112_design.png" alt="design image"> -->
     </aside>
 
-    <div id="home" class="samples"><a href="index.html">Veronica's Entry Page</a></div>
+    <div id="home" class="samples"><a href="index.html">Veronica's Home Page</a></div>
 
     <div id="updated">updated 02/06/2025</div>
 </body>
