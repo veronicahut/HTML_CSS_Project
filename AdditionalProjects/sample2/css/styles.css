@@ -1,0 +1,127 @@
+/*  
+    name: styles.css
+    date: 12/13/2025; 4/28/2026
+    author: Veronica Hutchins, ChatGPT
+    description: CSS styles for Trivia App
+*/
+body 
+{
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: sans-serif;
+    margin: 0;
+}
+
+.trivia-container 
+{
+    /* background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 600px;
+    text-align: center; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 30px;
+}
+
+h1
+{
+    color: #333;
+    margin-top: 10px;
+}
+
+#question 
+{
+    font-size: 24px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    text-align: center;
+}
+
+#feedback-message 
+{
+    font-size: 18px;
+    font-weight: bold;
+    color: #222;
+    margin-top: 10px;
+    height: 24px; 
+}
+
+.timer {
+    font-size: 14px;
+    margin: 10px;
+    color: #555;
+}
+
+.btn-grid 
+{
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.btn 
+{
+    background-color: #4c61af; 
+    color: white;
+    border: none;
+     margin: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.score {
+    font-size: 14px;
+    margin: 10px;
+    color: #555;
+}
+
+#points
+{
+    font-weight: bold;
+    color: #000;
+}
+
+#next-btn 
+{
+    background-color: #4100ba; 
+    margin: 10px;
+}
+
+.btn.big
+{
+    width: 100%;
+    padding: 12px;
+    border-radius: 12px;
+}
+
+.hide{display:none}
+
+/* response colors */
+.response.correct
+{
+    color: #1a8a2f;
+}
+
+.response.incorrect
+{
+    color: #b22222;
+}
+
+/* button hover effect */
+.btn:hover:not(.disabled) 
+{
+    background-color: #45a049;
+}

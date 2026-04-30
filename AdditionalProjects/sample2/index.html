@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!-- 
+        name: index.html
+        date: 12/13/2025; 4/25/2026
+        author: Veronica Hutchins, ChatGPT
+        description: Main HTML file for Trivia App
+     -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trivia Game</title>
+    <link rel="stylesheet" href="css/styles.css"> 
+</head>
+<body>
+    <main class="trivia-container">
+        <h1>Welcome to 2-Minute Trivia!</h1>
+
+        <p id="question">Loading trivia question...</p>
+
+        <p id="feedback-message" class="response"></p>
+
+        <div class="btn-grid">
+            <button id="true-answer" class="btn">True</button>
+            <button id="false-answer" class="btn">False</button>
+        </div>
+        
+        <div class="next-btn">
+            <button id="next-btn" class="btn big">Next Question</button>
+        </div>
+
+        <div class="timer">Time Remaining: <span id="timer"></span> </div>
+
+        <div class="score">Trivia Score: <span id="points">0</span></div>
+    </main>
+    
+    <script src="js/scripts.js"></script>
+</body>
+</html>
