@@ -10,8 +10,8 @@ Welcome! This is my personal portfolio website, showcasing my work, resume, and 
 - [Samples](samples.html)
 - [Contact](contact.html)
 
-You can also view the live site here:  
-https://veronicahut.github.io/HTML_CSS_Project/portfolio_index.html
+You can also view the website here:  
+https://veronicahut.github.io/HTML_CSS_Project/index.html
 
 ---
 © Veronica Hutchins
