@@ -1,11 +1,11 @@
 <?php
 // name: app/public/check_answer.php
-// date: 12/13/2025; 4/25/2026
+// date: 12/13/2025; 5/3/2026
 // author: ChatGPT
 // description: Accepts JSON {id, choice} and returns whether the answer is correct
 header('Content-Type: application/json');
-require __DIR__ . '/../db/config.php';
-
+//require __DIR__ . '/../db/config.php';
+require '/var/www/html/../db/config.php';
 $raw = file_get_contents('php://input');
 $input = json_decode($raw, true);
 if (!is_array($input) || !isset($input['id']) || !isset($input['choice'])) {
