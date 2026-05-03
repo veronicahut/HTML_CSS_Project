@@ -1,4 +1,4 @@
-# create
+# start
 FROM php:8.2-apache
 
 # Copy your project into the web server directory
