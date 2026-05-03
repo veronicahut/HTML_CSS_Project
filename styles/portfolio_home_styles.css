@@ -58,6 +58,9 @@ img {
     font-size: 1.25em;
     padding-left: 1em;
 }
+#linkh { 
+    float: center;
+}
 #linka { 
     padding-top: 2em;
     padding-bottom: 2em;
