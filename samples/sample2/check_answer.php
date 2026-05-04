@@ -44,7 +44,7 @@ try {
     $pdo = getPDO();
     // 2. Updated table name to match your Postgres "environmentalTrivia"
     // Use double quotes if you kept the capital 'T' in pgAdmin
-    $stmt = $pdo->prepare('SELECT answer FROM "environmentalTrivia" WHERE id = ?');
+    $stmt = $pdo->prepare('SELECT answer FROM \"environmentalTrivia\" WHERE id = ?');
     $stmt->execute([$id]);
     $row = $stmt->fetch();
 
