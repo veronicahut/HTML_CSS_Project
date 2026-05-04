@@ -1,6 +1,6 @@
 // name: scripts.js
 // date: 12/13/2025;4/28/2026
-// author: ChatGPT, Veronica Hutchins
+// author: ChatGPT, w3schools.com, Veronica Hutchins
 // description: Handles trivia question loading and answer checking
 
 // get DOM Elements
@@ -35,7 +35,7 @@ async function loadQuestion()
 
   // method to get question from server-side API
   try {
-    const res = await fetch('/sample2/app/public/get_question.php');    
+    const res = await fetch('/sample2/get_question.php');    
     const json = await res.json();
     if (json.success && json.data)
     { 
@@ -58,7 +58,7 @@ async function submitAnswer(choice)
   if (feedbackEl) { feedbackEl.textContent = 'Checking...'; feedbackEl.className = 'response'; }
 
   try {
-    const res = await fetch('/sample2/app/public/check_answer.php', {
+    const res = await fetch('/sample2/check_answer.php', {
       method: 'POST',
       headers: {'Content-Type':'application/json'},
       body: JSON.stringify({id: current.id, choice})
