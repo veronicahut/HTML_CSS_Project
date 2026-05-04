@@ -35,7 +35,7 @@ async function loadQuestion()
 
   // method to get question from server-side API
   try {
-    const res = await fetch('/sample2/get_question.php');    
+    const res = await fetch('/get_question.php');    
     const json = await res.json();
     if (json.success && json.data)
     { 
@@ -58,7 +58,7 @@ async function submitAnswer(choice)
   if (feedbackEl) { feedbackEl.textContent = 'Checking...'; feedbackEl.className = 'response'; }
 
   try {
-    const res = await fetch('/sample2/check_answer.php', {
+    const res = await fetch('/check_answer.php', {
       method: 'POST',
       headers: {'Content-Type':'application/json'},
       body: JSON.stringify({id: current.id, choice})
