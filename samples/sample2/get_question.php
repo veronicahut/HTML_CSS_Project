@@ -26,7 +26,7 @@
 //     ]);
 // }
 // Adjust path
-require __DIR__ . '/../db/config.php'; 
+require __DIR__ . '/includes/config.php'; 
 $pdo = getPDO();
 // Changed ORDER BY from RAND() to RANDOM() for Postgres
 $stmt = $pdo->query("
