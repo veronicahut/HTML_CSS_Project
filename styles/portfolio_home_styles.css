@@ -46,9 +46,6 @@ p {
     max-width: 1000px;
     margin: 0 auto;
 }
-img {
-    border-radius: 1.5em;
-}
 #im {
     flex: 1;
     display: flex;
@@ -58,7 +55,7 @@ img {
 #im img {
     width: 100%;
     max-width: 250px;
-    border-radius: 50%; /* Re-adding the circle look if desired */
+    border-radius: 50%; /* Re-adding the circle look */
     border: 5px solid #fff;
 }
 
@@ -66,7 +63,7 @@ img {
 #innercontainer {
     display: flex;
     flex-direction: column;
-    align-items: flex-end; /* Aligns 'developer' text and nav to the right of their container */
+    align-items: flex-end; /* Aligns text and nav to the right of their container */
     flex: 1;
 }
 .homepage {
@@ -106,7 +103,7 @@ img {
     margin-top: 5em;
     margin-right: 5em;
     margin-bottom: 0.5em;
-    text-align: right;
+    text-align: center;
 }
 
 /* navigation styles */
