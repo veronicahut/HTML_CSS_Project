@@ -37,17 +37,38 @@ p {
     margin: 0.15em 2.5em 0.15em 2.5em; /* 0.5em 5em 0.5em 0.5em; */
     padding: 0.15em;
 }
+#maincontent {
+    display: flex;
+    flex-direction: row; /* Aligns items horizontally */
+    align-items: center; /* Centers them vertically relative to each other */
+    justify-content: space-around; /* Distributes space between nav and image */
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
 img {
     border-radius: 1.5em;
 }
 #im {
-    display: block;
-    /* margin-left: auto; */
-    text-align: right;
-    /* float: center; */
+    flex: 1;
+    display: flex;
+    justify-content: center; /* Centers image in its half of the screen */
+    margin: 0; /* Remove previous margins that might interfere */
+}
+#im img {
+    width: 100%;
+    max-width: 250px;
+    border-radius: 50%; /* Re-adding the circle look if desired */
+    border: 5px solid #fff;
 }
 
  /* more styles */
+#innercontainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; /* Aligns 'developer' text and nav to the right of their container */
+    flex: 1;
+}
 .homepage {
     min-height: 100em;
     border: none;   
@@ -66,23 +87,19 @@ img {
     padding: 30px;
 }
 #linka { 
-    padding-top: 2em;
-    padding-bottom: 2em;
+    padding: 1.2em 2.5em;
     background-image: radial-gradient(white, #9ab1c7, #77a0c7);
 }
 #linkr { 
-    padding-top: 2em;
-    padding-bottom: 2em;
+    padding: 1.2em 2.5em;
     background-image: radial-gradient(white, #d1d8e6, #306be0);
 }
 #links { 
-    padding-top: 2em;
-    padding-bottom: 2em;
+    padding: 1.2em 2.5em;
     background-image: radial-gradient(white, #95d9f8, #5ac6f8);
 }
 #linkc { 
-    padding-top: 2em;
-    padding-bottom: 2em;
+    padding: 1.2em 2.5em;
     background-image: radial-gradient(white, #9d9db9, #18181a);
 }
 #home {
