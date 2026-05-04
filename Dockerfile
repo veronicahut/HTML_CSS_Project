@@ -1,9 +1,6 @@
 # start
 FROM php:8.2-apache
 
-# 1. Copy your project into the web server directory #COPY . /var/www/html/
-# 1. Copy ONLY the public folder into the web root
-#COPY ./AdditionalProjects/sample2/app/public/ /var/www/html/
 # 1. Copy the entire app directory (includes db and public)
 # This places 'db' at /var/www/db and 'public' at /var/www/html
 COPY ./AdditionalProjects/sample2/app/db/ /var/www/db/
