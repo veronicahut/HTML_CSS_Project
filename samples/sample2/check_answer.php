@@ -1,12 +1,10 @@
 <?php
-// name: app/public/check_answer.php
+// name: samples/sample2/check_answer.php
 // date: 12/13/2025; 5/3/2026
-// author: ChatGPT
+// author: ChatGPT, Google Gemini, Veronica Hutchins
 // description: Accepts JSON {id, choice} and returns whether the answer is correct
 
 header('Content-Type: application/json');
-
-// updated path to match the new 'includes' folder
 require __DIR__ . '/includes/config.php';
 
 $raw = file_get_contents('php://input');
@@ -17,30 +15,40 @@ if (!is_array($input) || !isset($input['id']) || !isset($input['choice'])) {
     exit;
 }
 
-$id = (int)$input['id'];
-$choice = $input['choice'];
-
 try {
     $pdo = getPDO();
-    // updated table name to match the Postgres "environmentalTrivia"
-    // Use double quotes for the capital 'T' in pgAdmin
-    $stmt = $pdo->prepare('SELECT answer FROM \"environmentalTrivia\" WHERE id = ?');
+    $id = (int)$input['id'];
+    $choice = $input['choice'];
+
+    // Ensure the table name matches the one in get_question.php
+    $stmt = $pdo->prepare('SELECT answer FROM "environmentalTrivia" WHERE id = ?');
     $stmt->execute([$id]);
     $row = $stmt->fetch();
 
     if (!$row) {
-        echo json_encode(['success' => false, 'error' => 'Answer not found']);
+        echo json_encode(['success' => false, 'error' => 'Question ID not found in database']);
         exit;
     }
 
-    // use simple comparison logic
-    $correct = (trim($row['answer']) === trim($choice));
+    // Use trim() to avoid issues with hidden spaces in the database
+    $isCorrect = (trim($row['answer']) === trim($choice));
+
     echo json_encode([
-        'success' => true, 
-        'correct' => $correct, 
+        'success' => true,
+        'correct' => $isCorrect,
         'correctAnswer' => $row['answer']
     ]);
 
+} catch (PDOException $e) {
+    // This catches database errors (e.g., table not found, bad credentials)
+    echo json_encode([
+        'success' => false, 
+        'error' => 'Database error: ' . $e->getMessage()
+    ]);
 } catch (Exception $e) {
-    echo json_encode(['success' => false, 'error' => 'Server error']);
+    // This catches everything else
+    echo json_encode([
+        'success' => false, 
+        'error' => 'General error: ' . $e->getMessage()
+    ]);
 }
