@@ -162,11 +162,11 @@ a:focus, a:hover, a:active {
         display: grid;
         grid-template-columns: repeat(6, 0.25fr);
         grid-gap: 5px;
-        grid-template-areas: 
-        "empty empty empty empty empty empty"
+        grid-template-areas:         
         "empty about empty empty empty empty"
         "resume empty samples empty empty empty"
-        "empty contact empty empty empty empty";
+        "empty contact empty empty empty empty"
+        "empty empty empty empty empty empty";
     }
     #empty  {
         grid-area: empty; 
