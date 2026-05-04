@@ -21,12 +21,12 @@ try {
     $choice = $input['choice'];
 
     // Ensure the table name matches the one in get_question.php
-    $stmt = $pdo->prepare('SELECT answer FROM "environmentalTrivia" WHERE id = ?');
+    $stmt = $pdo->prepare('SELECT answer FROM \"environmentalTrivia\" WHERE id = ?');
     $stmt->execute([$id]);
     $row = $stmt->fetch();
 
     if (!$row) {
-        echo json_encode(['success' => false, 'error' => 'Question ID not found in database']);
+        echo json_encode(['success' => false, 'error' => 'Answer not found in database']);
         exit;
     }
 
