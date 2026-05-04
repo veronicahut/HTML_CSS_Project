@@ -28,10 +28,10 @@
 // Adjust path
 require __DIR__ . '/includes/config.php'; 
 $pdo = getPDO();
-// Changed ORDER BY from RAND() to RANDOM() for Postgres
+// Changed ORDER BY from RAND() to RANDOM() and added double quotes to table name for Postgres
 $stmt = $pdo->query("
     SELECT id, question
-    FROM environmentalTrivia
+    FROM "environmentalTrivia"
     ORDER BY RANDOM() 
     LIMIT 1
 ");
