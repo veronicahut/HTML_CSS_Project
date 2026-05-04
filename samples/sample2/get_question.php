@@ -31,7 +31,7 @@ $pdo = getPDO();
 // Changed ORDER BY from RAND() to RANDOM() and added double quotes to table name for Postgres
 $stmt = $pdo->query("
     SELECT id, question
-    FROM "environmentalTrivia"
+    FROM \"environmentalTrivia\"
     ORDER BY RANDOM() 
     LIMIT 1
 ");
