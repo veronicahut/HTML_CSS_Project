@@ -3,37 +3,29 @@
 // date: 12/13/2025; 5/3/2026
 // author: ChatGPT
 // description: Fetches a random trivia question from the database and returns it as JSON
-// header('Content-Type: application/json');
-// //require __DIR__ . '/../db/config.php';
-// require '/var/www/html/../db/config.php';
-// $pdo = getPDO();
-// $stmt = $pdo->query("
-//     SELECT id, question
-//     FROM trivia
-//     ORDER BY RAND()
-//     LIMIT 1
-// ");
-// $q = $stmt->fetch();
-// if ($q) {
-//     echo json_encode([
-//         'success' => true,
-//         'data' => $q
-//     ]);
-// } else {
-//     echo json_encode([
-//         'success' => false,
-//         'error' => 'No questions found'
-//     ]);
-// }
+
 // Adjust path
 require __DIR__ . '/includes/config.php'; 
-$pdo = getPDO();
-// Changed ORDER BY from RAND() to RANDOM() and added double quotes to table name for Postgres
-$stmt = $pdo->query("
-    SELECT id, question
-    FROM \"environmentalTrivia\"
-    ORDER BY RANDOM() 
-    LIMIT 1
-");
-$question = $stmt->fetch();
-echo json_encode($question);
+
+try {
+    $pdo = getPDO();
+    $stmt = $pdo->query("
+        SELECT id, question
+        FROM \"environmentalTrivia\"
+        ORDER BY RANDOM() 
+        LIMIT 1
+    ");
+    $question = $stmt->fetch();
+
+    if ($question) {
+        // Wrap the result so it matches what scripts.js expects
+        echo json_encode([
+            'success' => true,
+            'data' => $question
+        ]);
+    } else {
+        echo json_encode(['success' => false, 'error' => 'No question found']);
+    }
+} catch (Exception $e) {
+    echo json_encode(['success' => false, 'error' => $e->getMessage()]);
+}
