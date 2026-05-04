@@ -1,0 +1,11 @@
+/* 
+    Veronica Hutchins
+    10/8/2025 
+    Assignment 05 - part 2
+*/
+
+h1 {color: red; }
+div { position: relative; left: 0px; font-size: 125%;}
+p {color: blue;}
+#pTwo {letter-spacing: 1px;}
+button { font-size: 105%; margin: 10px; padding: 5px; border-radius: 8px; }
