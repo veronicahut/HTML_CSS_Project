@@ -21,7 +21,7 @@ try {
     $choice = $input['choice'];
 
     // Ensure the table name matches the one in get_question.php
-    $stmt = $pdo->prepare('SELECT answer FROM \"environmentalTrivia\" WHERE id = ?');
+    $stmt = $pdo->prepare('SELECT answer FROM "environmentalTrivia" WHERE id = ?');
     $stmt->execute([$id]);
     $row = $stmt->fetch();
 
