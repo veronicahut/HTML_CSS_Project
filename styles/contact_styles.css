@@ -1,7 +1,7 @@
 /* CONTACT STYLE PAGE */ 
 html {
     box-sizing: border-box;
-    background: #0c0c0c;             
+    background: rgb(0,0,0); /* #0c0c0c */
 }
 * {
     box-sizing: inherit;
