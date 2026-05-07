@@ -1,0 +1,151 @@
+/* 
+  title: resume.css
+  author: Veronica Hutchins
+  date: 5/7/2026
+  note: portfolio resume page styles
+*/
+/* RESUME STYLE PAGE */
+html {
+    box-sizing: border-box;
+}
+* {
+    box-sizing: inherit;
+}
+/* generic styles #page */
+#page {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    width: 100%;            
+}        
+h1 {
+    min-height: 5em;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 3em;
+    font-weight: lighter;
+    padding: 1.5em;
+    text-align: center;
+    letter-spacing: 0.1em; 
+    color: #7C91A7; /* #F1F7FE; #ade5ff; #bbdbfb; #1f1f1f; */
+    text-shadow: .03em .03em .05em #637485; /* #617283; #6C7F92; */
+}
+h2 {
+    color: #32506e;
+    margin-top: 1.5em;
+}
+p {
+font-family: 'Times New Roman', Times, serif;
+    font-weight: 500;
+    line-height: 1.5em;
+    margin: 1em 2em 1em 2em; 
+    padding: 0.5em; 
+}
+span {
+font-family: verdana, sans-serif;
+}
+.resume {
+    background: #F1F7FE;  /* rgb(155, 182, 209); */
+    color: #0d1335;
+    text-align: center;
+    font-weight: bold;
+    padding-bottom: 1.5em;
+}
+.skills {
+font-family: verdana, sans-serif;
+}
+ul { 
+    list-style-type: none;
+    line-height: 1.5em;
+}
+#credit {
+    font-family: verdana, sans-serif;
+    color: #1f1f1f;
+    font-size: small;
+    font-weight: lighter;
+    font-style: italic;
+    text-align: left;
+    margin-left: 2em;
+}
+footer {
+    font-family: verdana, sans-serif;            
+    font-size: x-small;
+    font-weight: lighter;
+    margin: 2em;
+}        
+/* navigation styles */
+.resume a {
+    color: #0d1335;
+}
+a:focus, a:hover, a:active {
+    color: #3c9cc9; /* #ade5ff */
+}        
+nav ul {
+    list-style-type: none;
+}
+nav ul {
+    margin: 0; 
+    padding: 0; 
+    list-style-type: none; 
+    display: flex; 
+    justify-content: center;
+}
+nav ul li a { 	
+    display: block; 	
+    border: 1px solid; 
+    padding: .5em .5em; 	
+    border-radius: 2.5em; 
+    margin: 1em;     
+} 
+a {
+    text-align: center;
+}
+#home {
+    margin: 1em;
+    padding-top: 4em; 
+    font-size: x-small; 
+}
+#home a {
+    color: #7C91A7;
+}
+#home a:focus, #home a:hover, #home a:active {
+    color: #3c9cc9;
+}
+    /* media queries */
+    @media screen and (min-width: 50px) 
+{
+    .resume {
+        margin: 1em;
+        font-size: small;
+    }
+    ul {
+        list-style-type: none; 
+        display: flex;
+        margin: 1em;
+    }
+    p, .skills {
+        margin: 0.25em;
+        padding: 0.5em;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+}
+@media screen and (min-width: 450px) 
+{
+    .resume {
+        margin: 1em;
+        font-size: medium;
+    }
+    ul {
+        list-style-type: none; 
+        display: flex;
+        margin: 1em;
+    }
+    p, .skills {
+        margin: 0.25em;
+        padding: 0.5em;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+}
