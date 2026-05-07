@@ -11,7 +11,7 @@ function animateBackground() {
     brightness += direction * 0.5;
 
     // Reverse direction at limits
-    if (brightness >= 40) {
+    if (brightness >= 80) {
         direction = -1;
     } else if (brightness <= 0) {
         direction = 1;
