@@ -88,38 +88,40 @@
             <br>
             ...
             <br>
-            <pre><code>
-                 public char computerChoice()   
-                 {
+            <code>
+                &lt;pre&gt;&lt;code&gt;
+                public char computerChoice()   
+                {
                    //Random random = new Random();
                    randomChoice = 'y';
                    int i = 0;
                   
-                    while (randomChoice == 'y') 
-                    {
-                      //get a random number 0 up to 3
+                   while (randomChoice == 'y') 
+                   {
                       randomNum = (int)(Math.random() * 3);
-                      //see if it is a 0, 1, or 2
+                
                       switch (randomNum) {
-                          case 0 -> {
+                          case 0 -&gt; {
                               randomChoice = 'r';
                           }
-                          case 1 -> {
+                          case 1 -&gt; {
                               randomChoice = 'p';
                           }
-                          case 2 -> {
+                          case 2 -&gt; {
                               randomChoice = 's';
                           }
-                          //if not one of the choices, loop again
-                          default -> {
+                          default -&gt; {
                               randomChoice = 'y';
                           }
                       }
+                
                       i++;
-                  }        
-                  return randomChoice;
-              }
-            </code></pre>
+                   }        
+                
+                   return randomChoice;
+                }
+                &lt;/code&gt;&lt;/pre&gt;
+            </code>
         </p>  
 
     </div>
