@@ -75,42 +75,51 @@
             <a href="https://veronica-projects-l661.onrender.com/samples/sample2/index.html">Environmental Science Trivia</a> 
         </p>
         <p id="par3">
-            Final HTML/ CSS Class Project: This project is this portfolio. Included are navigation 
-            buttons and links, various headers and paragraphs, and images included (as you can see). 
-            There is also a separate CSS style sheet used. Here are a couple of sections of 
-            CSS and HTML code: <br>
+            Java Assignment: This project is a Rock Paper Scissors game. Here are a couple of sections of 
+            code: <br>
             <br>
             <code>
-                /* media queries */ <br>
-                @media screen and (min-width: 50px) 
-               { <br> 
-                   .samples { <br> 
-                       margin: 1em;
-                       font-size: small;
-                   } <br>
-                   ul { <br> 
-                       list-style-type: none; 
-                       display: flex;
-                       margin: 1em;
-                   } <br> 
-               }
+                char userChoice;
+                int randomNum;
+                char randomChoice;
+                String result;
+                Scanner input = new Scanner(System.in);
             </code>
             <br>
             ...
             <br>
-            <code>
-                &lt;!-- navigation --&gt; <br>
-                &lt;header&gt; <br>
-                &lt;nav&gt; <br>
-                &lt;ul&gt; <br>
-                &lt;li&gt;&lt;a href="portfolio_index.html"&gt;Home&lt;/a&gt;&lt;/li&gt; <br>
-                &lt;li&gt;&lt;a href="about.html"&gt;About&lt;/a&gt;&lt;/li&gt; <br>            
-                &lt;li&gt;&lt;a href="resume.html"&gt;Resume&lt;/a&gt;&lt;/li&gt; <br>
-                &lt;li&gt;&lt;a href="contact.html"&gt;Contact&lt;/a&gt;&lt;/li&gt; <br>
-                &lt;/ul&gt; <br>
-                &lt;/nav&gt; <br>
-                &lt;/header&gt; 
-            </code>
+            <pre><code>
+                 public char computerChoice()   
+                 {
+                   //Random random = new Random();
+                   randomChoice = 'y';
+                   int i = 0;
+                  
+                    while (randomChoice == 'y') 
+                    {
+                      //get a random number 0 up to 3
+                      randomNum = (int)(Math.random() * 3);
+                      //see if it is a 0, 1, or 2
+                      switch (randomNum) {
+                          case 0 -> {
+                              randomChoice = 'r';
+                          }
+                          case 1 -> {
+                              randomChoice = 'p';
+                          }
+                          case 2 -> {
+                              randomChoice = 's';
+                          }
+                          //if not one of the choices, loop again
+                          default -> {
+                              randomChoice = 'y';
+                          }
+                      }
+                      i++;
+                  }        
+                  return randomChoice;
+              }
+            </code></pre>
         </p>  
 
     </div>
