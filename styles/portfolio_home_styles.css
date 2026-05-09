@@ -27,13 +27,13 @@ h1 {
     font-stretch: ultra-expanded;
     font-size: 5em;
     font-weight: lighter;
-    letter-spacing: 0.5em;
+    letter-spacing: 0.3em;
 }
 p {
     font-family: verdana, sans-serif;
     text-align: center;
     font-size: small;
-    letter-spacing: 0.25em;
+    letter-spacing: 0.2em;
     margin: 0.15em 2.5em 0.15em 2.5em; /* 0.5em 5em 0.5em 0.5em; */
     padding: 0.15em;
 }
@@ -55,7 +55,7 @@ p {
 #im img {
     width: 100%;
     max-width: 250px;
-    border-radius: 50%; /* Re-adding the circle look */
+    border-radius: 50%; /* Adding the circle look */
     border: 5px solid #fff;
 }
 
@@ -85,19 +85,23 @@ p {
 }
 #linka { 
     padding: 1.2em 2.5em;
-    background-image: radial-gradient(white, #9ab1c7, #77a0c7);
+    /* background-image: radial-gradient(white, #9ab1c7, #77a0c7); */
+    color: #77a0c79;
 }
 #linkr { 
     padding: 1.2em 2.5em;
-    background-image: radial-gradient(white, #d1d8e6, #306be0);
+    /* background-image: radial-gradient(white, #d1d8e6, #306be0); */
+    color: #306be0;
 }
 #links { 
     padding: 1.2em 2.5em;
-    background-image: radial-gradient(white, #95d9f8, #5ac6f8);
+    /* background-image: radial-gradient(white, #95d9f8, #5ac6f8); */
+    color: #5ac6f8;
 }
 #linkc { 
     padding: 1.2em 2.5em;
-    background-image: radial-gradient(white, #9d9db9, #18181a);
+    /* background-image: radial-gradient(white, #9d9db9, #18181a); */
+    color: #18181a;
 }
 #home {
     margin-top: 5em;
