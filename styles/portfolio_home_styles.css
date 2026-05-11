@@ -139,7 +139,7 @@ a {
     font-weight: bold;
     text-align: center;
 }
-a:focus, a:hover, a:active {
+#homenav a:focus, #homenav a:hover, #homenav a:active {
     color: #276dee; /* medium blue */
 }
 #home a:focus, #home a:hover, #home a:active {
