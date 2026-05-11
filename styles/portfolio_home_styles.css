@@ -7,53 +7,34 @@
   note: project home page styles
 */
 
-html {
-    box-sizing: border-box;
-   /* background-color: #5b8fc0; */
-    background-repeat: no-repeat;
-    background-size: cover;
-    display: flex;
-    flex-direction: column; 
-}
-* {
-    box-sizing: inherit;
-}
-
-/* generic styles */
 h1 {
-    font-family: Verdana, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* More modern stack */
     padding: 0.5em;
     text-align: center;
-    font-stretch: ultra-expanded;
-    font-size: 5em;
-    font-weight: lighter;
-    letter-spacing: 0.3em;
+    font-size: clamp(2rem, 10vw, 5rem); /* Responsive sizing */
+    font-weight: 300;
+    letter-spacing: 0.2em; /* Slightly tighter for readability */
+    margin-bottom: 0;
 }
+
+#lastname {
+    display: block;
+    text-transform: uppercase;
+    font-size: 0.4em; /* Relative to the H1 */
+    letter-spacing: 0.8em;
+    margin-top: 10px;
+}
+
 p {
-    font-family: verdana, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-align: center;
-    font-size: small;
-    letter-spacing: 0.2em;
-    margin: 0.15em 2.5em 0.15em 2.5em; /* 0.5em 5em 0.5em 0.5em; */
-    padding: 0.15em;
-}
-#maincontent {
-    display: flex;
-    flex-direction: row; /* Aligns items horizontally */
-    align-items: center; /* Centers them vertically relative to each other */
-    justify-content: space-around; /* Distributes space between nav and image */
-    width: 100%;
-    max-width: 1000px;
-    margin: 0 auto;
+    font-size: 1rem;
+    letter-spacing: 0.1em; /* Reduced for subheadings */
+    color: #555;
+    margin: 0.5em auto;
 }
 
 /* Image styling */
-#im {
-    flex: 1;
-    display: flex;
-    justify-content: center; /* Centers image in its half of the screen */
-    margin: 0; /* Remove previous margins that might interfere */
-}
 #im img {
     max-width: 250px;
     border-radius: 50%;
@@ -61,86 +42,33 @@ p {
     box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
 
- /* more styles */
-#innercontainer {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end; /* Aligns text and nav to the right of their container */
-    flex: 1;
-}
-.homepage {
-    min-height: 100em;
-    border: none;   
-    color: #05092c; /* very dark blue */    
-}
-#lastname {
-    text-transform: uppercase;
-    font-size: 1.25em;
-    padding-left: 1em;
-}
-#homepage { 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    padding: 30px;
-}
-#linka { 
-    padding: 1.2em 2.5em;
-    /* background-image: radial-gradient(white, #9ab1c7, #77a0c7); */
-    color: #77a0c79;
-}
-#linkr { 
-    padding: 1.2em 2.5em;
-    /* background-image: radial-gradient(white, #d1d8e6, #306be0); */
-    color: #306be0;
-}
-#links { 
-    padding: 1.2em 2.5em;
-    /* background-image: radial-gradient(white, #95d9f8, #5ac6f8); */
-    color: #5ac6f8;
-}
-#linkc { 
-    padding: 1.2em 2.5em;
-    /* background-image: radial-gradient(white, #9d9db9, #18181a); */
-    color: #18181a;
-}
-#home {
-    margin-top: 5em;
-    margin-right: 5em;
-    margin-bottom: 0.5em;
-    text-align: center;
-}
-
-/* navigation styles */
-nav {
-    padding-top: 5em;
-}
-nav ul {
-    list-style-type: none;
-}
+/* Navigation Link Base Styles */
 nav ul {
     margin: 0; 
     padding: 0; 
-    list-style-type: none; 
+    list-style-type: none; /* This removes the dots */
     display: flex; 
     justify-content: center;
+    flex-wrap: wrap; /* Helps with mobile responsiveness */
 }
-nav ul li {
-    margin-left: .5em;
- }
 nav ul li a { 	
     display: block; 	
-    border: 1px solid; 
-    padding: .5em .5em; 	
-    border-radius: 2.5em; 
+    border: 2px solid transparent; 
+    padding: 0.8em 2em; 	
+    border-radius: 20px; /* rounded shape */
     margin: 0.5em;     
-    font-size: 1.17em;
-} 
-a {
-    font-weight: bold;
-    text-align: center;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: all 0.3s ease; /* Smooth animation */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Subtle depth */
+    /* color: rgb(141, 140, 140);  text */
 }
+
+/* Specific Button Colors (Flat Design) */
+#linka { color: #708599; } /* About */
+#linkr { color: #317595; } /* Resume */
+#links { color: #2758ba; } /* Samples */
+#linkc { color: #373758; } /* Contact */
 
 /* Hover Effects: Lift and Brighten */
 nav ul li a:hover {
@@ -148,95 +76,34 @@ nav ul li a:hover {
     box-shadow: 0 6px 12px rgba(0,0,0,0.15); /* Stronger shadow on hover */
     filter: brightness(1.1); /* Slightly brightens the color */
 }
-#home a:focus, #home a:active {
-    color: #87bdf0; /* light blue */
-}
-#home a {
-    color: #00318d; /* very dark blue */
+
+/* Mobile (Default) - Vertical Stack */
+#maincontent {
+    display: flex;
+    flex-direction: column-reverse; /* Image on top for mobile */
+    align-items: center;
+    padding: 20px;
+    gap: 2rem;
 }
 
-/* media queries */
- @media screen and (min-width: 50px) 
-{
-    .homepage {        
-        border: none;   
-        color: #05092c;   
-        font-size: small;  
-        margin: 1em;
-    }
-    #homeheader {
-        margin-top: 0.25em;
-        padding-top: 0;
-    }
-    #lastname {
-        padding-left: 2em;
-        font-size: x-small;
-    }
-    ul {
-        margin: 0; 
-        padding: 0; 
-        list-style-type: none; 
-        display: flex;
-      }
+#homenav ul {
+    display: flex;
+    flex-direction: column; /* Stack buttons vertically */
+    align-items: center;
 }
-@media screen and (min-width: 350px) 
-{
-    /* page grid defs */
+
+/* Tablet & Desktop - Side by Side */
+@media screen and (min-width: 768px) {
+    #maincontent {
+        flex-direction: row; /* Side-by-side */
+        justify-content: center;
+        gap: 5rem;
+    }
+
+    /* Create the diamond/grid pattern for buttons on desktop */
     #homenav ul {
         display: grid;
-        grid-template-columns: repeat(6, 0.25fr);
-        grid-gap: 5px;
-        grid-template-areas:         
-        "empty about empty empty empty empty"
-        "resume empty samples empty empty empty"
-        "empty contact empty empty empty empty"
-        "empty empty empty empty empty empty";
-    }
-    #empty  {
-        grid-area: empty; 
-        grid-row: 1;
-        grid-column: 1 / 6;
-        padding: .5em;
-    } 
-    #about  {
-        grid-area: about; 
-        grid-row: 2;
-        grid-column: 2 / 3;
-        padding: .5em; 
-    } 
-    #resume  {
-        grid-area: resume; 
-        grid-row: 3;
-        grid-column: 1 / 2;
-        padding: .5em;   
-    } 
-    #empty  {
-        grid-area: empty; 
-        grid-row: 3;
-        grid-column: 2 / 3;
-        padding: .5em;
-    } 
-    #samples  {
-        grid-area: samples; 
-        grid-row: 3;
-        grid-column: 3 / 4;
-        padding: .5em;
-    } 
-    #contact  {
-        grid-area: contact; 
-        grid-row: 4;
-        grid-column: 2 / 3;
-        padding: .5em;
-    }
-    #lastname {
-        font-size: medium;
-        padding-left: 2em;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 15px;
     }
 }
-@media screen and (min-width: 490px) 
-{
-    #lastname {
-        font-size: large;
-        padding-left: 2em;
-    }
-} 
