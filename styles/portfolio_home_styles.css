@@ -46,6 +46,8 @@ p {
     max-width: 1000px;
     margin: 0 auto;
 }
+
+/* Image styling */
 #im {
     flex: 1;
     display: flex;
@@ -53,10 +55,10 @@ p {
     margin: 0; /* Remove previous margins that might interfere */
 }
 #im img {
-    width: 100%;
     max-width: 250px;
-    border-radius: 50%; /* Adding the circle look */
-    border: 5px solid #fff;
+    border-radius: 50%;
+    border: 8px solid #f0f0f0;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
 
  /* more styles */
@@ -139,8 +141,12 @@ a {
     font-weight: bold;
     text-align: center;
 }
-#homenav a:focus, #homenav a:hover, #homenav a:active {
-    color: #276dee; /* medium blue */
+
+/* Hover Effects: Lift and Brighten */
+nav ul li #homenav a:hover {
+    transform: translateY(-3px); /* Lifts the button */
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15); /* Stronger shadow on hover */
+    filter: brightness(1.1); /* Slightly brightens the color */
 }
 #home a:focus, #home a:hover, #home a:active {
     color: #87bdf0; /* light blue */
