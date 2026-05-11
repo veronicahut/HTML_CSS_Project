@@ -143,12 +143,12 @@ a {
 }
 
 /* Hover Effects: Lift and Brighten */
-nav ul li #homenav a:hover {
+nav ul li a:hover {
     transform: translateY(-3px); /* Lifts the button */
     box-shadow: 0 6px 12px rgba(0,0,0,0.15); /* Stronger shadow on hover */
     filter: brightness(1.1); /* Slightly brightens the color */
 }
-#home a:focus, #home a:hover, #home a:active {
+#home a:focus, #home a:active {
     color: #87bdf0; /* light blue */
 }
 #home a {
