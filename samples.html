@@ -1,8 +1,7 @@
-<!-- SAMPLES PAGE -->
 <!--
   title: samples.html
   author: Veronica Hutchins
-  date: 11/19/2022;11/2/2024
+  date: 11/19/2022;11/2/2024; 5/12/2026
   note: project samples page
 --> 
 
@@ -12,8 +11,8 @@
 <head>
   <meta charset="UTF-8">
   <title>Portfolio_Samples</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">    
-  <style> 
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style> 
         @import url(styles/samples.css);
     </style> 
 </head>
@@ -22,10 +21,8 @@
         <header>
             <nav>
                 <ul>
-                    <li><a href="portfolio_index.html">Home</a></li> 
-                    <li><a href="about.html">About</a></li>             
+                    <li><a href="portfolio_index.html">Home</a></li>     
                     <li><a href="resume.html">Resume</a></li> 
-                    <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
         </header>
@@ -70,48 +67,46 @@
             </code>            
         </p>
         <p id="par2">
-            Try this environmental science trivia application!<br>
-            <br>           
-            <a href="https://veronica-projects-l661.onrender.com/samples/sample2/index.html">Click for Environmental Science Trivia</a> 
+            Fun Project: Sample 2 - an environmental science trivia application. <br>
+            <br><br>            
+		    <!-- <a href="https://veronica-projects-l661.onrender.com/samples/sample2/index.html">Environmental Science Trivia</a> -->
+            <a href="samples/sample2/index.html">Environmental Science Trivia</a>
         </p>
         <p id="par3">
-            Java Assignment: This project is a Rock-Paper-Scissors game. Here are a couple of sections of 
-            code: <br>
+            Final HTML/ CSS Class Project: This project is this portfolio. Included are navigation 
+            buttons and links, various headers and paragraphs, and images included (as you can see). 
+            There is also a separate CSS style sheet used. Here are a couple of sections of 
+            CSS and HTML code: <br>
             <br>
             <code>
-                char userChoice;
-                int randomNum;
-                char randomChoice;
-                String result;
-                Scanner input = new Scanner(System.in);
+                /* media queries */ <br>
+                @media screen and (min-width: 50px) 
+               { <br> 
+                   .samples { <br> 
+                       margin: 1em;
+                       font-size: small;
+                   } <br>
+                   ul { <br> 
+                       list-style-type: none; 
+                       display: flex;
+                       margin: 1em;
+                   } <br> 
+               }
             </code>
             <br>
             ...
             <br>
             <code>
-              public char computerChoice() {<br>
-                   //Random <br>
-                   randomChoice = 'y';<br>
-                   int i = 0;<br>
-                  
-                   while (randomChoice == 'y') {<br>
-                      randomNum = (int)(Math.random() * 3);<br>                
-                      switch (randomNum) {<br>
-                          case 0 -&gt;<br>
-                          { randomChoice = 'r'; }<br>
-                          case 1 -&gt;<br> 
-                          { randomChoice = 'p'; }<br>
-                          case 2 -&gt;<br> 
-                          { randomChoice = 's'; }<br>
-                          default -&gt;<br>
-                          { randomChoice = 'y'; }<br>
-                      }<br>
-                
-                      i++;<br>
-                   }<br>                  
-                   return randomChoice;<br>
-                }<br>
-            </code>                
+                &lt;!-- navigation --&gt; <br>
+                &lt;header&gt; <br>
+                &lt;nav&gt; <br>
+                &lt;ul&gt; <br>
+                &lt;li&gt;&lt;a href="portfolio_index.html"&gt;Home&lt;/a&gt;&lt;/li&gt; <br> 
+                &lt;li&gt;&lt;a href="resume.html"&gt;Resume&lt;/a&gt;&lt;/li&gt; <br>
+                &lt;/ul&gt; <br>
+                &lt;/nav&gt; <br>
+                &lt;/header&gt; 
+            </code>
         </p>  
 
     </div>
