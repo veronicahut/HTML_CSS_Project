@@ -1,7 +1,7 @@
 // title: brightnessAnimation.js
 // author: ChatGPT, Veronica Hutchins
-// date: 05/7/2026
-// note: brightens contact links one at a time every 5 seconds
+// date: 05/12/2026
+// note: brightens contact links background one at a time every 5 seconds
 
 const links = [
     document.querySelector("#email a"),
@@ -11,25 +11,15 @@ const links = [
 
 let currentIndex = 0;
 
-// normal and bright colors
-const normalColor = "#19a2a7";
-const brightColor = "#77fce6";
-
-// smooth transition effect
-links.forEach(link => {
-    link.style.transition = "color 1.5s ease";
-    link.style.color = normalColor;
-});
-
 function highlightNextLink() {
 
-    // reset all links
+    // remove highlight class from all
     links.forEach(link => {
-        link.style.color = normalColor;
+        link.classList.remove("active-link");
     });
 
-    // brighten current link
-    links[currentIndex].style.color = brightColor;
+    // add highlight class to current link
+    links[currentIndex].classList.add("active-link");
 
     // move to next link
     currentIndex++;
