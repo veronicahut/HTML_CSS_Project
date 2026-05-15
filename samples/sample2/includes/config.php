@@ -40,13 +40,6 @@ if ($databaseUrl) {
     $DB_USER = $dbopts['user'];
     $DB_PASS = $dbopts['pass'];
     $DB_NAME = ltrim($dbopts['path'], '/');
-} else {
-    // Fallback for local development
-    $DB_HOST = 'localhost';
-    $DB_USER = 'root';
-    $DB_PASS = '';
-    $DB_NAME = 'trivia_db';
-    $DB_PORT = 5432;
 }
 
 function getPDO() {
