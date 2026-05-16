@@ -23,7 +23,7 @@ if (scoreEl) scoreEl.textContent = score;
 // 3. Core Gameplay Functions
 async function loadTriviaQuestion() {
     try {
-        const response = await fetch('./includes/environmental_trivia.json');
+        const response = await fetch('../includes/environmental_trivia.json');
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
