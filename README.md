@@ -1,6 +1,6 @@
 # Veronica Hutchins Portfolio
 
-Welcome! This is my personal portfolio website, showcasing my work, resume, and contact information.
+Welcome! This is my personal portfolio website, showcasing samples of my work, resume, and contact information.
 
 ## View the Portfolio
 
