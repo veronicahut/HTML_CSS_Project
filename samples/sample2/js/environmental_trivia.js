@@ -1,4 +1,4 @@
-// name: scripts.js
+// name: environmental_trivia.js
 // date: 5/16/2026
 // author: Gemini, Veronica Hutchins
 // description: Handles trivia question loading and answer checking via a local JSON file
