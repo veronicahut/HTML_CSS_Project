@@ -1,6 +1,6 @@
 // name: environmental_trivia.js
 // date: 5/16/2026
-// author: Gemini, Veronica Hutchins
+// author: Google Gemini, Veronica Hutchins
 // description: Handles trivia question loading and answer checking via a local JSON file
 
 // 1. DOM Elements (Strictly matched to your HTML)
