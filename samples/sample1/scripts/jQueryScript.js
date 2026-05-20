@@ -1,16 +1,19 @@
 // Veronica Hutchins 
 // 10/8/2025
-// Assignment 05 - part 2
+// Assignment - part 2
+
+// get year
+var year = new Date().getFullYear();
 
 // get the dates for Thanksgiving, Christmas, and New Years Eve of 2025 
-const Thanksgiving25 = new Date("November 27, 2025 00:00:00").getTime();
-const Christmas25 = new Date("December 25, 2025 00:00:00").getTime();
-const NewYearsEve25 = new Date("December 31, 2025 00:00:00").getTime();
+const Thanksgiving25 = new Date("November 27, " + year + " 00:00:00").getTime();
+const Christmas25 = new Date("December 25, " + year + " 00:00:00").getTime();
+const NewYearsEve25 = new Date("December 31, " + year + " 00:00:00").getTime();
 
 // prepare messages
-var ThanksgivingMessage = "until Thanksgiving 2025";
-var ChristmasMessage = "until Christmas 2025";
-var NewYearsMessage = "until New Year's Eve 2025";
+var ThanksgivingMessage = "until Thanksgiving " + year;
+var ChristmasMessage = "until Christmas " + year;
+var NewYearsMessage = "until New Year's Eve " + year;
 
 // create variables
 var timeLeft;
