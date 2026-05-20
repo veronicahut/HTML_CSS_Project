@@ -152,12 +152,32 @@ $(function()
         i = i + 1;
         $('#credits').empty();
 
-        if (i % 2 == 0) 
+        if (i < 4)
         {
-            $('body').css('background-image', 'url(images/jeshoots-com-9n1USijYJZ4-unsplash-min.jpg)');
+            if (i == 1)
+            {
+                $('body').css('background-image', 'url(images/BarHarborMaine_20231012.jpg)');
+                $('body').css('background-size', 'cover');
+                $('#credits').append('Photo credits: Photo by Veronica Hutchins');
+            }
+            else if (i == 2)
+            {
+                $('body').css('background-image', 'url(images/BarHarborMaine_20231013.jpg)');
+                $('body').css('background-size', 'cover');
+                $('#credits').append('Photo credits: Photo by Veronica Hutchins');
+            }
+            else if (i == 3)
+            {
+                $('body').css('background-image', 'url(images/GrandHaven_20240716.jpg)');
+                $('body').css('background-size', 'cover');
+                $('#credits').append('Photo credits: Photo by Veronica Hutchins');
+            }
+        }
+        else if (i % 2 == 0) 
+        {
+            $('body').css('background-image', 'url(images/GrandHaven_20240221.jpg)');
             $('body').css('background-size', 'cover');
-            $('#credits').append('Photo credits: Photo by JESHOOTS.COM on Unsplash');
-            //Photo by <a href="https://unsplash.com/@jeshoots?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">JESHOOTS.COM</a> on <a href="https://unsplash.com/photos/pencil-on-opened-notebook-9n1USijYJZ4?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>      
+            $('#credits').append('Photo credits: Photo by Veronica Hutchins');
         }
         else if (i % 3 == 0) 
         {
@@ -165,11 +185,11 @@ $(function()
         }
         else 
         {
-            $('body').css('background-image', 'url(images/towfiqu-barbhuiya-bwOAixLG0uc-unsplash-min.jpg)');
+            $('body').css('background-image', 'url(images/HawkIsland_20221022.jpg)');
             $('body').css('background-size', 'cover');
-            $('#credits').append('Photo credits: Photo by Towfiqu barbhuiya on Unsplash');
-            // Photo by <a href="https://unsplash.com/@towfiqu999999?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Towfiqu barbhuiya</a> on <a href="https://unsplash.com/photos/a-calendar-with-red-push-buttons-pinned-to-it-bwOAixLG0uc?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>      
+            $('#credits').append('Photo credits: Photo by Veronica Hutchins');
         }
+
     });
 
 });
