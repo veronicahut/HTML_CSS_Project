@@ -40,7 +40,15 @@ function surprise()
         hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
         minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
         seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
-        message = "There are " + days + " days, " + hours + " hours, " + minutes + " minutes, and " + seconds + " seconds " +  ThanksgivingMessage;
+        if (days < 0)
+        {   
+            days = days * -1;
+            message = "It has been " + days + " days, " + hours + " hours, " + minutes + " minutes, and " + seconds + " seconds " +  " since Thanksgiving";
+        } 
+        else 
+        {
+            message = "There are " + days + " days, " + hours + " hours, " + minutes + " minutes, and " + seconds + " seconds " +  ThanksgivingMessage;
+        }        
     }
     else 
     {
@@ -52,7 +60,15 @@ function surprise()
             hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
             minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
             seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
-            message = "There are " + days + " days, " + hours + " hours, " + minutes + " minutes, and " + seconds + " seconds " + NewYearsMessage;
+            if (days < 0)
+            {
+                days = days * -1;
+                message = "It has been " + days + " days, " + hours + " hours, " + minutes + " minutes, and " + seconds + " seconds " +  " since New Year's Eve";                
+            }
+            else 
+            {
+                message = "There are " + days + " days, " + hours + " hours, " + minutes + " minutes, and " + seconds + " seconds " + NewYearsMessage;
+            }
         }
         else 
         {
@@ -62,7 +78,15 @@ function surprise()
             hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
             minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
             seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
-            message = "There are " + days + " days, " + hours + " hours, " + minutes + " minutes, and " + seconds + " seconds " + ChristmasMessage;
+            if (days < 0)
+            {
+                days = days * -1;
+                message = "It has been " + days + " days, " + hours + " hours, " + minutes + " minutes, and " + seconds + " seconds " +  " since Christmas";                
+            }
+            else 
+            {
+                message = "There are " + days + " days, " + hours + " hours, " + minutes + " minutes, and " + seconds + " seconds " + ChristmasMessage;
+            }
         }
     }
 
@@ -78,7 +102,7 @@ $(function()
 
     $('h1').fadeOut(4000);
     $('h2').slideToggle(3000);
-    $('div').animate({left: '250px'}, "slow");
+    $('#hThree').animate({left: '250px'}, "slow");
     $('#pGreen').css("color", "green");
 
     $('p').click(function()
@@ -86,12 +110,12 @@ $(function()
         $(this).hide();
     });
 
-     $('#btnSurprise').click(function()
+    $('#btnSurprise').click(function()
     { 
-        if (this.textContent === "It's Unbelievable!")
-        { this.textContent = "Surprise Countdown"; }
+        if (this.textContent === "Holidays Come So Quickly!")
+        { this.textContent = "Surprise Holiday Countdown"; }
         else 
-        { this.textContent = "It's Unbelievable!"; }
+        { this.textContent = "Holidays Come So Quickly!"; }
         
         // show result of surprise function in alert box
         alert('Surprise! ' + surprise() + '.'); 
@@ -152,42 +176,52 @@ $(function()
         i = i + 1;
         $('#credits').empty();
 
-        if (i < 4)
+        // Helper function to best fit the backgrounds uniformly
+        function setBackground(imageUrl) 
+        {
+            $('body').css({
+                'background-image': 'url(' + imageUrl + ')',
+                'background-size': 'cover',
+                'background-position': 'center center',
+                'background-repeat': 'no-repeat',
+                'background-attachment': 'fixed' // keeps background fixed while scrolling
+            });
+        }
+
+        // Cycle through the images and credits, resetting after the last one
+        if (i < 6)
         {
             if (i == 1)
             {
-                $('body').css('background-image', 'url(images/BarHarborMaine_20231012.jpg)');
-                $('body').css('background-size', 'cover');
-                $('#credits').append('Photo credits: Photo by Veronica Hutchins');
+                setBackground('images/BarHarborMaine_20231012.jpg');
+                $('#credits').append('Photo by Veronica Hutchins');
             }
             else if (i == 2)
             {
-                $('body').css('background-image', 'url(images/BarHarborMaine_20231013.jpg)');
-                $('body').css('background-size', 'cover');
-                $('#credits').append('Photo credits: Photo by Veronica Hutchins');
+                setBackground('images/BarHarborMaine_20231013.jpg');
+                $('#credits').append('Photo by Veronica Hutchins');
             }
             else if (i == 3)
             {
-                $('body').css('background-image', 'url(images/GrandHaven_20240716.jpg)');
-                $('body').css('background-size', 'cover');
-                $('#credits').append('Photo credits: Photo by Veronica Hutchins');
+                setBackground('images/GrandHaven_20240716.jpg');
+                $('#credits').append('Photo by Veronica Hutchins');
             }
-        }
-        else if (i % 2 == 0) 
-        {
-            $('body').css('background-image', 'url(images/GrandHaven_20240221.jpg)');
-            $('body').css('background-size', 'cover');
-            $('#credits').append('Photo credits: Photo by Veronica Hutchins');
-        }
-        else if (i % 3 == 0) 
-        {
-            $('body').css('background-image', 'none');
+            else if (i == 4) 
+            {
+                setBackground('images/GrandHaven_20240221.jpg');
+                $('#credits').append('Photo by Veronica Hutchins');
+            }
+            else if (i == 5) 
+            {
+                setBackground('images/HawkIsland_20221022.jpg');
+                $('#credits').append('Photo by Veronica Hutchins');
+            }
         }
         else 
         {
-            $('body').css('background-image', 'url(images/HawkIsland_20221022.jpg)');
-            $('body').css('background-size', 'cover');
-            $('#credits').append('Photo credits: Photo by Veronica Hutchins');
+            $('body').css('background-image', 'none');
+            //reset
+            i = 0;
         }
 
     });

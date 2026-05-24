@@ -1,9 +1,47 @@
 /* 
     Veronica Hutchins
-    10/7/2025 
+    10/7/2025; 5/23/2026
     Assignment 05 - part 1
 */
 
-body { margin: 10px; }
-h1 {color: red; font-size: 1.1em;}
-p {color: blue;}
+body
+{
+    background-color: #f0f0f0;
+    font-family: sans-serif;
+    margin: 10px;
+}
+
+h1 
+{
+    color: rgb(220, 1, 1); 
+    justify-content: center;
+    display: flex;
+    font-size: 1.5em;
+    margin: 15px;
+}
+
+p { 
+    color: rgb(2, 2, 155); 
+    font-size: 1.3em;
+}
+
+button 
+{
+    /* background-color: rgb(200, 162, 140); */
+    background-color: rgb(255, 219, 187);
+    border-radius: 15px;
+    color: rgb(40, 0, 0);
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px 2px;
+    /* cursor: pointer; */
+}
+
+footer 
+{ 
+    font-size: 0.9em;
+    margin-top: 20px;
+}
