@@ -51,42 +51,13 @@
             young children and individuals with special needs. This had three learning games in 
             one application. Some technologies used included inheritance, 
             polymorphism, exception handling, LINQ, an extension method, threading, and a 
-            programmer-created event. Here is a snippet of that code: <br>
+            programmer-created event. I have converted this project to a web application 
+            using Blazor. 
             <br>
-            <code>
-                public int GetAnswer(int aQuestionNum)
-                {
-                    <br>
-                    //use question number to get answer from database table
-                    <br>
-                    string command = "SELECT answerID FROM Questions WHERE Id = " + aQuestionNum + ";";
-                    <br>
-                    //create the command, data adapter, and dataset
-                    <br>
-                    sqlCommand = new SqlCommand(command, sqlConnection); <br>
-                    sqlDataAdapter = new SqlDataAdapter(sqlCommand); <br>
-                    DataSet dataSet2 = new DataSet();
-                    <br>
-                    //fill the dataset, get the table
-                    <br>
-                    sqlDataAdapter.Fill(dataSet2); <br>
-                    DataTable dataTable = dataSet2.Tables[0]; <br>
-                    foreach (DataRow dataRow in dataTable.Rows) <br> 
-                    {
-                        var a = dataRow[0];
-                        aAnswerNum = int.Parse(a.ToString());
-                    } <br>
-                    return aAnswerNum;
-                }
-            </code>            
-        </p>
-        
-
+            <br>
+            <a href="samples/sample3/index.html">Preschool Games</a>            
+        </p> 
     </div>
-
-    <aside>
-        <!-- <img src="images/20221112_design.png" alt="design image"> -->
-    </aside>
 
     <div id="home" class="samples"><a href="index.html">Veronica's Home Page</a></div>
 
