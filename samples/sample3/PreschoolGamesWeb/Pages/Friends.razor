@@ -1,57 +1,143 @@
 ﻿@page "/friends"
+@using PreschoolGames
 @inject HttpClient Http
 
-<PageTitle>Friends</PageTitle>
+<PageTitle>Friends Game</PageTitle>
 
-<h1>Friends Game</h1>
+<div class="game-container" style="background-color: @gameColor; padding: 30px; border-radius: 15px; text-align: center; max-width: 600px; margin: auto; min-height: 400px;">
+    <h1>Friends Game 🤝</h1>
+    <p class="instructions">Look at the scenario and pick the best choice!</p>
 
-<p>This component demonstrates fetching data from the server.</p>
+    <div class="status-box" style="margin: 20px 0; font-size: 1.3rem; font-weight: bold; color: #2c3e50;">
+        @statusMessage
+    </div>
 
-@if (forecasts == null)
-{
-    <p><em>Loading...</em></p>
-}
-else
-{
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Date</th>
-                <th aria-label="Temperature in Celsius">Temp. (C)</th>
-                <th aria-label="Temperature in Fahrenheit">Temp. (F)</th>
-                <th>Summary</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var forecast in forecasts)
+    @if (gameStarted)
+    {
+        <div class="card scenario-card" style="padding: 20px; border-radius: 10px; border: none; background: white; margin-bottom: 25px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+            <h3 style="color: #2e86de;">Scenario:</h3>
+            <p style="font-size: 1.25rem;">@GetQuestionText(currentQuestionId)</p>
+        </div>
+
+        <div class="choices-container" style="display: flex; flex-direction: column; gap: 15px; max-width: 400px; margin: 0 auto 25px auto;">
+            @for (int i = 0; i < currentChoices.Length; i++)
             {
-                <tr>
-                    <td>@forecast.Date.ToShortDateString()</td>
-                    <td>@forecast.TemperatureC</td>
-                    <td>@forecast.TemperatureF</td>
-                    <td>@forecast.Summary</td>
-                </tr>
+                int choiceId = currentChoices[i];
+                <button class="btn btn-outline-primary btn-lg" 
+                        style="padding: 15px; font-size: 1.1rem; border-width: 2px; font-weight: 500; text-align: left;"
+                        @onclick="() => HandleAnswerSelected(choiceId)">
+                    @GetAnswerText(choiceId)
+                </button>
             }
-        </tbody>
-    </table>
-}
+        </div>
+    }
+    else
+    {
+        @if (hasAnswered)
+        {
+            <div class="response-display" style="font-size: 4rem; margin-bottom: 20px;">
+                @responseEmoji
+            </div>
+        }
+
+        <button class="btn btn-success btn-lg" @onclick="LoadNextQuestion" style="font-weight: bold; padding: 12px 40px; font-size: 1.3rem; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
+            @(hasAnswered ? "Play Again! ➡️" : "Start Game ▶️")
+        </button>
+    }
+</div>
 
 @code {
-    private WeatherForecast[]? forecasts;
+    // Game engine state instances
+    private FriendsGame game = new FriendsGame(1);
+    private string gameColor = "white";
+    private string statusMessage = "Are you ready to practice being a great friend?";
+    private string responseEmoji = "";
 
-    protected override async Task OnInitializedAsync()
+    // Gameplay parameters matching your C# logic structures
+    private int currentQuestionId;
+    private int currentAnswerId;
+    private int[] currentChoices = new int[3];
+    
+    // UI flow control switches
+    private bool gameStarted = false;
+    private bool hasAnswered = false;
+
+    protected override void OnInitialized()
     {
-        forecasts = await Http.GetFromJsonAsync<WeatherForecast[]>("sample-data/weather.json");
+        // Dynamically binds "lightgreen" straight out of your abstract class override setup!
+        gameColor = game.Image(1);
     }
 
-    public class WeatherForecast
+    private void LoadNextQuestion()
     {
-        public DateOnly Date { get; set; }
+        hasAnswered = false;
+        gameStarted = true;
+        statusMessage = "What is the kindest thing to do?";
 
-        public int TemperatureC { get; set; }
+        // 1. Fire polymorphism logic to select a random question ID from memory
+        currentQuestionId = game.GetQuestion();
 
-        public string? Summary { get; set; }
+        // 2. Extract the true correct answer target index
+        currentAnswerId = game.GetAnswer(currentQuestionId);
 
-        public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
+        // 3. Populate array with 1 correct choice and 2 structural filtered choices
+        currentChoices = game.GetChoices(currentAnswerId);
+        
+        StateHasChanged();
     }
+
+    private void HandleAnswerSelected(int selectedChoiceId)
+    {
+        gameStarted = false;
+        hasAnswered = true;
+
+        // Run selection criteria directly against your exact internal validation algorithm
+        bool isCorrect = game.CheckAnswer(currentAnswerId, selectedChoiceId);
+
+        // Fetch dynamic system value feedback range (1 for wrong, 2-7 for random rewards)
+        int responseId = game.DisplayResponse(isCorrect);
+
+        if (isCorrect)
+        {
+            statusMessage = "🎉 Excellent! You made a wonderful choice!";
+            responseEmoji = GetRewardEmoji(responseId);
+        }
+        else
+        {
+            statusMessage = "😥 Let's try to make a nicer friend choice next time.";
+            responseEmoji = "💡"; // Guide marker pointing back to standard rules
+        }
+    }
+
+    // --- MOCK DATABASE TRANSLATION DICTIONARIES ---
+    // Converts your raw structural database integers directly into beautiful child UI elements
+
+    private string GetQuestionText(int id) => id switch
+    {
+        1 => "Someone is sitting all by themselves on the bench at recess.",
+        2 => "Your classmate drops their box of crayons all over the floor.",
+        3 => "You want to play with the red truck, but another child is holding it.",
+        4 => "A friend trips over a block and starts crying.",
+        _ => "A friend wants to play a game with you."
+    };
+
+    private string GetAnswerText(int id) => id switch
+    {
+        1 => "🌟 Sit next to them and ask them if they want to play tag!",
+        2 => "🛑 Ignore them, look away, and play somewhere else.",
+        3 => "🌟 Help them pick them up together so it gets cleaned up fast!",
+        4 => "🛑 Laugh at them or kick the remaining crayons away.",
+        _ => "👉 Share your toys and ask nicely."
+    };
+
+    private string GetRewardEmoji(int responseCode) => responseCode switch
+    {
+        2 => "🎈🌟🎈",
+        3 => "🏆🏆🏆",
+        4 => "🥇✨🥇",
+        5 => "🚀🦄🚀",
+        6 => "🎨👾🎨",
+        7 => "🍕🎂🍕",
+        _ => "⭐🌈⭐"
+    };
 }

@@ -1,18 +1,164 @@
 ﻿@page "/sequence"
+@using PreschoolGames
+@inject IJSRuntime JS
 
-<PageTitle>Sequence</PageTitle>
+<PageTitle>Sequence Game</PageTitle>
 
-<h1>Sequence</h1>
+<div class="game-container" style="background-color: @gameColor; padding: 30px; border-radius: 15px; text-align: center; max-width: 500px; margin: auto;">
+    <h1>Sequence Game 🧩</h1>
+    <p class="instructions">Watch the pattern closely, then click the squares in the exact same order!</p>
 
-<p role="status">Current count: @currentCount</p>
+    <div class="status-box" style="margin: 20px 0; font-size: 1.2rem; font-weight: bold;">
+        @statusMessage
+    </div>
 
-<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+    <div class="grid-container" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 30px auto; max-width: 300px;">
+        <button class="game-btn red" 
+                style="height: 120px; border-radius: 10px; border: none; background-color: @(activeButton == 1 ? "#ff6b6b" : "#c0392b"); box-shadow: @(activeButton == 1 ? "0 0 25px #ff6b6b" : "none");" 
+                @onclick="() => HandleUserClick(1)" 
+                disabled="@isCpuPlaying"></button>
+
+        <button class="game-btn blue" 
+                style="height: 120px; border-radius: 10px; border: none; background-color: @(activeButton == 2 ? "#54a0ff" : "#2980b9"); box-shadow: @(activeButton == 2 ? "0 0 25px #54a0ff" : "none");" 
+                @onclick="() => HandleUserClick(2)" 
+                disabled="@isCpuPlaying"></button>
+
+        <button class="game-btn yellow" 
+                style="height: 120px; border-radius: 10px; border: none; background-color: @(activeButton == 3 ? "#feca57" : "#f39c12"); box-shadow: @(activeButton == 3 ? "0 0 25px #feca57" : "none");" 
+                @onclick="() => HandleUserClick(3)" 
+                disabled="@isCpuPlaying"></button>
+
+        <button class="game-btn green" 
+                style="height: 120px; border-radius: 10px; border: none; background-color: @(activeButton == 4 ? "#1dd1a1" : "#27ae60"); box-shadow: @(activeButton == 4 ? "0 0 25px #1dd1a1" : "none");" 
+                @onclick="() => HandleUserClick(4)" 
+                disabled="@isCpuPlaying"></button>
+    </div>
+
+    @if (!gameStarted)
+    {
+        <button class="btn btn-primary btn-lg" @onclick="StartNewGame" style="font-weight: bold; padding: 10px 30px;">Start Game ▶️</button>
+    }
+    else
+    {
+        <button class="btn btn-secondary" @onclick="ResetGame">Reset 🔄</button>
+    }
+</div>
 
 @code {
-    private int currentCount = 0;
+    // Game engine state instances
+    private SequenceGame game = new SequenceGame(2);
+    private string gameColor = "white";
+    private string statusMessage = "Press Start to Play!";
+    
+    // Arrays matching your backend structure
+    private int[] computerSequence = new int[5];
+    private int[] userSequence = new int[5];
+    
+    // UI Tracking States
+    private int activeButton = 0; // Tracks which color is currently flashing (1-4)
+    private int currentRoundStep = 0; // Tracks how many flashes to show this round (up to 5)
+    private int userClickCount = 0; // Tracks how many clicks the user has made in the current turn
+    private bool isCpuPlaying = false;
+    private bool gameStarted = false;
 
-    private void IncrementCount()
+    protected override void OnInitialized()
     {
-        currentCount++;
+        // Fetch the background layout color dynamically using polymorphism from your class!
+        gameColor = game.Image(2);
+    }
+
+    private async Task StartNewGame()
+    {
+        gameStarted = true;
+        userClickCount = 0;
+        currentRoundStep = 0; // Start with showing just the first color
+        
+        // Use your backend method to pre-generate the full random sequence array
+        computerSequence = game.GetAnswer();
+        
+        await PlayComputerSequence();
+    }
+
+    private async Task PlayComputerSequence()
+    {
+        isCpuPlaying = true;
+        statusMessage = "📺 Watch carefully...";
+        StateHasChanged(); // Force UI update
+
+        // Incrementally show more of the sequence each round
+        for (int i = 0; i <= currentRoundStep; i++)
+        {
+            await Task.Delay(300); // Small gap between flashes
+            
+            activeButton = computerSequence[i]; // Light up the target color
+            StateHasChanged();
+
+            await game.UseThreadMethodAsync(); // Calls your modern 1-second Task.Delay method!
+
+            activeButton = 0; // Turn off light
+            StateHasChanged();
+        }
+
+        isCpuPlaying = false;
+        statusMessage = "👉 Your turn! Repeat the pattern.";
+        userClickCount = 0;
+        StateHasChanged();
+    }
+
+    private async Task HandleUserClick(int buttonId)
+    {
+        if (isCpuPlaying) return;
+
+        // Temporarily flash the button the user clicked for tactile feedback
+        activeButton = buttonId;
+        StateHasChanged();
+        await Task.Delay(150);
+        activeButton = 0;
+        StateHasChanged();
+
+        // Record click into the UserAnswer structure matching your game logic
+        userSequence[userClickCount] = buttonId;
+
+        // Use your backend validation method to check accuracy up to the current click index
+        bool isCorrectSoFar = game.CheckAnswer(computerSequence, userSequence, userClickCount);
+
+        if (!isCorrectSoFar)
+        {
+            // Wrong answer fallback using DisplayResponse sequence logic
+            int responseCode = game.DisplayResponse(false);
+            statusMessage = "❌ Oops! That wasn't quite right. Try again!";
+            gameStarted = false;
+            return;
+        }
+
+        userClickCount++;
+
+        // Check if the user successfully completed the current pattern depth
+        if (userClickCount > currentRoundStep)
+        {
+            if (userClickCount == 5)
+            {
+                // Perfect game completion!
+                int successCode = game.DisplayResponse(true);
+                statusMessage = "🎉 Amazing Job! You matched the entire sequence!";
+                gameStarted = false;
+            }
+            else
+            {
+                // Round passed! Advance to next round layer
+                statusMessage = "⭐ Good job! Getting harder...";
+                currentRoundStep++;
+                await Task.Delay(1000);
+                await PlayComputerSequence();
+            }
+        }
+    }
+
+    private void ResetGame()
+    {
+        gameStarted = false;
+        isCpuPlaying = false;
+        activeButton = 0;
+        statusMessage = "Press Start to Play!";
     }
 }
