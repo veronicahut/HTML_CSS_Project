@@ -1,0 +1,63 @@
+/* 
+    Veronica Hutchins
+    10/8/2025; 5/23/2026
+    Assignment 05 - part 2
+*/
+
+body 
+{ 
+    margin: 10px;
+    background-color: #ebecec; 
+}
+
+h1 
+{
+    margin: 12px;
+    color: red; 
+}
+
+div 
+{ 
+    position: relative; 
+    left: 0px; font-size: 125%;
+}
+
+p 
+{
+    color: blue;
+}
+
+#stay 
+{
+    justify-content: left;    
+    color: black;
+    font-size: 0.9em;
+}
+
+#pTwo 
+{
+    letter-spacing: 1px;
+}
+
+button 
+{ 
+    background-color: rgb(185, 255, 185);
+    font-size: 105%; 
+    margin: 10px; 
+    padding: 5px; 
+    border-radius: 8px; 
+}
+
+#credits 
+{
+    color: white;
+}
+
+footer 
+{ 
+    font-size: 0.9em;
+    margin-top: 20px;
+    background-color: #d9d9d9;
+    border-radius: 8px;
+    padding: 5px;
+}
