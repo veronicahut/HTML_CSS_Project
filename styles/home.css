@@ -1,0 +1,181 @@
+/* 
+  title: home.css
+  author: Veronica Hutchins
+  date: 11/19/2022; 11/02/2024
+  note: project home styles page
+*/
+
+.homepage { 
+    border: none;
+}
+h1 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* More modern stack */
+    padding: 0.5em;
+    text-align: center;
+    font-size: clamp(2rem, 10vw, 5rem); /* Responsive sizing */
+    font-weight: 300;
+    letter-spacing: 0.2em; /* Slightly tighter for readability */
+    margin-bottom: 0;
+}
+
+#lastname {
+    display: block;
+    text-transform: uppercase;
+    font-size: 0.4em; /* Relative to the H1 */
+    letter-spacing: 0.8em;
+    margin-top: 10px;
+}
+
+p {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    font-size: 1rem;
+    letter-spacing: 0.1em; /* Reduced for subheadings */
+    color: #555;
+    margin: 0.5em auto;
+}
+
+/* Image styling */
+#im img {
+    max-width: 250px;
+    border-radius: 50%;
+    border: 8px solid #f0f0f0;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* Navigation Link Base Styles */
+nav ul {
+    margin: 0; 
+    padding: 0; 
+    list-style-type: none; /* This removes the dots */
+    display: flex; 
+    justify-content: center;
+    flex-wrap: wrap; /* Helps with mobile responsiveness */
+}
+nav ul li a { 	
+    display: block; 	
+    border: 2px solid transparent; 
+    padding: 0.8em 2em; 	
+    border-radius: 20px; /* rounded shape */
+    margin: 0.5em;     
+    font-size: 1rem;
+    text-decoration: none;
+    transition: all 0.3s ease; /* Smooth animation */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Subtle depth */
+    /* color: rgb(141, 140, 140);  text */
+}
+
+/* Specific Button Colors (Flat Design) */
+#linka { color: #708599; } /* About */
+#linkr { color: #026999; } /* Resume */
+#links { color: #2758ba; } /* Samples */
+#linkc { color: #373758; } /* Contact */
+
+/* Hover Effects: Lift and Brighten */
+nav ul li a:hover {
+    transform: translateY(-3px); /* Lifts the button */
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15); /* Stronger shadow on hover */
+    filter: brightness(1.1); /* Slightly brightens the color */
+}
+
+/* Mobile (Default) - Vertical Stack */
+#maincontent {
+    display: flex;
+    flex-direction: column-reverse; /* Image on top for mobile */
+    align-items: center;
+    padding: 20px;
+    gap: 2rem;
+}
+
+#homenav ul {
+    display: flex;
+    flex-direction: column; /* Stack buttons vertically */
+    align-items: center;
+}
+
+/* ABOUT SECTION */
+#aboutsect {
+    max-width: 900px;
+    margin: 5rem auto;
+    padding: 2rem;
+}
+#aboutheader {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    letter-spacing: 0.1em;
+    color: #2f3b52;
+}
+#aboutsect p {
+    text-align: left;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    color: #444;
+}
+#aboutsect aside {
+    text-align: center;
+    margin-top: 2rem;
+}
+#aboutsect aside img {
+    max-width: 300px;
+    border-radius: 16px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* CONTACT SECTION */
+#contactsect {
+    max-width: 900px;
+    margin: 5rem auto;
+    padding: 2rem;
+}
+#contactheader {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    letter-spacing: 0.1em;
+    color: #2f3b52;
+}
+#homesite {
+    text-align: center;
+    margin-top: 2rem;
+}
+/* Allow animation of links */
+#contactsect a {
+    color: #19a2a7;
+    text-decoration: none;
+    padding: 0.4em 0.8em;
+    border-radius: 12px;
+
+    transition:
+        color 0.3s ease,
+        border-color 1.5s ease,
+        box-shadow 1.5s ease,
+        background-color 1.5s ease;
+}
+/* Hover effect still works */
+#contactsect a:hover {
+    color: #ffffff;
+    background-color: #19a2a7;
+}
+/* Animated highlight from JavaScript */
+.active-link {
+    border: 2px solid #77fce6;
+    box-shadow: 0 0 12px rgba(119, 252, 230, 0.8);
+    background-color: rgba(119, 252, 230, 0.08);
+}
+
+/* Tablet & Desktop - Side by Side */
+@media screen and (min-width: 768px) {
+    #maincontent {
+        flex-direction: row; /* Side-by-side */
+        justify-content: center;
+        gap: 5rem;
+    }
+
+    /* Create the diamond/grid pattern for buttons on desktop */
+    #homenav ul {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 15px;
+    }
+}
