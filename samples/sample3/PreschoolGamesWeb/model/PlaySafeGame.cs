@@ -1,7 +1,7 @@
 /* ****************************************************************************************************
 author: Veronica Hutchins
 course: CITP 280
-assignment: project part 5
+assignment: project
 date: 12/05/19
 notes: a derived class inheriting from the PreschoolGame class for a child's game application
 ***************************************************************************************************** */
