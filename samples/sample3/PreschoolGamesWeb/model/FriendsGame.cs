@@ -38,9 +38,24 @@ namespace PreschoolGames
         {
             new QuestionItem { Id = 1, GameTypeId = 1, AnswerId = 1 },
             new QuestionItem { Id = 2, GameTypeId = 1, AnswerId = 2 },
-            new QuestionItem { Id = 3, GameTypeId = 1, AnswerId = 3 },
-            new QuestionItem { Id = 4, GameTypeId = 1, AnswerId = 4 }
-            // Need to add more mock question records here!
+            new QuestionItem { Id = 3, GameTypeId = 1, AnswerId = 9 },
+            new QuestionItem { Id = 4, GameTypeId = 1, AnswerId = 4 },
+            new QuestionItem { Id = 5, GameTypeId = 1, AnswerId = 3 },
+            new QuestionItem { Id = 6, GameTypeId = 1, AnswerId = 4 },
+            new QuestionItem { Id = 7, GameTypeId = 1, AnswerId = 7 },
+            new QuestionItem { Id = 8, GameTypeId = 1, AnswerId = 10 },
+            new QuestionItem { Id = 9, GameTypeId = 1, AnswerId = 5 },
+            new QuestionItem { Id = 10, GameTypeId = 1, AnswerId = 6 },
+            new QuestionItem { Id = 11, GameTypeId = 1, AnswerId = 9 },
+            new QuestionItem { Id = 12, GameTypeId = 1, AnswerId = 2 },
+            new QuestionItem { Id = 13, GameTypeId = 1, AnswerId = 3 },
+            new QuestionItem { Id = 14, GameTypeId = 1, AnswerId = 4 },
+            new QuestionItem { Id = 15, GameTypeId = 1, AnswerId = 1 },
+            new QuestionItem { Id = 16, GameTypeId = 1, AnswerId = 4 },
+            new QuestionItem { Id = 17, GameTypeId = 1, AnswerId = 7 },
+            new QuestionItem { Id = 18, GameTypeId = 1, AnswerId = 4 },
+            new QuestionItem { Id = 19, GameTypeId = 1, AnswerId = 7 },
+            new QuestionItem { Id = 20, GameTypeId = 1, AnswerId = 8 }
         };
 
         private static readonly List<AnswerItem> StaticAnswers = new List<AnswerItem>

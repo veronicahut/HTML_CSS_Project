@@ -1,8 +1,135 @@
 @page "/playingSafe"
+@using PreschoolGames
 @inject HttpClient Http
 
-<PageTitle>Play Safe</PageTitle>
+<PageTitle>Play Safe Game</PageTitle>
 
-<h1>Play Safe Game</h1>
+<div class="game-container" style="background-color: @gameColor; padding: 30px; border-radius: 15px; text-align: center; max-width: 600px; margin: auto; min-height: 400px;">
+    <h1>Play Safe Game 🦺</h1>
+    <p class="instructions">Look at the action and tell us: is it a safe choice or a dangerous choice?</p>
 
-<p>This helps you learn about safety rules and how to stay safe.</p>
+    <div class="status-box" style="margin: 20px 0; font-size: 1.3rem; font-weight: bold; color: #2c3e50;">
+        @statusMessage
+    </div>
+
+    @if (gameStarted)
+    {
+        <div class="card scenario-card" style="padding: 25px; border-radius: 10px; border: none; background: white; margin-bottom: 25px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+            <h3 style="color: #af7ac5;">What is happening:</h3>
+            <p style="font-size: 1.35rem; font-weight: bold;">@GetQuestionText(currentQuestionId)</p>
+        </div>
+
+        <div class="choices-container" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; max-width: 440px; margin: 0 auto;">
+            <button class="btn btn-danger btn-lg" style="padding: 20px; font-size: 1.3rem; font-weight: bold; border-radius: 12px;" @onclick="() => HandleAnswerSelected(11)">
+                🛑 Unsafe!
+            </button>
+            <button class="btn btn-success btn-lg" style="padding: 20px; font-size: 1.3rem; font-weight: bold; border-radius: 12px;" @onclick="() => HandleAnswerSelected(12)">
+                👍 Safe!
+            </button>
+        </div>
+    }
+    else
+    {
+        @if (hasAnswered)
+        {
+            <div class="response-display" style="font-size: 4rem; margin-bottom: 20px;">
+                @responseEmoji
+            </div>
+        }
+
+        <button class="btn btn-primary btn-lg" @onclick="LoadNextQuestion" style="font-weight: bold; padding: 12px 40px; font-size: 1.3rem; background-color: #8e44ad; border: none;">
+            @(hasAnswered ? "Next Safety Rule! ➡️" : "Start Game ▶️")
+        </button>
+    }
+</div>
+
+@code {
+    private PlaySafeGame game = new PlaySafeGame(3);
+    private string gameColor = "white";
+    private string statusMessage = "Let's learn how to stay safe and healthy!";
+    private string responseEmoji = "";
+
+    private int currentQuestionId;
+    private int currentAnswerId;
+    
+    private bool gameStarted = false;
+    private bool hasAnswered = false;
+
+    protected override void OnInitialized()
+    {
+        // Dynamic binding for your LavenderBlush layout variable background!
+        gameColor = game.Image(3);
+    }
+
+    private void LoadNextQuestion()
+    {
+        hasAnswered = false;
+        gameStarted = true;
+        statusMessage = "Is this choice Safe or Unsafe?";
+
+        // Pulls a random item in the range 21 to 42 using polymorphism
+        currentQuestionId = game.GetQuestion();
+        currentAnswerId = game.GetAnswer(currentQuestionId);
+        
+        StateHasChanged();
+    }
+
+    private void HandleAnswerSelected(int selectedChoiceId)
+    {
+        gameStarted = false;
+        hasAnswered = true;
+
+        bool isCorrect = game.CheckAnswer(currentAnswerId, selectedChoiceId);
+        int responseId = game.DisplayResponse(isCorrect);
+
+        if (isCorrect)
+        {
+            statusMessage = "🎉 Correct! You know how to stay perfectly safe!";
+            responseEmoji = GetRewardEmoji(responseId);
+        }
+        else
+        {
+            statusMessage = "⚠️ Oh no, that's not safe. We should be extra careful!";
+            responseEmoji = "🧐";
+        }
+    }
+
+    // Maps IDs 21-42 to child-focused text descriptions
+    private string GetQuestionText(int id) => id switch
+    {
+        21 => "A boy is washing his hands with warm water and soap.",
+        22 => "A kid takes medicine out of a cabinet completely by themselves.",
+        23 => "A girl holds an adult's hand and crosses at the crosswalk.",
+        24 => "A girl drops a glass dish right next to a hot oven.",
+        25 => "A mom carefully gives her child the right medicine helper.",
+        26 => "A child spills milk on the kitchen floor and leaves it there.",
+        27 => "Kids are swimming happily together with an adult lifeguard watching.",
+        28 => "A man is looking down at his phone while walking in the street.",
+        29 => "Kids snap their helmets on tightly before riding bikes.",
+        30 => "A man is running as fast as he can while holding sharp scissors.",
+        31 => "A boy clicks his seatbelt locked as soon as he gets in the car.",
+        32 => "A boy sticks a metal fork inside a plugged-in toaster.",
+        33 => "Kids wait for the crossing guard to hold up the stop sign.",
+        34 => "A boy reaches for an open bottle of pills left on a table.",
+        35 => "A girl helps her mom bake cookies while wearing oven mitts.",
+        36 => "A kid is playing too close to deep water without a life jacket.",
+        37 => "A boy sweeps up crumbs off the floor to help clean up.",
+        38 => "A girl tries to poke her finger into an electrical wall outlet.",
+        39 => "Kids bake a cake together with an adult helping with the stove.",
+        40 => "A boy reaches up towards a hot pot on the stove.",
+        41 => "A girl puts all her building blocks away in the toy bin.",
+        42 => "A kid chases a runaway ball straight into the street.",
+        _ => "A normal everyday choice."
+    };
+
+    private string GetRewardEmoji(int responseCode) => responseCode switch
+    {
+        2 => "🎈🦺🎈",
+        3 => "🌟🥇🌟",
+        4 => "🚀🛸🚀",
+        5 => "🌈✨🌈",
+        6 => "🏆👑🏆",
+        7 => "🍦🍪🍦",
+        _ => "⭐👍⭐"
+    };
+}

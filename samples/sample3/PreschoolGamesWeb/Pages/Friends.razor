@@ -111,14 +111,29 @@
 
     // --- MOCK DATABASE TRANSLATION DICTIONARIES ---
     // Converts your raw structural database integers directly into beautiful child UI elements
-
     private string GetQuestionText(int id) => id switch
     {
-        1 => "Someone is sitting all by themselves on the bench at recess.",
-        2 => "Your classmate drops their box of crayons all over the floor.",
-        3 => "You want to play with the red truck, but another child is holding it.",
-        4 => "A friend trips over a block and starts crying.",
-        _ => "A friend wants to play a game with you."
+        1 => "Look! A boy is helping someone up.",
+        2 => "Oh no, a kid is being a bully.",
+        3 => "Look how nicely these kids are playing together!",
+        4 => "Two kids are fighting over a stuffed toy bear.",
+        5 => "Look at the kids running happily together!",
+        6 => "Stop! Those kids are kicking each other.",
+        7 => "These friends are playing nicely with blocks.",
+        8 => "This man is talking way too loud inside.",
+        9 => "Look at these silly kids making funny joke faces!",
+        10 => "Oh no, a bully is stealing money.",
+        11 => "Look at those kind girls sharing their chips.",
+        12 => "Hey! Those boys are pulling a girl's hair.",
+        13 => "Fun! The kids are playing in a giant ball pit.",
+        14 => "Oh no, a boy accidentally breaks a girl's doll.",
+        15 => "Look at the teamwork! Kids building blocks together.",
+        16 => "Stop! Those kids are yelling at each other.",
+        17 => "These friends are playing nicely in the sandbox.",
+        18 => "Those kids are fighting over a stuffed animal.",
+        19 => "Look at those great friends sharing their electronics.",
+        20 => "Oops! A kid accidentally spills their milk.",
+        _ => "Look at what your friends are doing!"
     };
 
     private string GetAnswerText(int id) => id switch

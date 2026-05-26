@@ -22,13 +22,30 @@ namespace PreschoolGames
         // REPLACE DATABASE DATA: Replaces the original database
         private static readonly List<QuestionItem> StaticQuestions = new List<QuestionItem>
         {
-            new QuestionItem { Id = 20, GameTypeId = 3, AnswerId = 11 },
             new QuestionItem { Id = 21, GameTypeId = 3, AnswerId = 12 },
             new QuestionItem { Id = 22, GameTypeId = 3, AnswerId = 11 },
-            new QuestionItem { Id = 23, GameTypeId = 3, AnswerId = 12 }
-            // I need to add the actual Question IDs and Answer IDs here!
+            new QuestionItem { Id = 23, GameTypeId = 3, AnswerId = 12 },
+            new QuestionItem { Id = 24, GameTypeId = 3, AnswerId = 11 },
+            new QuestionItem { Id = 25, GameTypeId = 3, AnswerId = 12 },
+            new QuestionItem { Id = 26, GameTypeId = 3, AnswerId = 11 },
+            new QuestionItem { Id = 27, GameTypeId = 3, AnswerId = 12 },
+            new QuestionItem { Id = 28, GameTypeId = 3, AnswerId = 11 },
+            new QuestionItem { Id = 29, GameTypeId = 3, AnswerId = 12 },
+            new QuestionItem { Id = 30, GameTypeId = 3, AnswerId = 11 },
+            new QuestionItem { Id = 31, GameTypeId = 3, AnswerId = 12 },
+            new QuestionItem { Id = 32, GameTypeId = 3, AnswerId = 11 },
+            new QuestionItem { Id = 33, GameTypeId = 3, AnswerId = 12 },
+            new QuestionItem { Id = 34, GameTypeId = 3, AnswerId = 11 },
+            new QuestionItem { Id = 35, GameTypeId = 3, AnswerId = 12 },
+            new QuestionItem { Id = 36, GameTypeId = 3, AnswerId = 11 },
+            new QuestionItem { Id = 37, GameTypeId = 3, AnswerId = 12 },
+            new QuestionItem { Id = 38, GameTypeId = 3, AnswerId = 11 },
+            new QuestionItem { Id = 39, GameTypeId = 3, AnswerId = 12 },
+            new QuestionItem { Id = 40, GameTypeId = 3, AnswerId = 11 },
+            new QuestionItem { Id = 41, GameTypeId = 3, AnswerId = 12 },
+            new QuestionItem { Id = 42, GameTypeId = 3, AnswerId = 11 }
         };
-        
+                
         // constructors
         public PlaySafeGame()
         { } // default
