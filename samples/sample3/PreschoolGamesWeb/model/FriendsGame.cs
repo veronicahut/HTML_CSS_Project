@@ -33,29 +33,29 @@ namespace PreschoolGames
         private int aAnswerNum;
         private int[] aUserChoices = new int[3];
 
-        // Replaces Database data - mock database in memory
+        // Replaces Database data
         private static readonly List<QuestionItem> StaticQuestions = new List<QuestionItem>
         {
             new QuestionItem { Id = 1, GameTypeId = 1, AnswerId = 1 },
-            new QuestionItem { Id = 2, GameTypeId = 1, AnswerId = 2 },
-            new QuestionItem { Id = 3, GameTypeId = 1, AnswerId = 9 },
-            new QuestionItem { Id = 4, GameTypeId = 1, AnswerId = 4 },
-            new QuestionItem { Id = 5, GameTypeId = 1, AnswerId = 3 },
-            new QuestionItem { Id = 6, GameTypeId = 1, AnswerId = 4 },
-            new QuestionItem { Id = 7, GameTypeId = 1, AnswerId = 7 },
-            new QuestionItem { Id = 8, GameTypeId = 1, AnswerId = 10 },
-            new QuestionItem { Id = 9, GameTypeId = 1, AnswerId = 5 },
-            new QuestionItem { Id = 10, GameTypeId = 1, AnswerId = 6 },
-            new QuestionItem { Id = 11, GameTypeId = 1, AnswerId = 9 },
-            new QuestionItem { Id = 12, GameTypeId = 1, AnswerId = 2 },
-            new QuestionItem { Id = 13, GameTypeId = 1, AnswerId = 3 },
-            new QuestionItem { Id = 14, GameTypeId = 1, AnswerId = 4 },
-            new QuestionItem { Id = 15, GameTypeId = 1, AnswerId = 1 },
-            new QuestionItem { Id = 16, GameTypeId = 1, AnswerId = 4 },
-            new QuestionItem { Id = 17, GameTypeId = 1, AnswerId = 7 },
-            new QuestionItem { Id = 18, GameTypeId = 1, AnswerId = 4 },
-            new QuestionItem { Id = 19, GameTypeId = 1, AnswerId = 7 },
-            new QuestionItem { Id = 20, GameTypeId = 1, AnswerId = 8 }
+            new QuestionItem { Id = 2, GameTypeId = 1, AnswerId = 3 },
+            new QuestionItem { Id = 3, GameTypeId = 1, AnswerId = 5 },
+            new QuestionItem { Id = 4, GameTypeId = 1, AnswerId = 7 },
+            new QuestionItem { Id = 5, GameTypeId = 1, AnswerId = 9 },
+            new QuestionItem { Id = 6, GameTypeId = 1, AnswerId = 11 },
+            new QuestionItem { Id = 7, GameTypeId = 1, AnswerId = 13 },
+            new QuestionItem { Id = 8, GameTypeId = 1, AnswerId = 15 },
+            new QuestionItem { Id = 9, GameTypeId = 1, AnswerId = 17 },
+            new QuestionItem { Id = 10, GameTypeId = 1, AnswerId = 19 },
+            new QuestionItem { Id = 11, GameTypeId = 1, AnswerId = 1 },
+            new QuestionItem { Id = 12, GameTypeId = 1, AnswerId = 3 },
+            new QuestionItem { Id = 13, GameTypeId = 1, AnswerId = 5 },
+            new QuestionItem { Id = 14, GameTypeId = 1, AnswerId = 7 },
+            new QuestionItem { Id = 15, GameTypeId = 1, AnswerId = 9 },
+            new QuestionItem { Id = 16, GameTypeId = 1, AnswerId = 11 },
+            new QuestionItem { Id = 17, GameTypeId = 1, AnswerId = 13 },
+            new QuestionItem { Id = 18, GameTypeId = 1, AnswerId = 15 },
+            new QuestionItem { Id = 19, GameTypeId = 1, AnswerId = 17 },
+            new QuestionItem { Id = 20, GameTypeId = 1, AnswerId = 19 }
         };
 
         private static readonly List<AnswerItem> StaticAnswers = new List<AnswerItem>
@@ -63,8 +63,23 @@ namespace PreschoolGames
             new AnswerItem { Id = 1, Type = "positive" },
             new AnswerItem { Id = 2, Type = "negative" },
             new AnswerItem { Id = 3, Type = "positive" },
-            new AnswerItem { Id = 4, Type = "negative" }
-            // Need to add more mock answer records here!
+            new AnswerItem { Id = 4, Type = "negative" },
+            new AnswerItem { Id = 5, Type = "positive" },
+            new AnswerItem { Id = 6, Type = "negative" },
+            new AnswerItem { Id = 7, Type = "positive" },
+            new AnswerItem { Id = 8, Type = "negative" },
+            new AnswerItem { Id = 9, Type = "positive" },
+            new AnswerItem { Id = 10, Type = "negative" }
+            // new AnswerItem { Id = 11, Type = "positive" },
+            // new AnswerItem { Id = 12, Type = "negative" },
+            // new AnswerItem { Id = 13, Type = "positive" },
+            // new AnswerItem { Id = 14, Type = "negative" },
+            // new AnswerItem { Id = 15, Type = "positive" },
+            // new AnswerItem { Id = 16, Type = "negative" },
+            // new AnswerItem { Id = 17, Type = "positive" },
+            // new AnswerItem { Id = 18, Type = "negative" },
+            // new AnswerItem { Id = 19, Type = "positive" },
+            // new AnswerItem { Id = 20, Type = "negative" }            
         };
 
         // constructors
@@ -142,7 +157,7 @@ namespace PreschoolGames
 
             List<int> chFilter = new List<int>();
             
-            // The original game selection logic stays exactly the same
+            // game selection logic
             if (aAnswerNum % 2 == 0)
             {
                 var choiceFilter = aList.Where(list => list % 2 != 0);

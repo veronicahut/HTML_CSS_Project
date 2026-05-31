@@ -56,7 +56,7 @@
     // Gameplay parameters matching your C# logic structures
     private int currentQuestionId;
     private int currentAnswerId;
-    private int[] currentChoices = new int[3];
+    private int[] currentChoices = new int[1];
     
     // UI flow control switches
     private bool gameStarted = false;
@@ -104,8 +104,17 @@
         }
         else
         {
-            statusMessage = "😥 Let's try to make a nicer friend choice next time.";
-            responseEmoji = "💡"; // Guide marker pointing back to standard rules
+            // check if they were close
+            if(currentAnswerId % 2 != 0 && selectedChoiceId % 2 != 0)
+            {
+                statusMessage = ":) Nice thought.";
+                responseEmoji = "💡"; // Guide marker pointing back to standard rules
+            }
+            else 
+            {
+                statusMessage = "😥 Let's try to make a nicer friend choice next time.";
+                responseEmoji = "💡"; // Guide marker pointing back to standard rules
+            }            
         }
     }
 
@@ -119,30 +128,46 @@
         4 => "Two kids are fighting over a stuffed toy bear.",
         5 => "Look at the kids running happily together!",
         6 => "Stop! Those kids are kicking each other.",
-        7 => "These friends are playing nicely with blocks.",
+        7 => "These friends are done playing with blocks.",
         8 => "This man is talking way too loud inside.",
         9 => "Look at these silly kids making funny joke faces!",
-        10 => "Oh no, a bully is stealing money.",
-        11 => "Look at those kind girls sharing their chips.",
+        10 => "Oh no, a boy accidentally breaks a girl's toy.",
+        11 => "Oops! A kid accidentally spills their milk.", 
         12 => "Hey! Those boys are pulling a girl's hair.",
         13 => "Fun! The kids are playing in a giant ball pit.",
-        14 => "Oh no, a boy accidentally breaks a girl's doll.",
+        14 => "Oh no, a bully is kicking over a tower of blocks.",
         15 => "Look at the teamwork! Kids building blocks together.",
         16 => "Stop! Those kids are yelling at each other.",
-        17 => "These friends are playing nicely in the sandbox.",
-        18 => "Those kids are fighting over a stuffed animal.",
+        17 => "These friends are finished playing with the sandbox toys.",
+        18 => "That boy is yelling in the library.",
         19 => "Look at those great friends sharing their electronics.",
-        20 => "Oops! A kid accidentally spills their milk.",
-        _ => "Look at what your friends are doing!"
+        20 => "Those girls are fighting about cleaning up their toys.",
+        _ => "Look at how nice your friends are playing!"
     };
 
     private string GetAnswerText(int id) => id switch
     {
-        1 => "🌟 Sit next to them and ask them if they want to play tag!",
+        1 => "🌟 Go and ask them if you can help!",
         2 => "🛑 Ignore them, look away, and play somewhere else.",
-        3 => "🌟 Help them pick them up together so it gets cleaned up fast!",
-        4 => "🛑 Laugh at them or kick the remaining crayons away.",
-        _ => "👉 Share your toys and ask nicely."
+        3 => "🌟 Ask an adult for help!",
+        4 => "🛑 Laugh at them or take the toy away.",
+        5 => "🌟 Ask them if you can play with them!",
+        6 => "🛑 Ignore them, look away, and hide somewhere.",
+        7 => "🌟 Ask them if they want to play tag instead!",
+        8 => "🛑 Laugh at them or kick the ball away.",
+        9 => "🌟 Go and ask them if you can join!",
+        10 => "🛑 Yell at them and run away.",
+        11 => "🌟 Go to them and ask them if they want to do a puzzle instead!",
+        12 => "🛑 Ignore them, look away, and play somewhere else.",
+        13 => "🌟 Help them pick them up together so it gets cleaned up fast!",
+        14 => "🛑 Laugh at them or take the toy away.",
+        15 => "🌟 Ask politely if he can speak quieter!",
+        16 => "🛑 Ignore them, look away, and hide somewhere.",
+        17 => "🌟 Ask if you can join the game!",
+        18 => "🛑 Laugh at them or kick the ball away.",
+        19 => "🌟 Help them clean up so everyone can play a new game!",
+        20 => "🛑 Yell at them and run away.",
+        _ => "👉 Share your toys and be polite."
     };
 
     private string GetRewardEmoji(int responseCode) => responseCode switch
