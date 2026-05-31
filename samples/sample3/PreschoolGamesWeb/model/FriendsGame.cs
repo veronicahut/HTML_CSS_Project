@@ -69,17 +69,17 @@ namespace PreschoolGames
             new AnswerItem { Id = 7, Type = "positive" },
             new AnswerItem { Id = 8, Type = "negative" },
             new AnswerItem { Id = 9, Type = "positive" },
-            new AnswerItem { Id = 10, Type = "negative" }
-            // new AnswerItem { Id = 11, Type = "positive" },
-            // new AnswerItem { Id = 12, Type = "negative" },
-            // new AnswerItem { Id = 13, Type = "positive" },
-            // new AnswerItem { Id = 14, Type = "negative" },
-            // new AnswerItem { Id = 15, Type = "positive" },
-            // new AnswerItem { Id = 16, Type = "negative" },
-            // new AnswerItem { Id = 17, Type = "positive" },
-            // new AnswerItem { Id = 18, Type = "negative" },
-            // new AnswerItem { Id = 19, Type = "positive" },
-            // new AnswerItem { Id = 20, Type = "negative" }            
+            new AnswerItem { Id = 10, Type = "negative" },
+            new AnswerItem { Id = 11, Type = "positive" },
+            new AnswerItem { Id = 12, Type = "negative" },
+            new AnswerItem { Id = 13, Type = "positive" },
+            new AnswerItem { Id = 14, Type = "negative" },
+            new AnswerItem { Id = 15, Type = "positive" },
+            new AnswerItem { Id = 16, Type = "negative" },
+            new AnswerItem { Id = 17, Type = "positive" },
+            new AnswerItem { Id = 18, Type = "negative" },
+            new AnswerItem { Id = 19, Type = "positive" },
+            new AnswerItem { Id = 20, Type = "negative" }
         };
 
         // constructors
@@ -112,7 +112,7 @@ namespace PreschoolGames
         // methods
         public override int GetQuestion()  // polymorphism
         {
-            // Instead of querying SQL, filter our in-memory list using LINQ
+            // Instead of querying SQL, filter the in-memory list using LINQ
             List<int> qst = StaticQuestions
                 .Where(q => q.GameTypeId == 1)
                 .Select(q => q.Id)
@@ -149,65 +149,88 @@ namespace PreschoolGames
             int choice1;
             int choice2;
 
-            // Get answers using LINQ directly from our mock list
+            // Get answer choices using LINQ directly from list
+            // List<int> aList = StaticAnswers
+            //     .Where(a => a.Type == "positive" || a.Type == "negative")
+            //     .Select(a => a.Id)
+            //     .ToList();
             List<int> aList = StaticAnswers
-                .Where(a => a.Type == "positive" || a.Type == "negative")
+                .Where(a => a.Type == "negative")
                 .Select(a => a.Id)
                 .ToList();
 
             List<int> chFilter = new List<int>();
             
             // game selection logic
-            if (aAnswerNum % 2 == 0)
-            {
-                var choiceFilter = aList.Where(list => list % 2 != 0);
+            // if (aAnswerNum % 2 == 0)
+            // {
+            var choiceFilter = aList.Where(list => list % 2 != 0);
 
-                foreach (var i in choiceFilter)
-                {
-                    chFilter.Add(i);
-                }
-                int element1 = aRnd1.Next(0, chFilter.Count);
-                choice1 = chFilter[element1];
-                while (choice1 == aAnswerNum)
-                {
-                    element1 = aRnd1.Next(0, chFilter.Count);
-                    choice1 = chFilter[element1];
-                }
-                int element2 = aRnd1.Next(0, chFilter.Count);
-                choice2 = chFilter[element2];
-                while (choice2 == aAnswerNum || choice2 == choice1)
-                {
-                    element2 = aRnd1.Next(0, chFilter.Count);
-                    choice2 = chFilter[element2];
-                }
-            }
-            else
+            foreach (var i in choiceFilter)
             {
-                var choiceQuery = aList.Where(list => list % 2 == 0);
-                foreach (var i in choiceQuery)
-                {
-                    chFilter.Add(i);
-                }
-                int element1 = aRnd1.Next(0, chFilter.Count);
+                chFilter.Add(i);
+            }
+            int element1 = aRnd1.Next(0, chFilter.Count);
+            choice1 = chFilter[element1];
+            while (choice1 == aAnswerNum)
+            {
+                element1 = aRnd1.Next(0, chFilter.Count);
                 choice1 = chFilter[element1];
-                while (choice1 == aAnswerNum)
-                {
-                    element1 = aRnd1.Next(0, chFilter.Count);
-                    choice1 = chFilter[element1];
-                }
-                int element2 = aRnd1.Next(0, chFilter.Count);
+            }
+            int element2 = aRnd1.Next(0, chFilter.Count);
+            choice2 = chFilter[element2];
+            while (choice2 == aAnswerNum || choice2 == choice1)
+            {
+                element2 = aRnd1.Next(0, chFilter.Count);
                 choice2 = chFilter[element2];
-                while (choice2 == aAnswerNum || choice2 == choice1)
-                {
-                    element2 = aRnd1.Next(0, chFilter.Count);
-                    choice2 = chFilter[element2];
-                }
-            }  
+            }
+            // }
+            // else
+            // {
+            //     var choiceQuery = aList.Where(list => list % 2 == 0);
+            //     foreach (var i in choiceQuery)
+            //     {
+            //         chFilter.Add(i);
+            //     }
+            //     int element1 = aRnd1.Next(0, chFilter.Count);
+            //     choice1 = chFilter[element1];
+            //     while (choice1 == aAnswerNum)
+            //     {
+            //         element1 = aRnd1.Next(0, chFilter.Count);
+            //         choice1 = chFilter[element1];
+            //     }
+            //     int element2 = aRnd1.Next(0, chFilter.Count);
+            //     choice2 = chFilter[element2];
+            //     while (choice2 == aAnswerNum || choice2 == choice1)
+            //     {
+            //         element2 = aRnd1.Next(0, chFilter.Count);
+            //         choice2 = chFilter[element2];
+            //     }
+            // } 
+
+            // randomly assign the correct answer and the two choices to the user choices array
+            int correctPosition = aRnd1.Next(0, 3);
+            aUserChoices[correctPosition] = aAnswerNum;
+            if (correctPosition == 0)
+            {
+                aUserChoices[1] = choice1;
+                aUserChoices[2] = choice2;
+            }
+            else if (correctPosition == 1)
+            {
+                aUserChoices[0] = choice1;
+                aUserChoices[2] = choice2;
+            }
+            else // correctPosition == 2
+            {
+                aUserChoices[0] = choice1;
+                aUserChoices[1] = choice2;
+            }
             
             // final choices:
-            aUserChoices[0] = choice1;
-            aUserChoices[1] = aAnswerNum; 
-            aUserChoices[2] = choice2;
+            // aUserChoices[0] = choice1;
+            // aUserChoices[1] = aAnswerNum; 
+            // aUserChoices[2] = choice2;
             return aUserChoices;
         }
 
