@@ -89,7 +89,7 @@ p {
     justify-content: flex-start;
     padding: 30px;
 }
-#linka { 
+/* #linka { 
     padding: 1.2em 2.5em;
     background-image: radial-gradient(white, #9ab1c7, #77a0c7);
 }
@@ -104,7 +104,7 @@ p {
 #linkc { 
     padding: 1.2em 2.5em;
     background-image: radial-gradient(white, #9d9db9, #18181a);
-}
+} */
 #home {
     margin-top: 5em;
     margin-right: 5em;
@@ -113,7 +113,7 @@ p {
 }
 
 /* navigation styles */
-nav {
+/* nav {
     padding-top: 5em;
 }
 nav ul {
@@ -149,6 +149,41 @@ a:focus, a:hover, a:active {
 }
 #home a {
     color: #00318d; /* very dark blue */
+} */
+
+/* Center and align the navigation bar completely */
+.portfolio-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;            /* Evenly spaces the buttons */
+    margin: 40px auto;
+    max-width: 800px;
+    flex-wrap: wrap;      /* Keeps it beautiful on mobile screens */
+}
+
+/* Give all buttons matching dimensions and a cleaner UI */
+.nav-btn {
+    display: inline-block;
+    width: 140px;         /* Forces identical widths so they line up perfectly */
+    padding: 12px 0;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 600;
+    color: #2c3e50;
+    
+    /* Sleeker, modern border-radius instead of the heavy oval */
+    border-radius: 8px;   
+    background: linear-gradient(135px, #a1c4fd 0%, #c2e9fb 100%);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Clean hover feedback */
+.nav-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    color: #130cb7;
 }
 
 /* media queries */
