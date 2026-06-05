@@ -142,14 +142,15 @@ a {
     text-align: center;
 }
 a:focus, a:hover, a:active {
-    color: #276dee; /* medium blue */
+    color: #276dee; 
 }
 #home a:focus, #home a:hover, #home a:active {
-    color: #87bdf0; /* light blue */
+    color: #87bdf0; 
 }
 #home a {
-    color: #00318d; /* very dark blue */
-} */
+    color: #00318d; 
+} 
+*/
 
 /* Center and align the navigation bar completely */
 .portfolio-nav {
