@@ -1,9 +1,9 @@
 // name: environmental_trivia.js
-// date: 5/16/2026
-// author: Google Gemini, Veronica Hutchins
-// description: Handles trivia question loading and answer checking via a local JSON file
+// date: 06/19/2026
+// author: Veronica Hutchins and Gemini
+// description: Handles trivia question loading and displays educational facts alongside answers
 
-// 1. DOM Elements (Strictly matched to your HTML)
+// 1. DOM Elements
 const questionEl = document.getElementById('question');
 const feedbackEl = document.getElementById('feedback-message');
 const trueButtonEl = document.getElementById('true-answer');
@@ -13,53 +13,56 @@ const scoreEl = document.getElementById('points');
 const timerEl = document.getElementById('timer');
 
 // 2. Global Game Variables
-let questionsArray = [];       // Holds all questions loaded from JSON
-let currentQuestionIndex = 0;  // Keeps track of which question the user is on
+let questionsArray = [];       
+let currentQuestionIndex = 0;  
 let score = parseInt(localStorage.getItem('triviaScore') || '0', 10);
 
-// Initialize score counter on page load
 if (scoreEl) scoreEl.textContent = score;
 
 // 3. Core Gameplay Functions
 async function loadTriviaQuestion() {
     try {
-        const response = await fetch('../includes/environmental_trivia.json');
+        // If files are in the same directory now, use 'environmental_trivia.json'
+        // Otherwise, fallback to your includes directory folder path
+        const response = await fetch('../../includes/environmental_trivia.json').catch(() => 
+            fetch('../includes/environmental_trivia.json')
+        );
+
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
         
-        // Store all questions globally
         questionsArray = await response.json();
         
-        // Start the game loop by showing the first question
-        displayCurrentQuestion();
+        // Ensure we actually received data before trying to render
+        if (questionsArray && questionsArray.length > 0) {
+            displayCurrentQuestion();
+        } else {
+            if (questionEl) questionEl.textContent = "No trivia questions found in data file.";
+        }
         
     } catch (error) {
         console.error("Could not load trivia questions:", error);
-        if (questionEl) questionEl.textContent = "Error loading trivia questions. Please try again.";
+        if (questionEl) questionEl.textContent = "Error loading trivia questions. Please check file path.";
     }
 }
 
 function displayCurrentQuestion() {
-    // Clear out old feedback and hide the next button
     if (feedbackEl) {
         feedbackEl.textContent = "";
-        feedbackEl.className = "response"; // resets colors
+        feedbackEl.style.color = ""; // Clear out previous color states
     }
     if (nextButtonEl) nextButtonEl.style.display = 'none';
     
-    // Check if we ran out of questions in the array
     if (currentQuestionIndex >= questionsArray.length) {
         if (questionEl) questionEl.textContent = " 🎉 You've completed all available trivia questions!";
         setButtonsDisabled(true);
         return;
     }
 
-    // Load up the text for the current item
     const currentQuestion = questionsArray[currentQuestionIndex];
     if (questionEl) questionEl.textContent = currentQuestion.question;
     
-    // Unlock the answer inputs for the player
     setButtonsDisabled(false);
 }
 
@@ -67,27 +70,27 @@ function submitAnswer(selectedOption) {
     const currentQuestion = questionsArray[currentQuestionIndex];
     if (!currentQuestion || !feedbackEl) return;
 
-    // Lock selections so answers can't be changed mid-question
     setButtonsDisabled(true);
 
-    // Look inside the JSON's "answers" array to find the item marked correct
     const correctAnswerObj = currentQuestion.answers.find(ans => ans.correct === true);
     const correctAnswerText = correctAnswerObj ? correctAnswerObj.text : "";
 
-    // Compare the user's choice ('True' or 'False') to the text of the correct answer
+    // DYNAMIC FACT PRESENTATION:
+    // Pull the clean reference fact out of your new JSON field setup
+    const educationalFact = currentQuestion.fact ? `\n\nFact: ${currentQuestion.fact}` : "";
+
     if (selectedOption === correctAnswerText) {
         score++;
         localStorage.setItem('triviaScore', score);
         if (scoreEl) scoreEl.textContent = score;
         
-        feedbackEl.textContent = "Correct! 🌱 Excellent job.";
-        feedbackEl.style.color = "#2e7d32"; // Modern flat green
+        feedbackEl.innerText = `Correct! 🌱 Excellent job.${educationalFact}`;
+        feedbackEl.style.color = "#2e7d32"; 
     } else {
-        feedbackEl.textContent = `Incorrect. The correct answer was: ${correctAnswerText}`;
-        feedbackEl.style.color = "#c62828"; // Modern flat red
+        feedbackEl.innerText = `Incorrect. The correct answer was: ${correctAnswerText}.${educationalFact}`;
+        feedbackEl.style.color = "#c62828"; 
     }
 
-    // Reveal the "Next Question" button
     if (nextButtonEl) nextButtonEl.style.display = 'inline-block';
 }
 
@@ -101,8 +104,8 @@ function setButtonsDisabled(v) {
     if (falseButtonEl) falseButtonEl.disabled = v;
 }
 
-// 4. Countdown Timer Logic
-var end = new Date().getTime() + 120000; // 2 minutes
+// 4. Countdown Timer Logic (2 Minutes)
+var end = new Date().getTime() + 120000; 
 
 var x = setInterval(function() {
     var now = new Date().getTime();
@@ -120,17 +123,16 @@ var x = setInterval(function() {
         if (timerEl) timerEl.textContent = "Out of time!";
         setButtonsDisabled(true);
         
-        // Reset score
         score = 0;
         localStorage.setItem('triviaScore', score);
         if (scoreEl) scoreEl.textContent = score;
     }
 }, 1000);
 
-// 5. Explicit Event Listeners
+// 5. Event Listeners
 if (trueButtonEl) trueButtonEl.addEventListener('click', () => submitAnswer('True'));
 if (falseButtonEl) falseButtonEl.addEventListener('click', () => submitAnswer('False'));
 if (nextButtonEl) nextButtonEl.addEventListener('click', loadNextQuestion);
 
-// 6. Bootstrap Initial Setup
+// 6. Bootstrap Initial Run
 loadTriviaQuestion();
