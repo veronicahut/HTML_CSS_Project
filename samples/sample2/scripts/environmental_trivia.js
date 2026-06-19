@@ -24,7 +24,7 @@ async function loadTriviaQuestion() {
     try {
         // If files are in the same directory now, use 'environmental_trivia.json'
         // Otherwise, fallback to your includes directory folder path
-        const response = await fetch('../../includes/environmental_trivia.json').catch(() => 
+        const response = await fetch('includes/environmental_trivia.json').catch(() => 
             fetch('../includes/environmental_trivia.json')
         );
 
