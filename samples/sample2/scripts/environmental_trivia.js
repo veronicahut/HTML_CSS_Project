@@ -112,6 +112,7 @@ function startTimer() {
     // Clear any active timer intervals running beforehand
     clearInterval(timerInterval); 
     
+    // 60000 milliseconds = 1 minute
     timerEndTimestamp = new Date().getTime() + 60000; 
 
     timerInterval = setInterval(function() {
