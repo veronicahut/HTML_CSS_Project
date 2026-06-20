@@ -108,31 +108,6 @@ function setButtonsDisabled(v) {
     if (falseButtonEl) falseButtonEl.disabled = v;
 }
 
-// Countdown Timer (2 Minutes)
-// var end = new Date().getTime() + 120000; 
-
-// var x = setInterval(function() {
-//     var now = new Date().getTime();
-//     var distance = end - now;
-
-//     var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-//     var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-//     if (timerEl) {
-//         timerEl.textContent = minutes + "m " + seconds + "s ";
-//     }
-
-//     if (distance < 0) {
-//         clearInterval(x);
-//         if (timerEl) timerEl.textContent = "Out of time!";
-//         setButtonsDisabled(true);
-        
-//         score = 0;
-//         localStorage.setItem('triviaScore', score);
-//         if (scoreEl) scoreEl.textContent = score;
-//     }
-// }, 1000);
-
 function startTimer() {
     // Clear any active timer intervals running beforehand
     clearInterval(timerInterval); 
@@ -153,7 +128,13 @@ function startTimer() {
         if (distance < 0) {
             clearInterval(timerInterval);
             if (timerEl) timerEl.textContent = "Out of time!";
-            setButtonsDisabled(true);
+
+            // Disable buttons
+            setButtonsDisabled(true);            
+
+            // Hide next button so they can't continue
+            if (nextButtonEl) nextButtonEl.style.display = 'none';
+            //if (nextButtonEl) nextButtonEl.disabled = true;
             
             score = 0;
             localStorage.setItem('triviaScore', score);
