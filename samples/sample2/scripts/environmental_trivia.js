@@ -17,8 +17,8 @@ const restartButtonEl = document.getElementById('restart-btn');
 let questionsArray = [];       
 let currentQuestionIndex = 0;  
 let score = parseInt(localStorage.getItem('triviaScore') || '0', 10);
-let timerInterval; // Store interval globally so we can clear it
-let timerEndTimestamp; // Store end time globally
+let timerInterval; // Handle interval globally so we can clear it
+let timerEndTimestamp; // Handle end time globally
 
 if (scoreEl) scoreEl.textContent = score;
 
@@ -112,7 +112,7 @@ function startTimer() {
     // Clear any active timer intervals running beforehand
     clearInterval(timerInterval); 
     
-    timerEndTimestamp = new Date().getTime() + 120000; 
+    timerEndTimestamp = new Date().getTime() + 60000; 
 
     timerInterval = setInterval(function() {
         var now = new Date().getTime();
