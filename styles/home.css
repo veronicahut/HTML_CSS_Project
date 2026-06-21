@@ -1,181 +1,144 @@
+/* CSS STYLE PAGE */
+@charset "UTF-8";
 /* 
   title: home.css
   author: Veronica Hutchins
-  date: 11/19/2022; 11/02/2024
-  note: project home styles page
+  date: 11/19/2022
+  note: project home page styles
 */
 
-.homepage { 
-    border: none;
-}
-h1 {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* More modern stack */
-    padding: 0.5em;
-    text-align: center;
-    font-size: clamp(2rem, 10vw, 5rem); /* Responsive sizing */
-    font-weight: 300;
-    letter-spacing: 0.2em; /* Slightly tighter for readability */
-    margin-bottom: 0;
+/* Reset & Base Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-#lastname {
-    display: block;
-    text-transform: uppercase;
-    font-size: 0.4em; /* Relative to the H1 */
-    letter-spacing: 0.8em;
-    margin-top: 10px;
-}
-
-p {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    text-align: center;
-    font-size: 1rem;
-    letter-spacing: 0.1em; /* Reduced for subheadings */
-    color: #555;
-    margin: 0.5em auto;
-}
-
-/* Image styling */
-#im img {
-    max-width: 250px;
-    border-radius: 50%;
-    border: 8px solid #f0f0f0;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-}
-
-/* Navigation Link Base Styles */
-nav ul {
-    margin: 0; 
-    padding: 0; 
-    list-style-type: none; /* This removes the dots */
-    display: flex; 
-    justify-content: center;
-    flex-wrap: wrap; /* Helps with mobile responsiveness */
-}
-nav ul li a { 	
-    display: block; 	
-    border: 2px solid transparent; 
-    padding: 0.8em 2em; 	
-    border-radius: 20px; /* rounded shape */
-    margin: 0.5em;     
-    font-size: 1rem;
-    text-decoration: none;
-    transition: all 0.3s ease; /* Smooth animation */
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Subtle depth */
-    /* color: rgb(141, 140, 140);  text */
-}
-
-/* Specific Button Colors (Flat Design) */
-#linka { color: #708599; } /* About */
-#linkr { color: #026999; } /* Resume */
-#links { color: #2758ba; } /* Samples */
-#linkc { color: #373758; } /* Contact */
-
-/* Hover Effects: Lift and Brighten */
-nav ul li a:hover {
-    transform: translateY(-3px); /* Lifts the button */
-    box-shadow: 0 6px 12px rgba(0,0,0,0.15); /* Stronger shadow on hover */
-    filter: brightness(1.1); /* Slightly brightens the color */
-}
-
-/* Mobile (Default) - Vertical Stack */
-#maincontent {
+body {
+    font-family: 'Segoe UI', Verdana, sans-serif;
+    background-color: #f4f7f6;
+    color: #05092c;
+    min-height: 100vh;
     display: flex;
-    flex-direction: column-reverse; /* Image on top for mobile */
+    justify-content: center;
     align-items: center;
     padding: 20px;
-    gap: 2rem;
 }
 
-#homenav ul {
-    display: flex;
-    flex-direction: column; /* Stack buttons vertically */
-    align-items: center;
-}
-
-/* ABOUT SECTION */
-#aboutsect {
-    max-width: 900px;
-    margin: 5rem auto;
-    padding: 2rem;
-}
-#aboutheader {
-    text-align: center;
-    font-size: 2rem;
-    margin-bottom: 2rem;
-    letter-spacing: 0.1em;
-    color: #2f3b52;
-}
-#aboutsect p {
-    text-align: left;
-    line-height: 1.8;
-    margin-bottom: 1.5rem;
-    color: #444;
-}
-#aboutsect aside {
-    text-align: center;
-    margin-top: 2rem;
-}
-#aboutsect aside img {
-    max-width: 300px;
+/* Centered Layout Wrapper */
+.main-container {
+    max-width: 800px;
+    width: 100%;
+    background: #ffffff;
+    padding: 40px;
     border-radius: 16px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    text-align: center;
 }
 
-/* CONTACT SECTION */
-#contactsect {
-    max-width: 900px;
-    margin: 5rem auto;
-    padding: 2rem;
+/* Header & Intro Text */
+.hero-section {
+    margin-bottom: 40px;
 }
-#contactheader {
-    text-align: center;
-    font-size: 2rem;
-    margin-bottom: 2rem;
-    letter-spacing: 0.1em;
-    color: #2f3b52;
+
+#name {
+    font-size: 2.5rem;
+    font-weight: 300;
+    letter-spacing: 0.15em;
+    margin-bottom: 20px;
+    color: #05092c;
 }
-#homesite {
-    text-align: center;
-    margin-top: 2rem;
+
+.intro-text {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #555b73;
+    max-width: 600px;
+    margin: 0 auto;
 }
-/* Allow animation of links */
-#contactsect a {
-    color: #19a2a7;
+
+/* Navigation Menu */
+.portfolio-nav {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 16px;
+    margin: 40px auto;
+    max-width: 700px;
+}
+
+/* Interactive Modern Buttons */
+.nav-btn { 
+    display: block;
+    padding: 14px 10px;
     text-decoration: none;
-    padding: 0.4em 0.8em;
-    border-radius: 12px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: #1e293b;    
+    border-radius: 8px;   
+    background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.03);
+    transition: all 0.25s ease;
+} 
 
-    transition:
-        color 0.3s ease,
-        border-color 1.5s ease,
-        box-shadow 1.5s ease,
-        background-color 1.5s ease;
-}
-/* Hover effect still works */
-#contactsect a:hover {
-    color: #ffffff;
-    background-color: #19a2a7;
-}
-/* Animated highlight from JavaScript */
-.active-link {
-    border: 2px solid #77fce6;
-    box-shadow: 0 0 12px rgba(119, 252, 230, 0.8);
-    background-color: rgba(119, 252, 230, 0.08);
+.nav-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(19, 12, 183, 0.15);
+    color: #130cb7;
+    background: linear-gradient(135deg, #cfdef3 0%, #e0eafc 100%);
+} 
+
+/* Footer Layout */
+.footer-section {
+    margin-top: 40px;
+    border-top: 1px solid #e2e8f0;
+    padding-top: 20px;
+    font-size: 0.85rem;
+    color: #8a92a6;
 }
 
-/* Tablet & Desktop - Side by Side */
-@media screen and (min-width: 768px) {
-    #maincontent {
-        flex-direction: row; /* Side-by-side */
-        justify-content: center;
-        gap: 5rem;
+.updated-date {
+    margin-top: 4px;
+    font-style: italic;
+}
+
+/* media queries */
+ @media screen and (min-width: 50px) 
+{
+    .homepage {        
+        border: none;   
+        color: #05092c;   
+        font-size: small;  
+        margin: 1em;
     }
-
-    /* Create the diamond/grid pattern for buttons on desktop */
-    #homenav ul {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-gap: 15px;
+    #homepage {
+        margin-top: 0.25em;
+        padding-top: 0;
+    }       
+}
+@media screen and (min-width: 350px) 
+{
+    .homepage {        
+        border: none;   
+        color: #05092c;   
+        font-size: medium;  
+        margin: 1em;
+    }
+    #name {
+        font-size: large;
+        padding-left: 2em;
     }
 }
+@media screen and (min-width: 490px) 
+{
+    .homepage {        
+        border: none;   
+        color: #05092c;   
+        font-size: large;  
+        margin: 1em;
+    }
+    #name {
+        font-size: large;
+        padding-left: 2em;
+    }
+} 
