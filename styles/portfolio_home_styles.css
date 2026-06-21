@@ -7,184 +7,99 @@
   note: project home page styles
 */
 
-html {
-    box-sizing: border-box;
-   /* background-color: #5b8fc0; */
-    background-repeat: no-repeat;
-    background-size: cover;
-    display: flex;
-    flex-direction: column; 
-}
+/* Reset & Base Styles */
 * {
-    box-sizing: inherit;
-}
-.homepage {
-    max-width: 1200px; /* Standard size for modern desktop views */
-    margin-left: auto; /* Centers the container */
-    margin-right: auto;
-    padding: 0 20px;   /* Add a little breathing room */
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-/* generic styles */
-h1 {
-    font-family: Verdana, sans-serif;
-    padding: 0.5em;
-    text-align: center;
-    font-stretch: ultra-expanded;
-    font-size: 5em;
-    font-weight: lighter;
-    letter-spacing: 0.5em;
-}
-p {
-    font-family: verdana, sans-serif;
-    text-align: center;
-    font-size: small;
-    letter-spacing: 0.25em;
-    margin: 0.15em 2.5em 0.15em 2.5em; /* 0.5em 5em 0.5em 0.5em; */
-    padding: 0.15em;
-}
-#maincontent {
+body {
+    font-family: 'Segoe UI', Verdana, sans-serif;
+    background-color: #f4f7f6;
+    color: #05092c;
+    min-height: 100vh;
     display: flex;
-    flex-direction: row; /* Aligns items horizontally */
-    align-items: center; /* Centers them vertically relative to each other */
-    justify-content: space-around; /* Distributes space between nav and image */
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Centered Layout Wrapper */
+.main-container {
+    max-width: 800px;
     width: 100%;
-    max-width: 1000px;
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    text-align: center;
+}
+
+/* Header & Intro Text */
+.hero-section {
+    margin-bottom: 40px;
+}
+
+#name {
+    font-size: 2.5rem;
+    font-weight: 300;
+    letter-spacing: 0.15em;
+    margin-bottom: 20px;
+    color: #05092c;
+}
+
+.intro-text {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #555b73;
+    max-width: 600px;
     margin: 0 auto;
 }
-#im {
-    flex: 1;
-    display: flex;
-    justify-content: center; /* Centers image in its half of the screen */
-    margin: 0; /* Remove previous margins that might interfere */
-}
-#im img {
-    width: 100%;
-    max-width: 250px;
-    border-radius: 50%; /* Re-adding the circle look */
-    border: 5px solid #fff;
-}
 
- /* more styles */
-#innercontainer {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end; /* Aligns text and nav to the right of their container */
-    flex: 1;
-}
-.homepage {
-    min-height: 100em;
-    border: none;   
-    color: #05092c; /* very dark blue */    
-}
-#lastname {
-    text-transform: uppercase;
-    font-size: 1.25em;
-    padding-left: 1em;
-}
-#homepage { 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    padding: 30px;
-}
-/* #linka { 
-    padding: 1.2em 2.5em;
-    background-image: radial-gradient(white, #9ab1c7, #77a0c7);
-}
-#linkr { 
-    padding: 1.2em 2.5em;
-    background-image: radial-gradient(white, #d1d8e6, #306be0);
-}
-#links { 
-    padding: 1.2em 2.5em;
-    background-image: radial-gradient(white, #95d9f8, #5ac6f8);
-}
-#linkc { 
-    padding: 1.2em 2.5em;
-    background-image: radial-gradient(white, #9d9db9, #18181a);
-} */
-#home {
-    margin-top: 5em;
-    margin-right: 5em;
-    margin-bottom: 0.5em;
-    text-align: center;
-}
-
-/* navigation styles */
-/* nav {
-    padding-top: 5em;
-}
-nav ul {
-    list-style-type: none;
-}
-nav ul {
-    margin: 0; 
-    padding: 0; 
-    list-style-type: none; 
-    display: flex; 
-    justify-content: center;
-}
-nav ul li {
-    margin-left: .5em;
- }
-nav ul li a { 	
-    display: block; 	
-    border: 1px solid; 
-    padding: .5em .5em; 	
-    border-radius: 2.5em; 
-    margin: 0.5em;     
-    font-size: 1.17em;
-} 
-a {
-    font-weight: bold;
-    text-align: center;
-}
-a:focus, a:hover, a:active {
-    color: #276dee; 
-}
-#home a:focus, #home a:hover, #home a:active {
-    color: #87bdf0; 
-}
-#home a {
-    color: #00318d; 
-} 
-*/
-
-/* Center and align the navigation bar completely */
+/* Navigation Menu */
 .portfolio-nav {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;            /* Evenly spaces the buttons */
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 16px;
     margin: 40px auto;
-    max-width: 800px;
-    flex-wrap: wrap;      /* Keeps it beautiful on mobile screens */
+    max-width: 700px;
 }
 
-/* Give all buttons matching dimensions and a cleaner UI */
-.nav-btn {
-    display: inline-block;
-    width: 140px;         /* Forces identical widths so they line up perfectly */
-    padding: 12px 0;
-    text-align: center;
+/* Interactive Modern Buttons */
+.nav-btn { 
+    display: block;
+    padding: 14px 10px;
     text-decoration: none;
     font-weight: 600;
-    color: #2c3e50;
-    
-    /* Sleeker, modern border-radius instead of the heavy oval */
+    font-size: 0.95rem;
+    color: #1e293b;    
     border-radius: 8px;   
-    background: linear-gradient(135px, #a1c4fd 0%, #c2e9fb 100%);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.03);
+    transition: all 0.25s ease;
+} 
+
+.nav-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(19, 12, 183, 0.15);
+    color: #130cb7;
+    background: linear-gradient(135deg, #cfdef3 0%, #e0eafc 100%);
+} 
+
+/* Footer Layout */
+.footer-section {
+    margin-top: 40px;
+    border-top: 1px solid #e2e8f0;
+    padding-top: 20px;
+    font-size: 0.85rem;
+    color: #8a92a6;
 }
 
-/* Clean hover feedback */
-.nav-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-    color: #130cb7;
+.updated-date {
+    margin-top: 4px;
+    font-style: italic;
 }
 
 /* media queries */
@@ -196,78 +111,33 @@ a:focus, a:hover, a:active {
         font-size: small;  
         margin: 1em;
     }
-    #homeheader {
+    #homepage {
         margin-top: 0.25em;
         padding-top: 0;
-    }
-    #lastname {
-        padding-left: 2em;
-        font-size: x-small;
-    }
-    ul {
-        margin: 0; 
-        padding: 0; 
-        list-style-type: none; 
-        display: flex;
-      }
+    }       
 }
 @media screen and (min-width: 350px) 
 {
-    /* page grid defs */
-    #homenav ul {
-        display: grid;
-        grid-template-columns: repeat(6, 0.25fr);
-        grid-gap: 5px;
-        grid-template-areas:         
-        "empty about empty empty empty empty"
-        "resume empty samples empty empty empty"
-        "empty contact empty empty empty empty"
-        "empty empty empty empty empty empty";
+    .homepage {        
+        border: none;   
+        color: #05092c;   
+        font-size: medium;  
+        margin: 1em;
     }
-    #empty  {
-        grid-area: empty; 
-        grid-row: 1;
-        grid-column: 1 / 6;
-        padding: .5em;
-    } 
-    #about  {
-        grid-area: about; 
-        grid-row: 2;
-        grid-column: 2 / 3;
-        padding: .5em; 
-    } 
-    #resume  {
-        grid-area: resume; 
-        grid-row: 3;
-        grid-column: 1 / 2;
-        padding: .5em;   
-    } 
-    #empty  {
-        grid-area: empty; 
-        grid-row: 3;
-        grid-column: 2 / 3;
-        padding: .5em;
-    } 
-    #samples  {
-        grid-area: samples; 
-        grid-row: 3;
-        grid-column: 3 / 4;
-        padding: .5em;
-    } 
-    #contact  {
-        grid-area: contact; 
-        grid-row: 4;
-        grid-column: 2 / 3;
-        padding: .5em;
-    }
-    #lastname {
-        font-size: medium;
+    #name {
+        font-size: large;
         padding-left: 2em;
     }
 }
 @media screen and (min-width: 490px) 
 {
-    #lastname {
+    .homepage {        
+        border: none;   
+        color: #05092c;   
+        font-size: large;  
+        margin: 1em;
+    }
+    #name {
         font-size: large;
         padding-left: 2em;
     }
