@@ -91,6 +91,7 @@ p {
 #linka { color: #52667a; border-color: #cbd5e1; } 
 #linkr { color: #026999; border-color: #bae6fd; } 
 #linkc { color: #373758; border-color: #e2e8f0; } 
+#links { color: #151594; border-color: #b7dbef; } 
 
 .nav-btn:hover {
     transform: translateY(-3px); 
@@ -128,10 +129,15 @@ p {
     width: 100%;
 }
 
-picture {
-    max-width: 100%; /* Scale to screen size */
+.photo-container picture,
+.photo-container img {
     border-radius: 12px;
     box-shadow: 0 8px 16px rgba(0,0,0,0.08);
+    object-fit: contain; /* Display entire photo */
+}
+
+.photo-container {
+    align-items: center;
 }
 
 /* Small Responsive Sizing Config for Images */
@@ -213,6 +219,12 @@ footer p {
         height: auto;
         aspect-ratio: 4 / 3; /* Automatically balances width and height to minimize landscape cropping */
         object-fit: cover;
+    }
+
+    .photo-container {
+    height: auto;
+    aspect-ratio: auto;
+    align-items: center;
     }
 }
 
