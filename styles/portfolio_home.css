@@ -131,9 +131,13 @@ p {
 
 .photo-container picture,
 .photo-container img {
-    border-radius: 12px;
+    width: 100%;
+    max-width: 100%;
+    height: auto;        /* Strips out fixed heights to show the full picture */
+    display: block;
+    border-radius: 12px; /* Keeps your clean rounded borders */
     box-shadow: 0 8px 16px rgba(0,0,0,0.08);
-    object-fit: contain; /* Display entire photo */
+    object-fit: contain; /* Displays the full uncropped content bounds */
 }
 
 .photo-container {
@@ -222,9 +226,12 @@ footer p {
     }
 
     .photo-container {
-    height: auto;
-    aspect-ratio: auto;
-    align-items: center;
+        /* height: auto;
+        aspect-ratio: auto;
+        align-items: center; */
+        grid-template-columns: repeat(2, 1fr); /* Splits into side-by-side columns */
+        gap: 30px;
+        align-items: center;
     }
 }
 
