@@ -121,23 +121,22 @@ p {
 
 /* Center Image Container Gallery */
 .gallery-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: 1fr; /* Stacks vertically into 1 column on small screens */
     gap: 20px;
     margin-top: 2.5rem;
+    width: 100%;
 }
 
 /* Small Responsive Sizing Config for Images */
 .gallery-container picture, 
 .gallery-container img {
-    width: 100%;
-    max-width: 260px; /* Small layout default size */
-    height: auto;
+    width: 100%; /* Span width of grid */
+    max-width: 100%; /* Scale to screen size */
+    height: 250px;
     border-radius: 12px;
     box-shadow: 0 8px 16px rgba(0,0,0,0.08);
-    object-fit: cover;
+    object-fit: cover; /* Prevent stretching */
 }
 
 /* --- Contact Section & Footer --- */
@@ -174,44 +173,6 @@ footer p {
     color: #888;
 }
 
-/* --- Media Queries (Tablet / Desktop - 768px and above) --- */
-/* @media screen and (min-width: 768px) { */
-    /* #maincontent {
-        flex-direction: row; 
-        justify-content: center;
-        gap: 4rem;
-        margin: 2rem auto;
-    } */
-
-    /* Larger layout profile view */
-    /* #im img {
-        max-width: 250px; 
-    } */
-
-    /* Horizontal button spread */
-    /* #homenav {
-        flex-direction: row; 
-        justify-content: center;
-    }
-
-    #aboutsect, #contactsect {
-        margin: 5rem auto;
-        padding: 2rem;
-    } */
-
-    /* Expand images side by side and increase file boundaries on Desktop */
-    /* .gallery-container {
-        flex-direction: row;
-        gap: 30px;
-    } */
-
-    /* Upscaled desktop gallery sizing */
-    /* .gallery-container picture, 
-    .gallery-container img {
-        max-width: 380px; 
-    } */
-/* } */
-
 /* --- Base Mobile Styles (Phones: Less than 600px wide) --- */
 #maincontent {
     display: flex;
@@ -225,6 +186,27 @@ footer p {
 @media screen and (min-width: 600px) and (max-width: 992px) {
     #maincontent {        
         gap: 2.5rem;
+    }
+}
+
+/* --- Media Queries (Tablet / Desktop - 768px and above) --- */
+@media screen and (min-width: 768px) {
+    /* #maincontent {
+        flex-direction: row; 
+        justify-content: center;
+        gap: 4rem;
+        margin: 2rem auto;
+    } */
+
+    /* Automatically splits into two equal side-by-side columns */
+    .gallery-container {
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 30px;
+    }
+
+    .gallery-container picture, 
+    .gallery-container img {
+        height: 300px; /* Slightly taller aspect frame on larger screens */
     }
 }
 
