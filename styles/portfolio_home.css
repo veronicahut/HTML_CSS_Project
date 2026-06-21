@@ -39,7 +39,7 @@ p {
     margin: 0.5em auto;
 }
 
-/* --- Hero Image and Container Styling --- */
+/* --- Profile Image and Container Styling --- */
 #maincontent {
     display: flex;
     flex-direction: column-reverse; /* Profile Picture on top on Mobile devices */
@@ -143,6 +143,23 @@ p {
 .photo-container {
     align-items: center;
 }
+
+
+#photo {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+/* Handle mobile sized screen */
+#photo img {
+    width: 100%;
+    /* max-width: 220px;  */
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+}
+
 
 /* Small Responsive Sizing Config for Images */
 .gallery-container picture, 
