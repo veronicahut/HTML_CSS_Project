@@ -175,21 +175,74 @@ footer p {
 }
 
 /* --- Media Queries (Tablet / Desktop - 768px and above) --- */
-@media screen and (min-width: 768px) {
-    #maincontent {
+/* @media screen and (min-width: 768px) { */
+    /* #maincontent {
         flex-direction: row; 
+        justify-content: center;
+        gap: 4rem;
+        margin: 2rem auto;
+    } */
+
+    /* Larger layout profile view */
+    /* #im img {
+        max-width: 250px; 
+    } */
+
+    /* Horizontal button spread */
+    /* #homenav {
+        flex-direction: row; 
+        justify-content: center;
+    }
+
+    #aboutsect, #contactsect {
+        margin: 5rem auto;
+        padding: 2rem;
+    } */
+
+    /* Expand images side by side and increase file boundaries on Desktop */
+    /* .gallery-container {
+        flex-direction: row;
+        gap: 30px;
+    } */
+
+    /* Upscaled desktop gallery sizing */
+    /* .gallery-container picture, 
+    .gallery-container img {
+        max-width: 380px; 
+    } */
+/* } */
+
+/* --- Base Mobile Styles (Phones: Less than 600px wide) --- */
+#maincontent {
+    display: flex;
+    flex-direction: column-reverse; /* Keeps image on top for small phones */
+    align-items: center;
+    padding: 20px;
+    gap: 2rem;
+}
+
+/* --- Media Query for Tablets (Between 600px and 992px wide) --- */
+@media screen and (min-width: 600px) and (max-width: 992px) {
+    #maincontent {        
+        gap: 2.5rem;
+    }
+}
+
+/* --- Media Query for Desktop (993px wide and up) --- */
+@media screen and (min-width: 993px) {
+    #maincontent {
+        flex-direction: row; /* Returns to side-by-side alignment on large screens */
         justify-content: center;
         gap: 4rem;
         margin: 2rem auto;
     }
 
     #im img {
-        max-width: 250px; /* Larger layout profile view */
+        max-width: 250px;
     }
 
     #homenav {
-        flex-direction: row; /* Horizontal button spread */
-        justify-content: center;
+        flex-direction: row;
     }
 
     #aboutsect, #contactsect {
@@ -197,7 +250,6 @@ footer p {
         padding: 2rem;
     }
 
-    /* Expand images side by side and increase file boundaries on Desktop */
     .gallery-container {
         flex-direction: row;
         gap: 30px;
@@ -205,6 +257,6 @@ footer p {
 
     .gallery-container picture, 
     .gallery-container img {
-        max-width: 380px; /* Upscaled desktop gallery sizing */
+        max-width: 380px;
     }
 }
