@@ -2,7 +2,7 @@
   ENVIRONMENTAL PORTFOLIO HOME PAGE
   title: enviroPortfolio.html
   author: Veronica Hutchins
-  date: 11/19/2022; 11/2/2024; 5/12/2026
+  date: 5/12/2026
   note: portfolio index page; added reference to assignment for mobile app class 10/16/2025
 --> 
 <!doctype html>
@@ -27,11 +27,11 @@
         <section id="maincontent">
 
             <div id="innercontainer">                
-                <nav class="portfolio-nav">
-                    <a href="#about" class="nav-btn">About</a>
-                    <a href="#contact" class="nav-btn">Contact</a>
-                    <a href="enviroResume.html" class="nav-btn">Resume</a>
-                    <!-- <a href="samples.html" class="nav-btn">Samples</a> -->
+                <nav id="homenav" class="portfolio-nav">
+                    <a href="#about" id="linka" class="nav-btn">About</a>
+                    <a href="#contact" id="linkc" class="nav-btn">Contact</a>
+                    <a href="enviroResume.html" id="linkr" class="nav-btn">Resume</a>
+                    <!-- <a href="samples.html" id="links" class="nav-btn">Samples</a> -->
                 </nav>
             </div>
 
@@ -42,7 +42,7 @@
         </section>
 
         <!-- ABOUT SECTION -->
-        <section id="about">
+        <section id="aboutsect">
 
             <h2 id="aboutheader">about me</h2>
 
@@ -74,33 +74,35 @@
                 baking, traveling, photography, and spending time with family. 
             </p>
 
-            <aside> 
-                <img src="images/BarHarborMaine_20231014.jpg" alt="Stream at Bar Harbor Maine Photo">                
-                <img src="images/GrandHaven20240221.jpg" alt="Grand Haven Beach Photo">
+            <aside class="gallery-container"> 
+                <picture>
+                    <source media="(max-width: 600px)" srcset="images/BarHarborME_small.jpg">
+                    <img src="images/BarHarborMaine_20231014.jpg" alt="Stream at Bar Harbor Maine">
+                </picture>               
+                <picture>
+                    <source media="(max-width: 600px)" srcset="images/GrandHavenMI_small.jpg">
+                    <img src="images/GrandHaven20240221.jpg" alt="Grand Haven Beach">
+                </picture>
             </aside>
 
         </section>
 
          <!-- CONTACT SECTION -->
-        <section id="contact">
+        <section id="contactsect">
 
             <h2 id="contactheader">contact information</h2>
-            <br>
 
             <p id="email">
                 <a href="mailto:veronicahutchins2@gmail.com">veronicahutchins2@gmail.com</a>
             </p> 
-            <br>
 
             <p id="linkedin">
                 <a href="https://www.linkedin.com/in/veronica-hutchins-14875048">www.linkedin.com/in/veronica-hutchins-14875048</a>
             </p> 
-            <br>
 
             <p id="github">
                 <a href="https://github.com/veronicahut">https://github.com/veronicahut</a>
             </p>
-            <br>
 
         </section>
 
