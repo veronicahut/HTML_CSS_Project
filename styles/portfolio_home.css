@@ -128,8 +128,7 @@ p {
     width: 100%;
 }
 
-.photo-container picture, 
-.photo-container {
+.photo-container picture {
     max-width: 100%; /* Scale to screen size */
     border-radius: 12px;
     box-shadow: 0 8px 16px rgba(0,0,0,0.08);
