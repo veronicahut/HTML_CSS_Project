@@ -128,6 +128,10 @@ p {
     width: 100%;
 }
 
+.photo-container {
+    border-radius: 12px;
+}
+
 /* Small Responsive Sizing Config for Images */
 .gallery-container picture, 
 .gallery-container img {
