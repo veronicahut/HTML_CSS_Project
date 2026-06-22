@@ -57,6 +57,7 @@ p {
 #im img {
     width: 100%;
     max-width: 220px; /* Scaled down slightly for mobile */
+    min-width: 160px; /* Prevents the profile picture from shrinking too small! */
     height: auto;
     border-radius: 50%;
     border: 6px solid #f0f0f0;
