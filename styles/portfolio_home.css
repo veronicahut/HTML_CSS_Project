@@ -251,6 +251,14 @@ footer p {
     #maincontent {        
         gap: 2.5rem;
     }
+
+     #innercontainer {
+        margin: auto;
+    }
+
+    #maincontent {
+        justify-content: center;
+    }
 }
 
 /* --- Media Queries (Tablet / Desktop - 768px and above) --- */
@@ -280,15 +288,7 @@ footer p {
         grid-template-columns: repeat(2, 1fr); /* Splits into side-by-side columns */
         gap: 30px;
         align-items: center;
-    }
-
-    #innercontainer {
-        margin: auto;
-    }
-
-    #maincontent {
-        justify-content: center;
-    }
+    }   
 }
 
 /* --- Media Query for Desktop (993px wide and up) --- */
