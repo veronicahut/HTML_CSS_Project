@@ -46,6 +46,8 @@ p {
     align-items: center;
     justify-content: center;
     gap: 2em;
+    width: 100%;
+    margin: 0 auto;
 }
 
 #innercontainer {
