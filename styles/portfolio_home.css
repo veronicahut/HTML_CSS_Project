@@ -299,10 +299,10 @@ footer p {
 @media screen and (min-width: 993px) {
     #maincontent {
         flex-direction: row; /* Returns to side-by-side alignment on large screens */
-        justify-content: center;
+        /* justify-content: center; */
         align-items: center;
         gap: 4rem;
-        /* margin: 2rem auto; */
+        margin: 2rem auto;
     }
 
     #im img {
