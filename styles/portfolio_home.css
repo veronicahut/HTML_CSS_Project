@@ -48,7 +48,7 @@ p {
 }
 
 #innercontainer {
-    margin-left: 20%;
+    margin: 0; 
 }
 
 #im {
@@ -296,6 +296,7 @@ footer p {
     #maincontent {
         flex-direction: row; /* Returns to side-by-side alignment on large screens */
         justify-content: center;
+        align-items: center;
         gap: 4rem;
         margin: 2rem auto;
     }
