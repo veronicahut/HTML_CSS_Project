@@ -297,6 +297,10 @@ footer p {
         padding: 2rem;
     }
 
+    #contactsect {
+        margin-top: 0;
+    }
+
     .gallery-container {
         flex-direction: row;
         gap: 30px;
