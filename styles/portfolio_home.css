@@ -110,7 +110,7 @@ p {
 /* --- Gallery & Sections Layout --- */
 #aboutsect {
     max-width: 850px;
-    margin: 3rem auto;
+    margin: 3rem auto 0rem;
     padding: 1.5rem;
 }
 
