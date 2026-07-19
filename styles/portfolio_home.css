@@ -148,6 +148,20 @@ p {
     object-fit: contain; /* Displays the full uncropped content bounds */
 }
 
+.credit-text {
+    color: #fff;
+    padding: 4px 8px;
+    font-size: 0.8rem;
+    border-radius: 8px;
+    opacity: 0; /* Hidden by default */
+    transition: opacity 0.3s ease;
+}
+
+/* Show credit when hovering over the photo container */
+.gallery-container:hover .credit-text {
+    opacity: 1;
+}
+
 .photo-container {
     align-items: center;
 }
