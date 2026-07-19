@@ -283,7 +283,11 @@ footer p {
     }
 
     #innercontainer {
-        margin-left: 0;
+        margin: auto;
+    }
+
+    #maincontent {
+        justify-content: center;
     }
 }
 
