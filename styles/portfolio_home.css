@@ -108,7 +108,7 @@ p {
 
 /* --- Sections Layout --- */
 #maincontent {
-    padding: 0.5em; /* 20px; */
+    padding: 20px;
 }
 
 #aboutsect {
