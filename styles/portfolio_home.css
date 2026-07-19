@@ -152,14 +152,18 @@ p {
     color: #fff;
     padding: 4px 8px;
     font-size: 0.8rem;
+    text-align: left;
     border-radius: 8px;
-    opacity: 0; /* Hidden by default */
-    transition: opacity 0.3s ease;
+    visibility: hidden; /* Hidden by default */
+    transition: ease;
 }
 
 /* Show credit when hovering over the photo container */
 .gallery-container:hover .credit-text {
+    visibility: visible;
+    color: rgb(36, 85, 220);
     opacity: 1;
+    transition: ease;
 }
 
 .photo-container {
