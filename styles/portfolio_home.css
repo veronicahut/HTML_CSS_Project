@@ -246,6 +246,8 @@ footer p {
     justify-content: center;
     padding: 20px;
     gap: 2rem;
+    width: 100%;
+    margin: 0 auto;
 }
 
 /* --- Media Queries --- */
