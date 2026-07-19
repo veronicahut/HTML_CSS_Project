@@ -114,12 +114,8 @@ p {
     padding: 1.5em;
 }
 
-#contactsect {
-    max-width: 850px;
-    margin: 0% auto 3%;    
-    margin-top: 0;
-    padding: 1.5em;
-    padding-top: 0.1em;
+#contactsect { 
+    margin-bottom: 3%;
 }
 
 #aboutheader, #contactheader {
