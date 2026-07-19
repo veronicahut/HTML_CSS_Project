@@ -302,7 +302,7 @@ footer p {
         /* justify-content: center; */
         align-items: center;
         gap: 4rem;
-        margin: 2rem auto;
+        margin: auto;
     }
 
     #im img {
