@@ -281,6 +281,10 @@ footer p {
         gap: 30px;
         align-items: center;
     }
+
+    #innercontainer {
+        margin-left: auto;
+    }
 }
 
 /* --- Media Query for Desktop (993px wide and up) --- */
