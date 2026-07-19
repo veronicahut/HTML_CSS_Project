@@ -94,7 +94,7 @@ p {
     background-color: #f1f5f9;
 }
 
-/* Dynamic Color Palettes */
+/* Link Color Palettes */
 #linka { color: #52667a; border-color: #cbd5e1; } 
 #linkr { color: #026999; border-color: #bae6fd; } 
 #linkc { color: #373758; border-color: #e2e8f0; } 
@@ -108,7 +108,7 @@ p {
 
 /* --- Sections Layout --- */
 #maincontent {
-    padding: 1.5em; /* 20px; */
+    padding: 5em; /* 20px; */
 }
 
 #aboutsect {
