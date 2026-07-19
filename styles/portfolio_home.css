@@ -110,22 +110,22 @@ p {
 /* --- Gallery & Sections Layout --- */
 #aboutsect {
     max-width: 850px;
-    margin: 3rem auto 0rem;
-    padding: 1.5rem;
+    margin: 3% auto 0%;
+    padding: 1.5em;
 }
 
 #contactsect {
     max-width: 850px;
-    margin: 0rem auto 3rem;    
+    margin: 0% auto 3%;    
     margin-top: 0;
-    padding: 1.5rem;
-    padding-top: 0.1rem;
+    padding: 1.5em;
+    padding-top: 0.1em;
 }
 
 #aboutheader, #contactheader {
     text-align: center;
-    font-size: 1.75rem;
-    margin-bottom: 1.5rem;
+    font-size: 1.75em;
+    margin-bottom: 1.5em;
     letter-spacing: 0.1em;
     color: #2f3b52;
 }
@@ -133,7 +133,7 @@ p {
 #aboutsect p {
     text-align: left;
     max-width: 750px;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.5em;
 }
 
 /* Center Image Container Gallery */
