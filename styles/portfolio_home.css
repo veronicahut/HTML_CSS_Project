@@ -116,8 +116,8 @@ p {
 
 #contactsect {
     max-width: 850px;
-    margin: 3rem auto;    
-    margin-top: 0rem;
+    margin: 0rem auto 3rem;    
+    margin-top: 0;
     padding: 1.5rem;
     padding-top: 0.1rem;
 }
