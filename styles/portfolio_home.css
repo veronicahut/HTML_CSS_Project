@@ -108,10 +108,18 @@ p {
 }
 
 /* --- Gallery & Sections Layout --- */
-#aboutsect, #contactsect {
+#aboutsect {
     max-width: 850px;
     margin: 3rem auto;
     padding: 1.5rem;
+}
+
+#contactsect {
+    max-width: 850px;
+    margin: 3rem auto;    
+    margin-top: 0rem;
+    padding: 1.5rem;
+    padding-top: 0.1rem;
 }
 
 #aboutheader, #contactheader {
@@ -125,12 +133,7 @@ p {
 #aboutsect p {
     text-align: left;
     max-width: 750px;
-    /* margin-bottom: 1.5rem; */
-}
-
-/* Remove the top margin from contact to avoid doubling */
-#contactsect {
-    margin-top: 0;
+    margin-bottom: 1.5rem;
 }
 
 /* Center Image Container Gallery */
