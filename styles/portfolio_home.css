@@ -47,6 +47,10 @@ p {
     gap: 2em;
 }
 
+#innercontainer {
+    margin: auto 20px;
+}
+
 #im {
     display: flex;
     justify-content: center;
@@ -68,12 +72,10 @@ p {
 /* --- Navigation & Interactive UI Buttons --- */
 #homenav {
     display: flex;
-    /* flex-direction: column;  */
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
     gap: 12px;
-    /* align-items: center; */
     width: 100%;
 }
 
